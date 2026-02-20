@@ -1,23 +1,23 @@
 {
   "sectionTitle": "Why Choose Us?",
-  "sectionSubtitle": "Proactive IT That Builds Confidence, Not Chaos.",
-  "intro": "We believe IT should empower your business — not slow it down. That's why Quantum Harbour takes a proactive, prevention-first approach. From security and backups to updates and response, every part of our service is designed to protect uptime, reduce risk, and free your team to focus on what matters.",
+  "sectionSubtitle": "Business-First Technology That Delivers Results.",
+  "intro": "We believe technology should empower your business — not complicate it. OBH takes a design-thinking, innovation-driven approach to every project. From custom software and automation to web development, every solution is tailored to your workflows and built for long-term success.",
   "features": [
     {
       "icon": "clock",
-      "text": "24/7 monitoring and proactive maintenance"
+      "text": "Design-thinking approach to solving complex challenges"
     },
     {
       "icon": "team",
-      "text": "Local engineers and a dedicated support team"
+      "text": "Stanford Innovation Fellows with deep technical expertise"
     },
     {
       "icon": "money",
-      "text": "Predictable monthly pricing — no unexpected costs"
+      "text": "Measurable results: increased efficiency, reduced costs"
     },
     {
       "icon": "truck",
-      "text": "Proven reliability across construction, logistics, and healthcare"
+      "text": "Proven solutions across transport, construction & sustainability"
     }
   ]
 }

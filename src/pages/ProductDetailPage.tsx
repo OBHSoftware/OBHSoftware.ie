@@ -24,6 +24,7 @@ interface Product {
   features: Feature[];
   benefits: string[];
   stats: Stat[];
+  externalUrl?: string;
 }
 
 export function ProductDetailPage() {
@@ -125,9 +126,15 @@ export function ProductDetailPage() {
               : `Register your interest to be notified when ${product.name} launches and get early access.`}
           </p>
           <div className={styles.ctaButtons}>
-            <Link to={`/products/${product.slug}/site`} className={styles.subsiteButton}>
-              Visit {product.name} Site →
-            </Link>
+            {product.externalUrl ? (
+              <a href={product.externalUrl} target="_blank" rel="noopener noreferrer" className={styles.subsiteButton}>
+                Visit {product.name} Site →
+              </a>
+            ) : (
+              <Link to={`/products/${product.slug}/site`} className={styles.subsiteButton}>
+                Visit {product.name} Site →
+              </Link>
+            )}
             <Button href="/#contact" size="lg">
               {product.status === 'available' ? 'Schedule a Demo' : 'Register Interest'}
             </Button>

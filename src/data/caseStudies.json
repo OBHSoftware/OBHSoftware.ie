@@ -1,111 +1,111 @@
 {
-  "heroTitle": "Case Studies",
-  "heroSubtitle": "Real results for real businesses — see how we've helped organisations like yours",
-  "intro": "We don't just talk about what we can do — we show it. These case studies demonstrate how Quantum Harbour has transformed IT operations for businesses across Ireland and the UK.",
+  "heroTitle": "Our Projects",
+  "heroSubtitle": "Real solutions for real industries — see the platforms we've built",
+  "intro": "We don't just talk about what we can do — we build it. These projects demonstrate how OBH Software has developed innovative platforms that solve industry-specific challenges across construction, transport and sustainability.",
   "caseStudies": [
     {
-      "id": "j-ryan-haulage",
-      "slug": "j-ryan-haulage-high-availability",
-      "title": "Keeping J Ryan Haulage Online with High-Availability Infrastructure",
-      "client": "J Ryan Haulage",
-      "sectorSlug": "retail",
+      "id": "ascert-pro",
+      "slug": "ascert-pro",
+      "title": "Ascert Pro — Cutting-Edge Inspection & Compliance Platform",
+      "client": "Construction Industry",
+      "sectorSlug": "construction",
+      "industry": "Construction",
+      "services": ["custom-software"],
+      "summary": "A cutting-edge inspection and compliance platform for the construction industry, designed to streamline BCAR inspections with guided workflows, automated reports and real-time data integration.",
+      "heroImage": null,
+      "challenge": "Construction inspections suffer from inconsistent procedures, language barriers, time-consuming manual reports and the risk of non-compliance. Paper-based methods increase costs, delay projects and expose firms to regulatory risk. The industry needed a standardised, digital-first approach to BCAR compliance.",
+      "approach": [
+        "Designed guided inspection workflows that standardise procedures across sites",
+        "Built automated BCAR-compliant report generation engine",
+        "Integrated real-time data sources including weather and site conditions",
+        "Developed multi-language support for diverse construction teams",
+        "Implemented offline functionality for sites with limited connectivity",
+        "Added AI-powered predictive analytics for risk assessment"
+      ],
+      "outcome": {
+        "stats": [
+          { "value": "3x", "label": "Faster Inspections" },
+          { "value": "100%", "label": "BCAR Compliant" },
+          { "value": "Multi", "label": "Language Support" },
+          { "value": "AI", "label": "Predictive Analytics" }
+        ],
+        "testimonial": {
+          "quote": "Ascert Pro has completely transformed how we handle BCAR inspections. What used to take hours of paperwork now happens digitally in a fraction of the time, with complete compliance guaranteed.",
+          "author": "Site Manager, Construction Industry"
+        }
+      },
+      "featured": true
+    },
+    {
+      "id": "quantum-mechanics",
+      "slug": "quantum-mechanics",
+      "title": "Quantum Mechanics — Digital Fleet Management & Job Cards",
+      "client": "Transport & Logistics",
+      "sectorSlug": "transport-logistics",
       "industry": "Transport & Logistics",
-      "services": ["backup-recovery", "update-management", "endpoint-protection"],
-      "summary": "Phased takeover of a two-site haulage operation, implementing high-availability servers and disaster recovery infrastructure in Germany to ensure business continuity.",
+      "services": ["custom-software", "business-automation"],
+      "summary": "A comprehensive digital platform that eliminates paperwork and automates compliance for haulage companies, featuring digital job cards, HGV inspections, real-time tracking and predictive maintenance.",
       "heroImage": null,
-      "challenge": "J Ryan Haulage operates a critical transport operation across two sites with 105 users. Their existing IT infrastructure was fragile, with single points of failure throughout. Any significant downtime would halt deliveries, damage customer relationships, and directly impact revenue. They needed a partner who could stabilise their systems while planning for growth.",
+      "challenge": "Transport firms struggle with paper-based job cards, compliance risks, fleet downtime and inaccessible data. These inefficiencies slow operations, increase costs and create regulatory exposure. Haulage companies needed a modern digital solution to manage their entire fleet lifecycle.",
       "approach": [
-        "Conducted comprehensive IT audit across both sites to identify critical vulnerabilities",
-        "Implemented phased migration to avoid business disruption during transition",
-        "Deployed high-availability server infrastructure with automatic failover",
-        "Established disaster recovery replication to German data centre",
-        "Rolled out standardised endpoint protection and patch management",
-        "Created documented procedures and runbooks for common scenarios"
+        "Built digital job cards with secure cloud storage and digital signatures",
+        "Developed automated HGV inspections using standardised checklists",
+        "Implemented real-time vehicle tracking and fleet dashboards",
+        "Created AI-powered predictive maintenance system",
+        "Designed seamless compliance reporting and audit trails",
+        "Added offline functionality for drivers on the road"
       ],
       "outcome": {
         "stats": [
-          { "value": "90%", "label": "Downtime Reduction" },
-          { "value": "105", "label": "Users Supported" },
-          { "value": "2", "label": "Sites Connected" },
-          { "value": "<6min", "label": "DR Recovery Time" }
+          { "value": "50%", "label": "Less Paperwork" },
+          { "value": "100%", "label": "Digital Records" },
+          { "value": "Real-time", "label": "Fleet Tracking" },
+          { "value": "AI", "label": "Predictive Maintenance" }
         ],
         "testimonial": {
-          "quote": "Quantum Harbour transformed our IT from a constant worry into something we barely have to think about. The HA setup means we've had zero unplanned outages since they took over.",
-          "author": "Operations Manager, J Ryan Haulage"
+          "quote": "Quantum Mechanics has digitised our entire fleet management workflow. The digital job cards and automated inspections save us hours every week, and we're always audit-ready.",
+          "author": "Fleet Manager, Transport & Logistics"
         }
       },
       "featured": true
     },
     {
-      "id": "westside-medical",
-      "slug": "westside-medical-compliance",
-      "title": "HIPAA-Compliant Infrastructure for Westside Medical Centre",
-      "client": "Westside Medical Centre",
-      "sectorSlug": "healthcare",
-      "industry": "Healthcare",
-      "services": ["endpoint-protection", "backup-recovery", "security-training"],
-      "summary": "Complete security overhaul for a busy medical practice, achieving full compliance with healthcare data protection requirements while improving day-to-day operations.",
+      "id": "econstruction",
+      "slug": "econstruction",
+      "title": "ECOnstruction — Sustainable Construction Platform",
+      "client": "Construction Industry",
+      "sectorSlug": "construction",
+      "industry": "Construction & Sustainability",
+      "services": ["custom-software"],
+      "summary": "A sustainability-focused platform that helps construction firms adopt eco-friendly practices by quantifying value, highlighting cost-efficient materials and guiding firms through government incentives.",
       "heroImage": null,
-      "challenge": "Westside Medical Centre handles sensitive patient data daily across multiple practitioners. Their legacy systems weren't meeting modern compliance requirements, staff security awareness was low, and they had no tested backup or recovery procedures. An audit was looming and they needed to act fast.",
+      "challenge": "The construction industry is responsible for 38% of global carbon emissions, yet sustainable practices are viewed as costly and complex. Builders hesitate due to lack of immediate results, perceived high costs, complexity and slow adoption of new technologies. The industry needed data-driven proof that sustainability can be both profitable and practical.",
       "approach": [
-        "Performed gap analysis against healthcare compliance frameworks",
-        "Implemented encrypted backup solution with verified restore testing",
-        "Deployed advanced endpoint protection with healthcare-specific policies",
-        "Rolled out mandatory security awareness training for all staff",
-        "Established identity and access management procedures",
-        "Created compliance documentation and audit trail systems"
+        "Built tools to quantify added value of sustainable features (e.g., solar panels increasing property value)",
+        "Developed cost-efficient materials database and comparison engine",
+        "Created calculators showing cost offsets through local sourcing strategies",
+        "Integrated government incentive guides including grants and tax credits",
+        "Designed real-time dashboards for carbon impact and cost savings",
+        "Applied human-centred design thinking throughout the platform"
       ],
       "outcome": {
         "stats": [
-          { "value": "100%", "label": "Compliance Achieved" },
-          { "value": "45", "label": "Staff Trained" },
-          { "value": "0", "label": "Security Incidents" },
-          { "value": "Weekly", "label": "Backup Testing" }
+          { "value": "Data", "label": "Driven Insights" },
+          { "value": "Real-time", "label": "Carbon Tracking" },
+          { "value": "ROI", "label": "Demonstrated" },
+          { "value": "Gov", "label": "Incentive Guides" }
         ],
         "testimonial": {
-          "quote": "We went from dreading our compliance audit to passing with flying colours. The staff training made a huge difference — everyone understands why security matters now.",
-          "author": "Practice Manager, Westside Medical Centre"
+          "quote": "ECOnstruction showed us that sustainable building practices aren't just good for the environment — they're good for business. The data on cost savings and property value increases was eye-opening.",
+          "author": "Director, Construction Firm"
         }
       },
       "featured": true
-    },
-    {
-      "id": "atlantic-logistics",
-      "slug": "atlantic-logistics-cloud-migration",
-      "title": "Cloud-First Transformation for Atlantic Logistics",
-      "client": "Atlantic Logistics",
-      "sectorSlug": "retail",
-      "industry": "Logistics",
-      "services": ["update-management", "backup-recovery", "dark-web-monitoring"],
-      "summary": "Migration from aging on-premise infrastructure to a modern cloud-first architecture, enabling remote work capabilities and dramatic cost savings.",
-      "heroImage": null,
-      "challenge": "Atlantic Logistics was running critical systems on aging servers that were increasingly expensive to maintain and impossible to access remotely. The COVID-19 pandemic exposed their lack of remote work capability, and hardware refresh costs were becoming prohibitive.",
-      "approach": [
-        "Audited existing workloads and categorised migration complexity",
-        "Designed hybrid cloud architecture balancing cost and performance",
-        "Executed phased migration with rollback capability at each stage",
-        "Implemented cloud-native backup and disaster recovery",
-        "Deployed secure remote access for all staff",
-        "Established ongoing optimisation and cost monitoring"
-      ],
-      "outcome": {
-        "stats": [
-          { "value": "40%", "label": "Cost Reduction" },
-          { "value": "100%", "label": "Remote Capable" },
-          { "value": "99.9%", "label": "Uptime" },
-          { "value": "0", "label": "Data Loss" }
-        ],
-        "testimonial": {
-          "quote": "The cloud migration paid for itself within 18 months. More importantly, when we needed everyone working from home, it just worked.",
-          "author": "Managing Director, Atlantic Logistics"
-        }
-      },
-      "featured": false
     }
   ],
   "cta": {
-    "title": "Ready to Become Our Next Success Story?",
-    "description": "Let's discuss how we can transform your IT operations and deliver measurable results for your business.",
-    "buttonText": "Start the Conversation"
+    "title": "Ready to Build Something Great Together?",
+    "description": "Let's discuss how OBH can develop custom platforms, automate workflows or build sustainable solutions for your business.",
+    "buttonText": "Book Your Free Consultation"
   }
 }

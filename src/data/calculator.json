@@ -1,42 +1,42 @@
 {
-  "title": "Cost Calculator",
+  "title": "Project Estimator",
   "leftPanel": {
-    "title": "Managed Services Pricing",
+    "title": "Project Scope Estimator",
     "sliders": [
       {
         "id": "seats",
-        "label": "Seats",
-        "min": 0,
-        "max": 100,
-        "default": 10,
-        "unit": "seats",
-        "pricePerUnit": 50,
-        "description": "number of users or number of computers -- whichever is higher"
+        "label": "Features",
+        "min": 1,
+        "max": 20,
+        "default": 5,
+        "unit": "features",
+        "pricePerUnit": 500,
+        "description": "approximate number of distinct features or modules in your project"
       },
       {
         "id": "servers",
-        "label": "Servers",
+        "label": "Integrations",
         "min": 0,
         "max": 10,
-        "default": 1,
-        "unit": "servers",
-        "pricePerUnit": 100,
-        "description": "the amount of servers, whether on site or in the cloud"
+        "default": 2,
+        "unit": "integrations",
+        "pricePerUnit": 750,
+        "description": "number of external systems or APIs to integrate with"
       },
       {
         "id": "locations",
-        "label": "Locations",
+        "label": "Platforms",
         "min": 1,
-        "max": 10,
+        "max": 5,
         "default": 1,
-        "unit": "locations",
-        "pricePerUnit": 100,
-        "description": "the amount of locations that your company operates at"
+        "unit": "platforms",
+        "pricePerUnit": 2000,
+        "description": "number of platforms (web, iOS, Android, etc.)"
       }
     ]
   },
   "rightPanel": {
-    "title": "Estimated Monthly Cost",
+    "title": "Estimated Starting Cost",
     "currency": "€"
   }
 }

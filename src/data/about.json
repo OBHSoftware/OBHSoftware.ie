@@ -1,26 +1,26 @@
 {
   "sectionTitle": "About Us.",
-  "sectionSubtitle": "Built by Engineers. Trusted by Businesses.",
+  "sectionSubtitle": "Founded by Engineers. Driven by Innovation.",
   "intro": [
-    "Quantum Harbour began as an in-house IT partner for Irish SMEs and has grown into a trusted managed service provider supporting clients across Ireland and the UK.",
-    "We've combined deep technical experience with a commitment to honest, reliable service — the kind that business owners can actually depend on."
+    "OBH Software was founded at the University of Galway by Ethan O'Brien and Sarah Jane Hughes — two Electronic & Computer Engineering students passionate about technology and problem-solving.",
+    "As Stanford University Innovation Fellows, we bring a fresh, efficiency-driven and sustainable approach to tackling complex business challenges. We empower businesses to streamline operations, enhance productivity and stay ahead in a rapidly evolving digital world."
   ],
   "highlights": [
     {
       "icon": "team",
-      "text": "Locally based support team"
+      "text": "Stanford University Innovation Fellows"
     },
     {
       "icon": "shield",
-      "text": "Partnerships with top-tier cybersecurity vendors"
+      "text": "Design-thinking & innovation-driven approach"
     },
     {
       "icon": "building",
-      "text": "Industry experience across multiple sectors"
+      "text": "Industry experience across transport, construction & more"
     },
     {
       "icon": "certificate",
-      "text": "ISO-aligned best practices"
+      "text": "Award-winning founders & proven results"
     }
   ]
 }

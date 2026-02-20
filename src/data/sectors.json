@@ -1,239 +1,122 @@
 {
-  "title": "Sectors We Serve",
-  "subtitle": "Tailored IT solutions for your industry",
+  "title": "Industries We Serve",
+  "subtitle": "Tailored technology solutions for your sector",
   "sectors": [
     {
-      "id": "healthcare",
-      "name": "Healthcare",
-      "slug": "healthcare",
-      "icon": "shield",
-      "shortDescription": "Secure, compliant IT for healthcare providers",
-      "heroTitle": "Healthcare IT Solutions",
-      "heroSubtitle": "HIPAA-compliant managed services designed for medical practices, clinics, and healthcare organizations",
-      "description": "Healthcare organizations face unique IT challenges including strict compliance requirements, the need for 24/7 system availability, and protecting sensitive patient data. Our healthcare IT solutions are designed to meet these challenges head-on.",
-      "features": [
-        {
-          "title": "HIPAA Compliance",
-          "description": "Full compliance with healthcare data protection regulations"
-        },
-        {
-          "title": "24/7 System Monitoring",
-          "description": "Round-the-clock monitoring to ensure critical systems stay online"
-        },
-        {
-          "title": "Secure Patient Data",
-          "description": "Advanced encryption and security protocols for patient information"
-        },
-        {
-          "title": "EHR Integration",
-          "description": "Seamless integration with electronic health record systems"
-        }
-      ],
-      "challenges": [
-        "Maintaining HIPAA compliance across all systems",
-        "Protecting patient data from cyber threats",
-        "Ensuring 24/7 availability of critical systems",
-        "Managing legacy medical equipment integration"
-      ],
-      "stats": [
-        { "value": "99.9%", "label": "Uptime Guarantee" },
-        { "value": "100%", "label": "HIPAA Compliant" },
-        { "value": "24/7", "label": "Support Available" }
-      ]
-    },
-    {
-      "id": "finance",
-      "name": "Financial Services",
-      "slug": "financial-services",
-      "icon": "money",
-      "shortDescription": "Robust security for financial institutions",
-      "heroTitle": "Financial Services IT Solutions",
-      "heroSubtitle": "Enterprise-grade security and compliance for banks, credit unions, and financial institutions",
-      "description": "Financial institutions require the highest levels of security and regulatory compliance. Our financial services IT solutions provide the robust infrastructure and security measures needed to protect sensitive financial data.",
-      "features": [
-        {
-          "title": "PCI DSS Compliance",
-          "description": "Full compliance with payment card industry standards"
-        },
-        {
-          "title": "Advanced Threat Protection",
-          "description": "Multi-layered security to protect against sophisticated attacks"
-        },
-        {
-          "title": "Disaster Recovery",
-          "description": "Comprehensive backup and recovery solutions"
-        },
-        {
-          "title": "Audit Support",
-          "description": "Documentation and support for regulatory audits"
-        }
-      ],
-      "challenges": [
-        "Meeting strict regulatory requirements",
-        "Protecting against financial fraud and cyber attacks",
-        "Ensuring transaction security and integrity",
-        "Managing complex compliance documentation"
-      ],
-      "stats": [
-        { "value": "100%", "label": "PCI Compliant" },
-        { "value": "<15min", "label": "Response Time" },
-        { "value": "256-bit", "label": "Encryption" }
-      ]
-    },
-    {
-      "id": "legal",
-      "name": "Legal",
-      "slug": "legal",
-      "icon": "certificate",
-      "shortDescription": "Confidential IT services for law firms",
-      "heroTitle": "Legal Industry IT Solutions",
-      "heroSubtitle": "Secure, confidential IT services designed for law firms and legal practices",
-      "description": "Law firms handle highly sensitive client information that requires the utmost protection. Our legal IT solutions ensure client confidentiality while providing the reliable technology infrastructure your practice needs.",
-      "features": [
-        {
-          "title": "Client Confidentiality",
-          "description": "Robust security measures to protect privileged information"
-        },
-        {
-          "title": "Document Management",
-          "description": "Secure document storage and management systems"
-        },
-        {
-          "title": "E-Discovery Support",
-          "description": "Technology solutions for electronic discovery processes"
-        },
-        {
-          "title": "Remote Access",
-          "description": "Secure remote access for attorneys working from anywhere"
-        }
-      ],
-      "challenges": [
-        "Maintaining attorney-client privilege in digital systems",
-        "Securing sensitive case documents",
-        "Meeting court filing technology requirements",
-        "Supporting remote and hybrid work arrangements"
-      ],
-      "stats": [
-        { "value": "100%", "label": "Data Encrypted" },
-        { "value": "99.9%", "label": "Uptime" },
-        { "value": "24/7", "label": "Monitoring" }
-      ]
-    },
-    {
-      "id": "manufacturing",
-      "name": "Manufacturing",
-      "slug": "manufacturing",
-      "icon": "building",
-      "shortDescription": "Industrial IT for modern manufacturing",
-      "heroTitle": "Manufacturing IT Solutions",
-      "heroSubtitle": "Reliable IT infrastructure for factories, plants, and industrial operations",
-      "description": "Manufacturing operations depend on reliable technology to maintain production efficiency. Our manufacturing IT solutions integrate with your operational technology to create a seamless, secure environment.",
-      "features": [
-        {
-          "title": "OT/IT Integration",
-          "description": "Seamless integration between operational and information technology"
-        },
-        {
-          "title": "Production Monitoring",
-          "description": "Real-time monitoring of production systems and equipment"
-        },
-        {
-          "title": "Supply Chain Security",
-          "description": "Protected connections with suppliers and partners"
-        },
-        {
-          "title": "Industrial IoT",
-          "description": "Secure management of connected industrial devices"
-        }
-      ],
-      "challenges": [
-        "Securing legacy industrial systems",
-        "Integrating IT with operational technology",
-        "Maintaining production uptime",
-        "Managing remote facility networks"
-      ],
-      "stats": [
-        { "value": "99.9%", "label": "Uptime" },
-        { "value": "50+", "label": "Plants Served" },
-        { "value": "24/7", "label": "Support" }
-      ]
-    },
-    {
-      "id": "retail",
-      "name": "Retail",
-      "slug": "retail",
+      "id": "transport-logistics",
+      "name": "Transport & Logistics",
+      "slug": "transport-logistics",
       "icon": "truck",
-      "shortDescription": "Scalable IT for retail operations",
-      "heroTitle": "Retail IT Solutions",
-      "heroSubtitle": "Scalable, secure IT solutions for retail stores and e-commerce operations",
-      "description": "Retail businesses need IT solutions that scale with seasonal demand and protect customer payment data. Our retail IT services keep your operations running smoothly while maintaining PCI compliance.",
+      "shortDescription": "Digital transformation for fleet management and compliance",
+      "heroTitle": "Transport & Logistics Solutions",
+      "heroSubtitle": "Streamline fleet operations, automate compliance and optimise routes with purpose-built technology",
+      "description": "Transport and logistics companies face strict regulatory requirements, operational inefficiencies and rising costs. Paper-based job cards and vehicle inspections cause delays and errors. OBH develops industry-specific digital solutions that eliminate paperwork, automate compliance and give you real-time visibility across your fleet.",
       "features": [
         {
-          "title": "POS Security",
-          "description": "Secure point-of-sale systems and payment processing"
+          "title": "Digital Job Cards & Inspections",
+          "description": "Replace paper-based workflows with secure digital job cards featuring cloud storage and digital signatures"
         },
         {
-          "title": "Multi-Location Support",
-          "description": "Unified IT management across all store locations"
+          "title": "Fleet Management Tools",
+          "description": "Real-time tracking, maintenance alerts and comprehensive fleet performance dashboards"
         },
         {
-          "title": "E-Commerce Integration",
-          "description": "Seamless connection between online and in-store systems"
+          "title": "AI-Powered Route Optimisation",
+          "description": "Reduce fuel costs and delivery times with intelligent route planning and optimisation"
         },
         {
-          "title": "Inventory Systems",
-          "description": "Reliable inventory management technology"
+          "title": "Compliance & Safety Audits",
+          "description": "Automated compliance reporting and safety audit tools that keep you ahead of regulations"
         }
       ],
       "challenges": [
-        "Protecting customer payment data",
-        "Managing IT across multiple locations",
-        "Scaling for seasonal demand",
-        "Integrating online and offline operations"
+        "Strict regulatory requirements and compliance burden",
+        "Paper-based job cards causing delays and errors",
+        "Rising operational costs and inefficiencies",
+        "Lack of real-time fleet visibility"
       ],
       "stats": [
-        { "value": "100%", "label": "PCI Compliant" },
-        { "value": "500+", "label": "Locations" },
-        { "value": "<1hr", "label": "Response Time" }
+        { "value": "50%", "label": "Less Paperwork" },
+        { "value": "100%", "label": "Digital Compliance" },
+        { "value": "24/7", "label": "Fleet Visibility" }
       ]
     },
     {
-      "id": "professional-services",
-      "name": "Professional Services",
-      "slug": "professional-services",
-      "icon": "team",
-      "shortDescription": "Flexible IT for service businesses",
-      "heroTitle": "Professional Services IT Solutions",
-      "heroSubtitle": "Flexible, secure IT solutions for consultancies, agencies, and service firms",
-      "description": "Professional service firms need technology that enables collaboration while protecting client data. Our solutions provide the flexibility and security your team needs to deliver exceptional service.",
+      "id": "construction",
+      "name": "Construction",
+      "slug": "construction",
+      "icon": "building",
+      "shortDescription": "Compliance automation and digital project management",
+      "heroTitle": "Construction Industry Solutions",
+      "heroSubtitle": "Automate BCAR inspections, streamline project workflows and drive sustainable construction practices",
+      "description": "Construction is evolving rapidly with increasing demands for compliance, sustainability and digital transformation. Paper-based workflows slow projects and make compliance tracking difficult. OBH offers construction-focused software that automates inspections, manages projects digitally and integrates with existing BIM and ERP tools.",
       "features": [
         {
-          "title": "Collaboration Tools",
-          "description": "Secure platforms for team and client collaboration"
+          "title": "BCAR Inspection Software",
+          "description": "Automated Building Control Amendment Regulations inspection platform with guided workflows"
         },
         {
-          "title": "Mobile Workforce",
-          "description": "Support for remote and mobile employees"
+          "title": "Digital Project Management",
+          "description": "Scheduling, documentation and workflow management tools built for construction teams"
         },
         {
-          "title": "Client Data Protection",
-          "description": "Comprehensive security for client information"
+          "title": "ERP & CRM Integration",
+          "description": "Seamless integration with existing enterprise systems and project management tools"
         },
         {
-          "title": "Project Management",
-          "description": "Integrated project and resource management tools"
+          "title": "AI-Driven Analytics",
+          "description": "Risk assessment, forecasting and data-driven insights for smarter decision-making"
         }
       ],
       "challenges": [
-        "Enabling secure remote collaboration",
-        "Protecting diverse client data",
-        "Supporting a mobile workforce",
-        "Scaling with business growth"
+        "Complex BCAR compliance and tracking requirements",
+        "Paper-based workflows slowing project delivery",
+        "Sustainability demands and reporting",
+        "Integration with existing BIM and ERP systems"
       ],
       "stats": [
-        { "value": "99.9%", "label": "Uptime" },
-        { "value": "100%", "label": "Cloud Ready" },
-        { "value": "24/7", "label": "Support" }
+        { "value": "100%", "label": "BCAR Compliant" },
+        { "value": "3x", "label": "Faster Inspections" },
+        { "value": "Real-time", "label": "Project Insights" }
+      ]
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "slug": "entertainment",
+      "icon": "team",
+      "shortDescription": "Digital solutions for creative industries",
+      "heroTitle": "Entertainment Industry Solutions",
+      "heroSubtitle": "Empower creative businesses with custom digital platforms, ticketing systems and audience engagement tools",
+      "description": "The entertainment and creative industries are rapidly evolving, with increasing demand for digital experiences, online ticketing, content management and audience analytics. OBH builds custom digital solutions that help entertainment businesses reach wider audiences, streamline operations and create unforgettable experiences.",
+      "features": [
+        {
+          "title": "Custom Digital Platforms",
+          "description": "Purpose-built web applications for content delivery, booking and fan engagement"
+        },
+        {
+          "title": "Ticketing & Booking Systems",
+          "description": "Scalable online ticketing and reservation platforms with payment integration"
+        },
+        {
+          "title": "Content Management",
+          "description": "Flexible CMS solutions for managing media, events and digital content at scale"
+        },
+        {
+          "title": "Audience Analytics",
+          "description": "Data-driven insights into audience behaviour, preferences and engagement patterns"
+        }
+      ],
+      "challenges": [
+        "Managing complex digital content workflows",
+        "Scaling for peak demand during events",
+        "Engaging audiences across multiple channels",
+        "Integrating ticketing with existing operations"
+      ],
+      "stats": [
+        { "value": "Custom", "label": "Solutions" },
+        { "value": "Scalable", "label": "Architecture" },
+        { "value": "Data-Driven", "label": "Insights" }
       ]
     }
   ]

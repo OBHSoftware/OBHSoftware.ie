@@ -20,8 +20,9 @@
 
 /* Variants */
 .primary {
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(35, 78, 1, 0.3);
 }
 
 .secondary {

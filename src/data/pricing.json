@@ -1,56 +1,48 @@
 {
-  "sectionTitle": "Explore Our Packages.",
-  "sectionSubtitle": "Simple, Transparent Pricing — Per User, Per Month.",
+  "sectionTitle": "Our Engagement Models.",
+  "sectionSubtitle": "Flexible Solutions to Match Your Needs.",
   "plans": [
     {
-      "name": "Reactive Plan",
-      "price": "€30",
-      "features": [
-        { "text": "Support Billed Extra*", "highlight": true },
-        { "text": "Monitoring & Patching" },
-        { "text": "Antivirus/EDR" },
-        { "text": "Endpoint & Cloud Backup" },
-        { "text": "Email Filtering" },
-        { "text": "Security Training" },
-        { "text": "Identity & Dark Web Monitoring" },
-        { "text": "SaaS Protection" },
-        { "text": "24/7 Breach Monitoring" }
-      ],
-      "footnote": "* €70/hour ad hoc, €50/hour in blocks of 8 hours (within business hours)."
-    },
-    {
-      "name": "Proactive Plan",
-      "price": "€65",
-      "features": [
-        { "text": "8am-6pm Unlimited Support*" },
-        { "text": "Monitoring & Patching" },
-        { "text": "Antivirus/EDR" },
-        { "text": "Endpoint & Cloud Backup" },
-        { "text": "Email Filtering" },
-        { "text": "Security Training" },
-        { "text": "Identity & Dark Web Monitoring" },
-        { "text": "SaaS Protection" },
-        { "text": "24/7 Breach Monitoring" }
-      ],
-      "footnote": "* Fair usage applies, onsite, out of hours support and projects billed extra."
-    },
-    {
-      "name": "Enterprise Plan",
+      "name": "Project-Based",
       "contactUs": true,
       "features": [
-        { "text": "24/7 + Onsite Support", "highlight": true },
-        { "text": "Monitoring & Patching" },
-        { "text": "Antivirus/EDR" },
-        { "text": "Disaster Recovery" },
-        { "text": "Endpoint & Cloud Backup" },
-        { "text": "Email Filtering" },
-        { "text": "Security Training" },
-        { "text": "Additional Projects" },
-        { "text": "Identity & Dark Web Monitoring" },
-        { "text": "SaaS Protection" },
-        { "text": "24/7 Breach Monitoring" },
-        { "text": "Hardware as a Service (HaaS)" }
-      ]
+        { "text": "Defined Scope & Timeline", "highlight": true },
+        { "text": "Discovery & Consultation" },
+        { "text": "Custom Solution Design" },
+        { "text": "Agile Development" },
+        { "text": "Rigorous Testing & QA" },
+        { "text": "Deployment & Training" },
+        { "text": "Post-Launch Support" }
+      ],
+      "footnote": "Ideal for well-defined projects with clear deliverables."
+    },
+    {
+      "name": "Retainer Partnership",
+      "contactUs": true,
+      "features": [
+        { "text": "Ongoing Development & Support", "highlight": true },
+        { "text": "Priority Access to Our Team" },
+        { "text": "Monthly Development Hours" },
+        { "text": "Continuous Optimisation" },
+        { "text": "Regular Strategy Sessions" },
+        { "text": "Proactive Recommendations" },
+        { "text": "Dedicated Account Manager" }
+      ],
+      "footnote": "Best for businesses needing continuous technology support and evolution."
+    },
+    {
+      "name": "Consultation",
+      "contactUs": true,
+      "features": [
+        { "text": "Free Initial Consultation", "highlight": true },
+        { "text": "Workflow & IT Analysis" },
+        { "text": "Technology Roadmap" },
+        { "text": "Cost Estimation" },
+        { "text": "Integration Planning" },
+        { "text": "Strategic Recommendations" },
+        { "text": "No Obligation" }
+      ],
+      "footnote": "Start here — book a free consultation to discuss your goals."
     }
   ]
 }

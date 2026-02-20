@@ -18,7 +18,7 @@ export function SubsiteHeader({
   siteName,
   siteSlug,
   navigation,
-  primaryColor = '#072a59',
+  primaryColor = '#234E01',
 }: SubsiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,7 +97,7 @@ export function SubsiteHeader({
       <div className={styles.container}>
         <div className={styles.brand}>
           <Link to="/" className={styles.parentLink}>
-            <img src="/logo.svg" alt="Quantum Harbour" className={styles.parentLogo} />
+            <img src="/logo.png" alt="OBH Software Consulting" className={styles.parentLogo} />
           </Link>
           <span className={styles.divider}>|</span>
           <Link to={basePath} className={styles.siteName}>

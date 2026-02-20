@@ -1,18 +1,38 @@
 {
   "mainNav": [
-    { "label": "Services", "href": "/#services" },
-    { "label": "Pricing", "href": "/#pricing" },
-    { "label": "Sectors", "href": "/sectors" },
     {
-      "label": "Resources",
-      "href": "/resources",
+      "label": "Industries",
+      "href": "/sectors",
       "dropdown": [
-        { "label": "Case Studies", "href": "/case-studies" },
-        { "label": "Insights", "href": "/insights" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Products", "href": "/products" },
-        { "label": "Partners", "href": "/partners" },
-        { "label": "FAQ", "href": "/faq" }
+        { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
+        { "label": "Construction", "href": "/sectors/construction" },
+        { "label": "Entertainment", "href": "/sectors/entertainment" }
+      ]
+    },
+    {
+      "label": "Services",
+      "href": "/#services",
+      "dropdown": [
+        { "label": "Custom Software Development", "href": "/services/custom-software" },
+        { "label": "Business Process Automation", "href": "/services/business-automation" },
+        { "label": "Web Design & Development", "href": "/services/web-design" }
+      ]
+    },
+    {
+      "label": "Products",
+      "href": "/products",
+      "dropdown": [
+        { "label": "qMechanic", "href": "https://qmechanic.autos", "external": true },
+        { "label": "qHaul", "href": "/products/qhaul" }
+      ]
+    },
+    {
+      "label": "Projects",
+      "href": "/case-studies",
+      "dropdown": [
+        { "label": "Ascert Pro", "href": "/case-studies/ascert-pro" },
+        { "label": "Quantum Mechanics", "href": "/case-studies/quantum-mechanics" },
+        { "label": "ECOnstruction", "href": "/case-studies/econstruction" }
       ]
     },
     { "label": "About", "href": "/#about" },
@@ -21,33 +41,28 @@
   "footerLinks": {
     "quickLinks": [
       { "label": "Services", "href": "/#services" },
-      { "label": "Pricing", "href": "/#pricing" },
-      { "label": "Calculator", "href": "/calculator" },
-      { "label": "Case Studies", "href": "/case-studies" },
+      { "label": "Industries", "href": "/sectors" },
+      { "label": "Products", "href": "/products" },
+      { "label": "Projects", "href": "/case-studies" },
       { "label": "How We Work", "href": "/how-we-work" },
       { "label": "FAQ", "href": "/faq" },
       { "label": "About", "href": "/#about" },
       { "label": "Contact", "href": "/#contact" }
     ],
-    "resources": [
-      { "label": "Insights", "href": "/insights" },
-      { "label": "Resources", "href": "/resources" },
-      { "label": "Products", "href": "/products" },
-      { "label": "Partners", "href": "/partners" },
-      { "label": "Careers", "href": "/careers" }
+    "services": [
+      { "label": "Custom Software", "href": "/services/custom-software" },
+      { "label": "Business Automation", "href": "/services/business-automation" },
+      { "label": "Web Design", "href": "/services/web-design" }
     ],
     "sectors": [
-      { "label": "Healthcare", "href": "/sectors/healthcare" },
-      { "label": "Financial Services", "href": "/sectors/financial-services" },
-      { "label": "Legal", "href": "/sectors/legal" },
-      { "label": "Manufacturing", "href": "/sectors/manufacturing" },
-      { "label": "Retail", "href": "/sectors/retail" },
-      { "label": "Professional Services", "href": "/sectors/professional-services" }
+      { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
+      { "label": "Construction", "href": "/sectors/construction" },
+      { "label": "Entertainment", "href": "/sectors/entertainment" }
     ],
     "clients": [
-      { "label": "Client Portal", "href": "/client-portal" },
-      { "label": "Support", "href": "/client-portal" },
-      { "label": "Resources", "href": "/resources" }
+      { "label": "Book a Consultation", "href": "/#contact" },
+      { "label": "FAQ", "href": "/faq" },
+      { "label": "Insights", "href": "/insights" }
     ]
   }
 }

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Header, Footer } from './components/layout';
 import { BackToTop, ScrollToTop } from './components/common';
 import {
@@ -50,6 +50,10 @@ function App() {
       <Routes>
         {/* External redirect for remote support */}
         <Route path="/remotesupport" element={<ExternalRedirect url="https://pub-ac6387c37e9f4bfb927f8e58fde05092.r2.dev/rustdesk-host%3D65.109.164.224%2Ckey%3DlFHbstKyRQobGxkRCUE96e3KSffrjigXA8lUzin4RPw%3D.exe" />} />
+
+        {/* qMechanic redirect — now on its own domain */}
+        <Route path="/products/qmechanic/site/*" element={<ExternalRedirect url="https://qmechanic.autos" />} />
+        <Route path="/products/qmechanic/site" element={<ExternalRedirect url="https://qmechanic.autos" />} />
 
         {/* Product subsites - rendered without main Header/Footer */}
         <Route path="/products/:productSlug/site" element={<SubsitePage />} />

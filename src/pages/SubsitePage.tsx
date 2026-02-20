@@ -11,12 +11,10 @@ import {
 } from '../components/subsite';
 
 // Import all subsite data
-import qmechanicData from '../data/subsites/qmechanic.json';
 import qhaulData from '../data/subsites/qhaul.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const subsiteMap: Record<string, any> = {
-  qmechanic: qmechanicData,
   qhaul: qhaulData,
 };
 

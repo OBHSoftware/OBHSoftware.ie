@@ -61,7 +61,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #34a853;
+  background: var(--color-orange);
   cursor: pointer;
   border: 3px solid var(--color-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -71,7 +71,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #34a853;
+  background: var(--color-orange);
   cursor: pointer;
   border: 3px solid var(--color-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

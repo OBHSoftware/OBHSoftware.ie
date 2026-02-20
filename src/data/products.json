@@ -1,7 +1,7 @@
 {
   "heroTitle": "Our Products",
-  "heroSubtitle": "Purpose-built software solutions designed to streamline your operations",
-  "intro": "Beyond managed IT services, we develop specialized software products that address real industry challenges. Our products are built from hands-on experience working with businesses just like yours.",
+  "heroSubtitle": "Purpose-built software products you can use today",
+  "intro": "Beyond consulting, we build and sell specialised software products that address real industry challenges. Our products are born from hands-on experience working with businesses just like yours.",
   "products": [
     {
       "id": "qmechanic",
@@ -47,7 +47,8 @@
         { "value": "50%", "label": "Less Paperwork" },
         { "value": "100%", "label": "Digital Records" },
         { "value": "24/7", "label": "Access" }
-      ]
+      ],
+      "externalUrl": "https://qmechanic.autos"
     },
     {
       "id": "qhaul",

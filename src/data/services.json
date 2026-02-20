@@ -1,36 +1,21 @@
 {
-  "sectionTitle": "What Do We Do?",
-  "sectionSubtitle": "Our Core Managed Services.",
+  "sectionTitle": "What We Do",
+  "sectionSubtitle": "Technology Solutions That Drive Results.",
   "services": [
     {
-      "title": "Windows & Software Update Management",
-      "description": "Automatic patching and performance monitoring that stops issues before they start.",
-      "slug": "update-management"
+      "title": "Custom Software Development",
+      "description": "Tailored software solutions built to solve your specific business challenges, from web applications to complex enterprise systems.",
+      "slug": "custom-software"
     },
     {
-      "title": "Antivirus & Endpoint Detection & Response",
-      "description": "Always-on threat protection with rapid containment of suspicious activity — stopping attacks before they spread.",
-      "slug": "endpoint-protection"
+      "title": "Business Process Automation",
+      "description": "Streamline operations and eliminate manual bottlenecks with intelligent automation powered by AI, RPA and smart integrations.",
+      "slug": "business-automation"
     },
     {
-      "title": "Data Backup & Recovery",
-      "description": "Local and cloud backups designed for reliability, tested regularly to guarantee recovery when it matters most.",
-      "slug": "backup-recovery"
-    },
-    {
-      "title": "Email Spam Filtering",
-      "description": "Advanced filtering to block phishing, malware, and spam before it ever hits your inbox.",
-      "slug": "email-filtering"
-    },
-    {
-      "title": "Security Awareness Training",
-      "description": "Engaging cybersecurity training, including phishing simulations and an online learning portal for staff.",
-      "slug": "security-training"
-    },
-    {
-      "title": "Identity Threat & Dark Web Monitoring",
-      "description": "Instant alerts if your business credentials appear online, giving you time to act before criminals do.",
-      "slug": "dark-web-monitoring"
+      "title": "Web Design & Development",
+      "description": "High-performance, SEO-optimised websites and web applications that elevate your brand and convert visitors into customers.",
+      "slug": "web-design"
     }
   ]
 }

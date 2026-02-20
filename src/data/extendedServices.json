@@ -1,22 +1,22 @@
 {
-  "sectionTitle": "Add Ons:",
-  "sectionSubtitle": "Extended Managed Services.",
+  "sectionTitle": "Also Explore:",
+  "sectionSubtitle": "Additional Capabilities.",
   "services": [
     {
-      "title": "Business Continuity & Disaster Recovery",
-      "description": "From total system loss to back to work in 6 minutes. Safeguard critical data and ensure business continuity with robust backup and tested recovery systems."
+      "title": "AI & Machine Learning Integration",
+      "description": "Leverage predictive analytics, intelligent automation and machine learning to gain deeper insights and make data-driven decisions that give you a competitive edge."
     },
     {
-      "title": "Hardware & Software Management",
-      "description": "Our HaaS model lets you lease under a predictable monthly plan. We handle procurement, setup, and lifecycle management so you can focus on running your business."
+      "title": "System Integration & API Development",
+      "description": "Connect your existing tools and platforms with custom API development and seamless integrations that create a unified technology ecosystem."
     },
     {
-      "title": "Cloud Solutions & Virtualisation",
-      "description": "Optimise performance and flexibility with tailored cloud hosting and virtualisation strategies."
+      "title": "Mobile Application Development",
+      "description": "Native and cross-platform mobile apps that extend your reach and give your team and customers powerful tools on the go."
     },
     {
-      "title": "IT Consulting & Project Management",
-      "description": "Strategic guidance from engineers who understand how to align IT with your business goals."
+      "title": "Technology Consulting & Strategy",
+      "description": "Strategic guidance from engineers who understand how to align technology with your business goals, from digital transformation roadmaps to tech stack selection."
     }
   ]
 }

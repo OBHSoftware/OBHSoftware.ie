@@ -4,25 +4,25 @@
   "lastUpdated": "2024-11-28T00:00:00Z",
 
   "site": {
-    "id": "quantum-harbour",
-    "name": "Quantum Harbour",
-    "tagline": "Proactive IT that keeps your business running day and night.",
-    "domain": "quantumharbour.ie",
+    "id": "obh-software",
+    "name": "OBH Software",
+    "tagline": "Innovating industries through sustainable technology solutions.",
+    "domain": "obhsoftware.ie",
     "locale": "en-IE",
     "timezone": "Europe/Dublin"
   },
 
   "branding": {
     "logo": {
-      "primary": "/logo.svg",
-      "light": "/logo-light.svg",
-      "dark": "/logo-dark.svg",
+      "primary": "/logo.png",
+      "light": "/logo.png",
+      "dark": "/logo.png",
       "favicon": "/favicon.ico"
     },
     "colors": {
-      "primary": "#072a59",
-      "secondary": "#190d4e",
-      "accent": "#d9d9d9",
+      "primary": "#234E01",
+      "secondary": "#1a3501",
+      "accent": "#F38B2A",
       "success": "#22c55e",
       "warning": "#fbbf24",
       "error": "#ef4444",
@@ -32,8 +32,8 @@
         "muted": "rgba(255, 255, 255, 0.6)"
       },
       "background": {
-        "primary": "#072a59",
-        "secondary": "#190d4e",
+        "primary": "#234E01",
+        "secondary": "#1a3501",
         "card": "rgba(255, 255, 255, 0.05)"
       }
     },
@@ -46,20 +46,19 @@
   "navigation": {
     "dataFile": "navigation.json",
     "mainNav": [
+      { "label": "Industries", "href": "/sectors", "type": "page" },
       { "label": "Services", "href": "/#services", "type": "anchor" },
-      { "label": "Pricing", "href": "/#pricing", "type": "anchor" },
-      { "label": "Case Studies", "href": "/case-studies", "type": "page" },
-      { "label": "Sectors", "href": "/sectors", "type": "page" },
+      { "label": "Projects", "href": "/case-studies", "type": "page" },
       { "label": "About", "href": "/#about", "type": "anchor" },
       { "label": "Contact", "href": "/#contact", "type": "anchor" }
     ],
-    "footerSections": ["quickLinks", "resources", "sectors", "clients"]
+    "footerSections": ["quickLinks", "services", "sectors", "clients"]
   },
 
   "pages": {
     "home": {
       "path": "/",
-      "title": "Quantum Harbour - Managed IT Services",
+      "title": "OBH Software - Technology Consulting",
       "sections": ["hero", "services", "extendedServices", "whyUs", "pricing", "testimonials", "about", "contact"],
       "dataFiles": {
         "services": "services.json",
@@ -72,12 +71,12 @@
     },
     "calculator": {
       "path": "/calculator",
-      "title": "Pricing Calculator",
+      "title": "Project Estimator",
       "dataFile": "calculator.json"
     },
     "sectors": {
       "path": "/sectors",
-      "title": "Industry Sectors",
+      "title": "Industries We Serve",
       "dataFile": "sectors.json",
       "detailPath": "/sectors/:slug"
     },
@@ -94,14 +93,14 @@
     },
     "products": {
       "path": "/products",
-      "title": "Our Products",
+      "title": "Our Platforms",
       "dataFile": "products.json",
       "detailPath": "/products/:slug",
       "subsitePath": "/products/:slug/site"
     },
     "caseStudies": {
       "path": "/case-studies",
-      "title": "Case Studies",
+      "title": "Our Projects",
       "dataFile": "caseStudies.json",
       "detailPath": "/case-studies/:slug"
     },
@@ -143,9 +142,8 @@
       "id": "qmechanic",
       "slug": "qmechanic",
       "name": "qMechanic",
-      "path": "/products/qmechanic/site",
-      "manifestFile": "subsites/qmechanic.json",
-      "status": "active"
+      "externalUrl": "https://qmechanic.autos",
+      "status": "external"
     },
     {
       "id": "qhaul",
@@ -158,30 +156,28 @@
   ],
 
   "contact": {
-    "email": "hello@quantumharbour.ie",
-    "phone": "+353 1 234 5678",
-    "emergencyPhone": "+353 1 234 5679",
+    "email": "info@obhsoftware.ie",
+    "phone": "+353 87 295 9063",
     "address": {
-      "street": "",
-      "city": "Dublin",
+      "street": "University of Galway",
+      "city": "Galway",
       "country": "Ireland"
     },
     "social": {
-      "linkedin": "https://linkedin.com/company/quantumharbour",
-      "twitter": "https://twitter.com/quantumharbour"
+      "linkedin": "https://linkedin.com/company/obhsoftware"
     }
   },
 
   "seo": {
-    "defaultTitle": "Quantum Harbour - Managed IT Services Ireland",
-    "titleTemplate": "%s | Quantum Harbour",
-    "defaultDescription": "Managed IT, Cybersecurity, and Hosting solutions for Irish and UK businesses. Transparent pricing, real protection, expert support.",
-    "keywords": ["managed IT", "cybersecurity", "IT support", "Ireland", "Dublin", "MSP", "cloud hosting"],
+    "defaultTitle": "OBH Software - Technology Consulting Ireland",
+    "titleTemplate": "%s | OBH Software",
+    "defaultDescription": "Custom software, web design and business-process automation. Innovating industries through sustainable technology solutions.",
+    "keywords": ["software consulting", "custom software", "web design", "business automation", "Ireland", "Galway", "technology"],
     "ogImage": "/og-image.jpg"
   },
 
   "legal": {
-    "companyName": "Quantum Harbour Ltd",
+    "companyName": "OBH Software",
     "registrationNumber": "",
     "vatNumber": "",
     "privacyPolicy": "/privacy",

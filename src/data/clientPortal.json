@@ -1,90 +1,77 @@
 {
   "heroTitle": "Client Portal",
-  "heroSubtitle": "Access support, resources, and tools for Quantum Harbour clients",
-  "intro": "Welcome to the Quantum Harbour client area. Use the links below to access support, open tickets, or get remote assistance.",
+  "heroSubtitle": "Access support, resources and tools for OBH Software clients",
+  "intro": "Welcome to the OBH Software client area. Use the links below to access project resources, schedule consultations or get in touch with our team.",
   "sections": [
     {
-      "title": "Support & Tickets",
+      "title": "Get in Touch",
       "items": [
         {
-          "title": "Open Support Portal",
-          "description": "Log in to view your tickets, submit new requests, and track progress on open issues.",
+          "title": "Book a Consultation",
+          "description": "Schedule a free consultation to discuss your project, explore new ideas or review your technology roadmap.",
           "icon": "ticket",
           "linkType": "external",
-          "url": "https://quantumharbour.itclientportal.com/ClientPortal/Login.aspx",
-          "buttonText": "Open Portal"
+          "url": "/#contact",
+          "buttonText": "Book Now"
         },
         {
           "title": "Email Support",
-          "description": "Send an email to our support team. Emails are automatically converted to tickets.",
+          "description": "Send an email to our team for project enquiries, support requests or general questions.",
           "icon": "email",
           "linkType": "mailto",
-          "url": "mailto:support@quantumharbour.ie",
+          "url": "mailto:info@obhsoftware.ie",
           "buttonText": "Email Us"
         }
       ]
     },
     {
-      "title": "Remote Support",
+      "title": "Resources",
       "items": [
         {
-          "title": "Remote Assistance",
-          "description": "Allow our technicians to connect to your computer securely for hands-on troubleshooting.",
-          "icon": "remote",
-          "linkType": "external",
-          "url": "https://pub-ac6387c37e9f4bfb927f8e58fde05092.r2.dev/rustdesk-host%3D65.109.164.224%2Ckey%3DlFHbstKyRQobGxkRCUE96e3KSffrjigXA8lUzin4RPw%3D.exe",
-          "buttonText": "Start Session"
-        },
-        {
-          "title": "Download Agent",
-          "description": "Download and install our remote monitoring agent if it's not already on your device.",
+          "title": "Project Resources",
+          "description": "Access documentation, guides and templates to support your technology projects.",
           "icon": "download",
           "linkType": "external",
-          "url": "https://merlot.rmm.datto.com/download-agent/windows/a038f88e-2ed1-40a3-b11e-9622daec4107",
-          "buttonText": "Download"
-        }
-      ]
-    },
-    {
-      "title": "System Status",
-      "items": [
+          "url": "/resources",
+          "buttonText": "View Resources"
+        },
         {
-          "title": "Service Status",
-          "description": "Check the current status of Quantum Harbour services and any ongoing incidents.",
+          "title": "Insights & Blog",
+          "description": "Read our latest thoughts on technology, innovation and industry trends.",
           "icon": "status",
           "linkType": "external",
-          "url": "https://status.quantumharbour.ie",
-          "buttonText": "View Status"
+          "url": "/insights",
+          "buttonText": "Read Insights"
         }
       ]
     }
   ],
   "emergencySupport": {
-    "title": "Severity 1 Emergency?",
-    "description": "If your business is down or you're experiencing a critical security incident, don't wait for a ticket response.",
+    "title": "Need Urgent Support?",
+    "description": "If you have an urgent project issue or need immediate assistance, don't hesitate to reach out directly.",
     "instructions": [
-      "Call our emergency line immediately",
-      "Have your company name and brief description ready",
-      "Stay by your phone for callback if needed"
+      "Call or email us directly",
+      "Describe the issue and affected systems",
+      "We'll respond as quickly as possible"
     ],
     "phone": "+353 87 295 9063",
-    "note": "Sev 1 calls are answered 24/7. Use this line only for genuine business-critical emergencies."
+    "note": "For project emergencies and critical issues. For general enquiries, please use the contact form."
   },
   "resources": {
     "title": "Client Resources",
-    "description": "Helpful guides and documentation for Quantum Harbour clients.",
+    "description": "Helpful guides and documentation for OBH Software clients.",
     "links": [
       {
-        "title": "How to Submit a Good Support Ticket",
-        "url": "/resources/support-ticket-guide"
+        "title": "Our Development Process",
+        "url": "/how-we-work"
       },
       {
-        "title": "Security Best Practices Guide",
-        "url": "/resources/security-best-practices"
+        "title": "Frequently Asked Questions",
+        "url": "/faq"
       },
       {
-        "title": "Understanding Your Monthly Report",
-        "url": "/resources/monthly-report-guide"
+        "title": "Free Resources & Templates",
+        "url": "/resources"
       }
     ]
   }

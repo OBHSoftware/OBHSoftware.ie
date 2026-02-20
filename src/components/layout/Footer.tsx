@@ -9,7 +9,7 @@ interface LinkItem {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { quickLinks, resources, sectors, clients } = navigationData.footerLinks;
+  const { quickLinks, services, sectors, clients } = navigationData.footerLinks;
 
   return (
     <footer className={styles.footer}>
@@ -17,11 +17,10 @@ export function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <img src="/logo.svg" alt="Quantum Harbour" className={styles.logoIcon} />
-              <span className={styles.logoText}>Quantum Harbour</span>
+              <img src="/logo.png" alt="OBH Software Consulting" className={styles.logoImg} />
             </Link>
             <p className={styles.tagline}>
-              Proactive IT that keeps your business running day and night.
+              Innovating industries through sustainable technology solutions.
             </p>
           </div>
 
@@ -37,9 +36,9 @@ export function Footer() {
           </div>
 
           <div className={styles.links}>
-            <h4 className={styles.linksTitle}>Resources</h4>
+            <h4 className={styles.linksTitle}>Services</h4>
             <ul className={styles.linksList}>
-              {resources.map((link: LinkItem) => (
+              {services.map((link: LinkItem) => (
                 <li key={link.href}>
                   <Link to={link.href}>{link.label}</Link>
                 </li>
@@ -48,7 +47,7 @@ export function Footer() {
           </div>
 
           <div className={styles.links}>
-            <h4 className={styles.linksTitle}>Sectors</h4>
+            <h4 className={styles.linksTitle}>Industries</h4>
             <ul className={styles.linksList}>
               {sectors.map((link: LinkItem) => (
                 <li key={link.href}>
@@ -59,7 +58,7 @@ export function Footer() {
           </div>
 
           <div className={styles.links}>
-            <h4 className={styles.linksTitle}>For Clients</h4>
+            <h4 className={styles.linksTitle}>Connect</h4>
             <ul className={styles.linksList}>
               {clients.map((link: LinkItem) => (
                 <li key={link.href + link.label}>
@@ -72,7 +71,7 @@ export function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            &copy; {currentYear} Quantum Harbour. All rights reserved.
+            &copy; {currentYear} OBH Software. All rights reserved.
           </p>
         </div>
       </div>

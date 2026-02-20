@@ -1,9 +1,9 @@
 {
-  "sectionTitle": "Testimonial",
+  "sectionTitle": "What Our Clients Say",
   "testimonials": [
     {
-      "quote": "Quantum Harbour transformed our IT infrastructure. Their proactive approach means we rarely have issues, and when we do, they're resolved before we even notice. Truly exceptional service.",
-      "author": "Operations Director, Construction Industry"
+      "quote": "OBH Software transformed our fleet management with their Quantum Mechanics platform. The digital job cards and automated compliance reporting have saved us countless hours and eliminated paperwork errors. Truly exceptional.",
+      "author": "Operations Director, Transport & Logistics"
     }
   ]
 }

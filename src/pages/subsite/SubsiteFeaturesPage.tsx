@@ -4,14 +4,11 @@ import { SubsiteHeader, SubsiteFooter } from '../../components/subsite';
 import styles from './SubsiteFeaturesPage.module.css';
 
 // Import subsite data
-import qmechanicManifest from '../../data/subsites/qmechanic.json';
 import qhaulManifest from '../../data/subsites/qhaul.json';
-import qmechanicFeatures from '../../data/subsites/qmechanic/features.json';
 import qhaulFeatures from '../../data/subsites/qhaul/features.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const subsiteMap: Record<string, { manifest: any; features: any }> = {
-  qmechanic: { manifest: qmechanicManifest, features: qmechanicFeatures },
   qhaul: { manifest: qhaulManifest, features: qhaulFeatures },
 };
 

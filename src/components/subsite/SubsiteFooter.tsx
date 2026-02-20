@@ -15,7 +15,7 @@ interface SubsiteFooterProps {
 export function SubsiteFooter({
   copyright,
   links = [],
-  primaryColor = '#072a59',
+  primaryColor = '#234E01',
 }: SubsiteFooterProps) {
   return (
     <footer className={styles.footer} style={{ '--primary-color': primaryColor } as React.CSSProperties}>

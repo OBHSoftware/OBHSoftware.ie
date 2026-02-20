@@ -64,10 +64,8 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission - replace with actual API call
     try {
-      // For now, create a mailto link as fallback
-      const mailtoLink = `mailto:info@quantumharbour.ie?subject=IT Audit Request from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:info@obhsoftware.ie?subject=Consultation Request from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
       )}`;
 
@@ -85,8 +83,8 @@ export function Contact() {
     <Section id="contact">
       <AnimatedSection>
         <SectionHeader
-          title="Ready to Get Started?"
-          subtitle="Let's discuss how we can help protect your business."
+          title="Let's Build Something Great Together."
+          subtitle="Book your free consultation and discover how technology can transform your business."
         />
       </AnimatedSection>
 
@@ -170,14 +168,14 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
-                  placeholder="Tell us about your IT needs..."
+                  placeholder="Tell us about your project or business challenge..."
                   rows={5}
                 />
                 {errors.message && <span className={styles.error}>{errors.message}</span>}
               </div>
 
               <Button size="lg" onClick={() => {}}>
-                {isSubmitting ? 'Sending...' : 'Book your free IT Audit'}
+                {isSubmitting ? 'Sending...' : 'Book Your Free Consultation'}
               </Button>
 
               {submitStatus === 'success' && (
@@ -192,20 +190,20 @@ export function Contact() {
           <div className={styles.info}>
             <h3 className={styles.infoTitle}>Get in Touch</h3>
             <p className={styles.infoText}>
-              Book a free IT audit and discover how Quantum Harbour can
-              streamline your operations, strengthen your security, and give you
-              peace of mind.
+              Book a free consultation and discover how OBH Software can
+              help you streamline operations, build custom solutions and
+              drive sustainable growth through technology.
             </p>
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>
                 <span className={styles.contactLabel}>Email</span>
-                <a href="mailto:info@quantumharbour.ie" className={styles.contactValue}>
-                  info@quantumharbour.ie
+                <a href="mailto:info@obhsoftware.ie" className={styles.contactValue}>
+                  info@obhsoftware.ie
                 </a>
               </div>
               <div className={styles.contactItem}>
                 <span className={styles.contactLabel}>Location</span>
-                <span className={styles.contactValue}>Ireland & UK</span>
+                <span className={styles.contactValue}>University of Galway, Ireland</span>
               </div>
             </div>
           </div>

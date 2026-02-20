@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--color-secondary);
+  background-color: #F38B2A;
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
 }
 
@@ -28,22 +28,15 @@
   text-decoration: none;
 }
 
-.logoIcon {
-  width: 50px;
-  height: 50px;
+.logoImg {
+  height: 75px;
+  width: auto;
+  border-radius: 6px;
   transition: transform var(--transition-base);
 }
 
-.logo:hover .logoIcon {
-  transform: rotate(10deg) scale(1.05);
-}
-
-.logoText {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
-  font-size: 1.25rem;
-  letter-spacing: 0.1em;
-  color: var(--color-white);
+.logo:hover .logoImg {
+  transform: scale(1.03);
 }
 
 .tagline {

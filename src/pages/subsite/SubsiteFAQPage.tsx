@@ -4,14 +4,11 @@ import { SubsiteHeader, SubsiteFooter } from '../../components/subsite';
 import styles from './SubsiteFAQPage.module.css';
 
 // Import subsite data
-import qmechanicManifest from '../../data/subsites/qmechanic.json';
 import qhaulManifest from '../../data/subsites/qhaul.json';
-import qmechanicFaq from '../../data/subsites/qmechanic/faq.json';
 import qhaulFaq from '../../data/subsites/qhaul/faq.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const subsiteMap: Record<string, { manifest: any; faq: any }> = {
-  qmechanic: { manifest: qmechanicManifest, faq: qmechanicFaq },
   qhaul: { manifest: qhaulManifest, faq: qhaulFaq },
 };
 

@@ -19,7 +19,7 @@ export function SubsiteHero({
   ctaText,
   ctaLink,
   backgroundImage,
-  primaryColor = '#072a59',
+  primaryColor = '#234E01',
 }: SubsiteHeroProps) {
   return (
     <section className={styles.hero} style={{ '--primary-color': primaryColor } as React.CSSProperties}>

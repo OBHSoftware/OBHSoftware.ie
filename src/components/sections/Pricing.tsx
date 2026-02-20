@@ -17,8 +17,8 @@ export function Pricing() {
           <FadeInUp key={index}>
             <PlanCard
               name={plan.name}
-              price={plan.price}
-              contactUs={plan.contactUs}
+              price={'price' in plan ? (plan as { price: string }).price : undefined}
+              contactUs={'contactUs' in plan ? (plan as { contactUs: boolean }).contactUs : undefined}
               features={plan.features}
               footnote={plan.footnote}
             />

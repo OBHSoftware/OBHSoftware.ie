@@ -19,6 +19,19 @@
   font-size: var(--text-4xl);
   color: var(--color-white);
   margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-orange);
+  border-radius: 2px;
 }
 
 .subtitle {

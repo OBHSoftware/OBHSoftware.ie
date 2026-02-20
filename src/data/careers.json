@@ -1,72 +1,68 @@
 {
   "heroTitle": "Careers",
-  "heroSubtitle": "Join a team that takes IT seriously — and has fun doing it",
-  "intro": "Quantum Harbour is growing, and we're always interested in talking to talented people who share our values. Whether we're actively hiring or not, we'd love to hear from you.",
+  "heroSubtitle": "Join a team that's innovating industries through sustainable technology",
+  "intro": "OBH Software is growing, and we're always interested in talking to talented people who share our passion for technology, design thinking and making a real impact.",
   "about": {
     "title": "Who We Are",
-    "description": "We're a managed service provider based in Ireland, supporting businesses across Ireland and the UK. We're small enough that everyone matters, but growing fast enough that there's real opportunity. Our team is made up of people who genuinely care about doing good work — not just closing tickets, but actually solving problems.",
+    "description": "We're a technology consulting firm based at the University of Galway, founded by Stanford Innovation Fellows with a mission to innovate industries through sustainable technology. We combine deep technical expertise with design thinking to build solutions that genuinely transform how businesses operate.",
     "culture": [
       {
-        "title": "No Blame Culture",
-        "description": "Mistakes happen. We focus on learning and fixing, not pointing fingers. If you broke it, you're probably the best person to fix it — and we'll help."
+        "title": "Design-Thinking Culture",
+        "description": "We approach every problem with empathy and creativity. Understanding the user comes before writing code — always."
       },
       {
-        "title": "Remote-Friendly",
-        "description": "We have an office, but we don't mandate attendance. Work from where you're most productive. We care about results, not presenteeism."
+        "title": "Innovation-Driven",
+        "description": "We're constantly exploring new technologies and methodologies. If you love learning and experimenting, you'll fit right in."
       },
       {
-        "title": "Continuous Learning",
-        "description": "Technology moves fast. We invest in training, certifications, and giving people time to learn. If you want to grow, we'll support that."
+        "title": "Real Impact",
+        "description": "Our work directly transforms industries — from digitising fleet management to driving sustainable construction. Every project matters."
       },
       {
-        "title": "Honest Communication",
-        "description": "No corporate speak, no politics. We say what we mean and mean what we say — with clients and with each other."
+        "title": "Collaborative Partnership",
+        "description": "We work as a team internally and as partners with our clients. No egos, no silos — just great work built together."
       }
     ]
   },
   "roles": {
     "title": "Types of Roles",
-    "description": "We typically hire for the following types of positions. Even if we're not actively recruiting, we're always happy to receive CVs from strong candidates.",
+    "description": "We typically hire for the following types of positions. Even if we're not actively recruiting, we're always happy to hear from strong candidates.",
     "types": [
       {
-        "title": "MSP Engineer",
-        "description": "The core of our service delivery. You'll handle escalated tickets, project work, and help maintain client environments. Strong Windows, networking, and troubleshooting skills required. Experience with RMM/PSA tools a plus."
-      },
-      {
-        "title": "Service Desk Analyst",
-        "description": "First point of contact for client issues. You'll triage tickets, handle common requests, and escalate appropriately. Great communication skills and genuine desire to help people required."
-      },
-      {
-        "title": "Field Technician",
-        "description": "On-site support for clients across Ireland. You'll handle hardware deployments, on-site troubleshooting, and be the face of Quantum Harbour at client locations. Clean driving licence required."
-      },
-      {
-        "title": "Security Specialist",
-        "description": "Focus on security tooling, incident response, and helping clients improve their security posture. Experience with EDR, SIEM, and security frameworks required."
-      },
-      {
         "title": "Software Developer",
-        "description": "Building internal tools and client-facing products like qMechanic. Modern web technologies, API development, and database experience required."
+        "description": "Build custom software platforms and web applications using modern technologies. Experience with React, Node.js, Python or similar technologies required. A passion for clean code and user-centred design is essential."
+      },
+      {
+        "title": "UI/UX Designer",
+        "description": "Design intuitive, beautiful interfaces for our platforms and client projects. Experience with Figma, wireframing and user research required. Understanding of design thinking methodology is a strong plus."
+      },
+      {
+        "title": "Business Analyst / Consultant",
+        "description": "Work with clients to understand their challenges, map workflows and define software requirements. Strong communication skills, analytical thinking and business acumen required."
+      },
+      {
+        "title": "AI / Data Engineer",
+        "description": "Develop AI and machine learning features for our platforms — from predictive maintenance to analytics dashboards. Experience with Python, data pipelines and ML frameworks required."
       }
     ]
   },
   "benefits": {
     "title": "What We Offer",
     "items": [
-      "Competitive salary based on experience",
+      "Meaningful work that impacts real industries",
       "Flexible working arrangements",
-      "Training and certification budget",
-      "Hardware provided (laptop, monitors, etc.)",
-      "Pension contribution",
-      "25 days annual leave",
-      "Regular team events (optional, not forced fun)"
+      "Access to Stanford Innovation Fellowship network",
+      "Training and professional development",
+      "Modern tech stack and tools",
+      "Collaborative, no-ego team culture",
+      "Opportunity to grow with a scaling company"
     ]
   },
   "openPositions": [],
   "cta": {
     "title": "Interested?",
-    "description": "We're not always actively hiring, but we're always interested in meeting good people. Send us your CV and tell us a bit about yourself.",
-    "email": "careers@quantumharbour.ie",
+    "description": "We're not always actively hiring, but we're always interested in meeting talented people. Send us your CV and tell us a bit about yourself.",
+    "email": "careers@obhsoftware.ie",
     "buttonText": "Get in Touch"
   }
 }

@@ -105,7 +105,7 @@ export function PartnerDetailPage() {
           <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
           <p className={styles.ctaDescription}>
             Contact us to discuss how {partner.name} can help with your project.
-            As a Quantum Harbour partner, they understand our clients' needs and deliver exceptional results.
+            As an OBH Software partner, they understand our clients' needs and deliver exceptional results.
           </p>
           <div className={styles.ctaButtons}>
             <Button href="/#contact" size="lg">

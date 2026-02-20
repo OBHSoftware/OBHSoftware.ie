@@ -1,120 +1,108 @@
 {
   "heroTitle": "Frequently Asked Questions",
-  "heroSubtitle": "Answers to common questions about our services, pricing, and how we work",
+  "heroSubtitle": "Answers to common questions about our services, process and how we work",
   "categories": [
-    {
-      "name": "Support & Response",
-      "faqs": [
-        {
-          "question": "What are your standard response times?",
-          "answer": "For Severity 1 (business down) incidents, we respond within 30 minutes, 24/7. Severity 2 issues get a response within 2 hours during business hours. Standard requests are acknowledged within 4 business hours and resolved based on priority."
-        },
-        {
-          "question": "How do I contact support?",
-          "answer": "You can reach us via our client portal (preferred for tracking), email at support@quantumharbour.ie, or phone for urgent issues. Severity 1 incidents should always be called in to ensure immediate response."
-        },
-        {
-          "question": "Do you provide on-site support?",
-          "answer": "Yes. Our Proactive Plan includes on-site support during business hours when required. Enterprise clients get priority on-site response. On-site visits are also available ad-hoc for Reactive Plan clients at our standard hourly rate."
-        },
-        {
-          "question": "What hours is your support team available?",
-          "answer": "Our helpdesk operates 8am-6pm Monday to Friday for general support. Proactive and Enterprise clients have access to out-of-hours support for critical issues. Our monitoring systems run 24/7/365 and will alert us to critical problems regardless of time."
-        }
-      ]
-    },
-    {
-      "name": "Pricing & Contracts",
-      "faqs": [
-        {
-          "question": "How is pricing calculated?",
-          "answer": "We price per user, per month. A 'user' is anyone who needs IT support — whether full-time, part-time, or contractor. This keeps pricing simple and predictable as your team changes."
-        },
-        {
-          "question": "Are there any setup fees?",
-          "answer": "For straightforward environments, there's no setup fee — we absorb onboarding costs. Complex migrations, legacy system cleanups, or environments requiring significant remediation may have a one-time project fee, which we'll quote transparently upfront."
-        },
-        {
-          "question": "What's the minimum contract length?",
-          "answer": "Our standard agreement is 12 months, which gives us time to properly stabilise and optimise your environment. We offer month-to-month after the initial term. We're confident you'll want to stay."
-        },
-        {
-          "question": "What happens if we need to add or remove users?",
-          "answer": "Easy — just let us know. Billing adjusts the following month. We don't lock you into user counts, and there's no penalty for reducing headcount."
-        },
-        {
-          "question": "Do you support contractors or only full-time staff?",
-          "answer": "We price per supported user, regardless of employment type. If they need IT support and access to your systems, they count as a user."
-        }
-      ]
-    },
-    {
-      "name": "Security & Compliance",
-      "faqs": [
-        {
-          "question": "How do you handle our sensitive data?",
-          "answer": "We follow strict data handling procedures aligned with ISO 27001 best practices. Our staff are background-checked, we use encrypted connections for all remote access, and we maintain detailed audit logs. Your data stays yours — we're custodians, not owners."
-        },
-        {
-          "question": "Can you help with compliance requirements?",
-          "answer": "Absolutely. We have experience with GDPR, healthcare data protection, PCI-DSS, and various industry-specific requirements. We can provide compliance documentation, implement required controls, and support you through audits."
-        },
-        {
-          "question": "What happens if there's a security breach?",
-          "answer": "We have documented incident response procedures. We'll contain the threat, investigate the root cause, notify you immediately, help with any regulatory reporting requirements, and implement measures to prevent recurrence. Our EDR tools also provide forensic data for investigation."
-        },
-        {
-          "question": "Do you provide security awareness training?",
-          "answer": "Yes, it's included in all our plans. We provide monthly phishing simulations, an online learning portal, and regular security awareness updates. We can also run targeted training for high-risk roles."
-        }
-      ]
-    },
-    {
-      "name": "Technical & Services",
-      "faqs": [
-        {
-          "question": "What systems and software do you support?",
-          "answer": "We primarily support Windows environments, Microsoft 365, and common business applications. We also support Mac endpoints and can manage Linux servers. If you have specific line-of-business applications, we'll work with those vendors on your behalf."
-        },
-        {
-          "question": "Can you take over from our current IT provider?",
-          "answer": "Yes, we handle provider transitions regularly. We'll coordinate with your existing provider, ensure proper handover of documentation and credentials, and manage the transition to minimise disruption."
-        },
-        {
-          "question": "Do you provide hardware?",
-          "answer": "Yes, through our Hardware as a Service (HaaS) offering. You lease hardware on a predictable monthly cost, and we handle procurement, setup, and lifecycle management. This is available as an add-on to any plan."
-        },
-        {
-          "question": "What's included in your backup service?",
-          "answer": "We back up endpoints, servers, and cloud data (Microsoft 365, etc.) with encrypted storage both locally and in the cloud. Critically, we perform regular test restores to verify backups actually work — not just that they exist."
-        },
-        {
-          "question": "Can you support multiple office locations?",
-          "answer": "Absolutely. We currently support clients across Ireland and the UK with multi-site operations. Our remote management tools work regardless of location, and we can coordinate on-site support at any location."
-        }
-      ]
-    },
     {
       "name": "Getting Started",
       "faqs": [
         {
-          "question": "What does onboarding look like?",
-          "answer": "We start with a discovery call to understand your environment and needs. Then we conduct a free IT audit to assess your current state. From there, we propose a plan, and if you proceed, we execute a structured onboarding over 2-4 weeks depending on complexity."
+          "question": "How do we begin working with OBH?",
+          "answer": "It starts with a free consultation. We'll discuss your business challenges, goals and current technology setup. From there, we'll propose a tailored solution with a clear roadmap and cost estimate — no obligation."
         },
         {
-          "question": "How long does it take to get fully set up?",
-          "answer": "Typically 2-4 weeks from contract signing to full managed services coverage. We prioritise getting monitoring and security tools deployed first, then roll out remaining components systematically."
+          "question": "Is the initial consultation really free?",
+          "answer": "Yes, absolutely. We offer a free discovery consultation where we analyse your existing workflows, identify pain points and discuss how technology can help. There's no sales pressure — just honest advice."
         },
         {
-          "question": "What do you need from us to get started?",
-          "answer": "Initially, just time for a discovery conversation. For onboarding, we'll need admin credentials to your systems, documentation your current provider has (if any), and introductions to key stakeholders. We'll guide you through exactly what's needed."
+          "question": "How long does a typical project take?",
+          "answer": "It depends on scope and complexity. A focused web project might take 4-8 weeks, while a complex custom software platform could take 3-6 months. We'll give you a clear timeline during the proposal phase and keep you updated throughout development."
+        },
+        {
+          "question": "Do you work with startups or only established businesses?",
+          "answer": "We work with businesses of all sizes — from startups looking to build their first product to established companies needing to modernise their operations. Our approach scales to match your needs and budget."
+        }
+      ]
+    },
+    {
+      "name": "Services & Process",
+      "faqs": [
+        {
+          "question": "What technologies do you use?",
+          "answer": "We choose the best technology for each project rather than forcing a one-size-fits-all approach. Our team is experienced with modern web frameworks (React, Node.js, Python), cloud platforms (AWS, Azure), mobile development, AI/ML tools and more. We'll recommend the right stack for your specific needs."
+        },
+        {
+          "question": "Can you integrate with our existing systems?",
+          "answer": "Absolutely. We specialise in building solutions that work seamlessly with your existing CRM, ERP, BIM, project management and other business tools. Integration planning is a core part of our proposal phase."
+        },
+        {
+          "question": "What is your development methodology?",
+          "answer": "We follow agile methodologies with regular sprint cycles, demos and feedback sessions. This means you see progress throughout the project, can provide feedback early and get a solution that truly matches your needs."
+        },
+        {
+          "question": "Do you provide ongoing support after launch?",
+          "answer": "Yes. Our relationship doesn't end at deployment. We offer long-term support, maintenance and feature updates. Many of our clients continue working with us on a retainer basis as their needs evolve."
+        }
+      ]
+    },
+    {
+      "name": "Pricing & Engagement",
+      "faqs": [
+        {
+          "question": "How is pricing structured?",
+          "answer": "We offer both project-based pricing and retainer partnerships. Project-based work has a defined scope and fixed cost. Retainers provide ongoing development hours at a predictable monthly rate. We'll recommend the best model for your situation."
+        },
+        {
+          "question": "Do you offer fixed-price projects?",
+          "answer": "Yes, for well-defined projects we can provide fixed-price proposals after the discovery phase. This gives you budget certainty while ensuring we deliver everything agreed upon."
+        },
+        {
+          "question": "What happens if the scope changes during a project?",
+          "answer": "Change is natural in software development. We handle scope changes transparently — any adjustments are discussed, estimated and agreed before implementation. Our agile approach means we can adapt to evolving requirements without derailing the project."
+        },
+        {
+          "question": "Can we start with a small project to test the relationship?",
+          "answer": "Absolutely. Many of our long-term partnerships started with a single focused project. Starting small lets you experience our process and quality firsthand before committing to larger engagements."
+        }
+      ]
+    },
+    {
+      "name": "Industry Expertise",
+      "faqs": [
+        {
+          "question": "What industries do you specialise in?",
+          "answer": "We have deep expertise in transport and logistics, construction and sustainability. We've built platforms like Quantum Mechanics (fleet management), Ascert Pro (BCAR inspections) and ECOnstruction (sustainable construction). We also work across other sectors where our approach adds value."
+        },
+        {
+          "question": "Can you help with regulatory compliance?",
+          "answer": "Yes. Our construction and transport solutions are built with compliance at their core — from BCAR regulations to HGV inspection requirements. We ensure our platforms keep you ahead of regulatory demands."
+        },
+        {
+          "question": "Do you have experience with sustainability-focused projects?",
+          "answer": "Sustainability is central to our mission. Our ECOnstruction platform demonstrates how we help businesses adopt eco-friendly practices while remaining financially viable. We believe technology should drive sustainable outcomes."
+        }
+      ]
+    },
+    {
+      "name": "About OBH",
+      "faqs": [
+        {
+          "question": "Who are the founders?",
+          "answer": "OBH was founded by Ethan O'Brien and Sarah Jane Hughes, both Electronic & Computer Engineering students at the University of Galway and Stanford University Innovation Fellows. They bring a unique combination of technical expertise, design thinking and entrepreneurial vision."
+        },
+        {
+          "question": "What makes OBH different from other software consultancies?",
+          "answer": "Three things: our design-thinking approach ensures solutions are human-centred; our Stanford Innovation Fellowship background brings a unique problem-solving methodology; and our industry-specific expertise means we don't just write code — we understand your business challenges."
+        },
+        {
+          "question": "Where are you based?",
+          "answer": "We're based at the University of Galway, Ireland. We work with clients across Ireland and beyond, with the ability to collaborate both remotely and on-site as needed."
         }
       ]
     }
   ],
   "cta": {
     "title": "Still Have Questions?",
-    "description": "We're happy to chat through any questions not covered here. No pressure, no sales pitch — just honest answers.",
+    "description": "We're happy to chat through any questions not covered here. No pressure, no sales pitch — just honest answers about how we can help.",
     "buttonText": "Get in Touch"
   }
 }

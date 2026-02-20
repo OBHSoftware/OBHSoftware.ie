@@ -8,7 +8,7 @@
     "slug": "qhaul",
     "name": "qHaul",
     "tagline": "Transport Management System",
-    "parentSite": "quantum-harbour",
+    "parentSite": "obh-software",
     "parentProduct": "qhaul",
     "status": "coming-soon",
     "launchDate": "2025-06-01"
@@ -21,9 +21,9 @@
       "icon": "/products/qhaul/icon.svg"
     },
     "colors": {
-      "primary": "#072a59",
-      "secondary": "#190d4e",
-      "accent": "#d9d9d9"
+      "primary": "#234E01",
+      "secondary": "#1a3501",
+      "accent": "#F38B2A"
     }
   },
 
@@ -248,7 +248,7 @@
   },
 
   "footer": {
-    "copyright": "© 2024 qHaul. A Quantum Harbour Product.",
+    "copyright": "© 2024 qHaul. An OBH Software Product.",
     "links": [
       { "label": "Privacy Policy", "href": "/privacy" },
       { "label": "Terms of Service", "href": "/terms" },

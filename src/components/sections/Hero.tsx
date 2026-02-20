@@ -14,9 +14,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          Proactive IT that keeps your business running —
+          Innovating Industries Through
           <br />
-          day and night.
+          Sustainable Technology.
         </motion.h1>
 
         <motion.div
@@ -26,11 +26,12 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className={styles.description}>
-            Managed IT, Cybersecurity, and Hosting solutions for Irish and UK
-            businesses that can't afford downtime.
+            Custom software, web design and business-process automation
+            that brings your ideas to life using technology and design thinking.
           </p>
           <p className={styles.description}>
-            Transparent pricing. Real protection. Expert support when it matters most.
+            Empowering businesses to streamline operations, enhance productivity
+            and stay ahead in a rapidly evolving digital world.
           </p>
         </motion.div>
 
@@ -40,7 +41,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
           <Button href="#contact" size="lg">
-            Book your free IT Audit
+            Book Your Free Consultation
           </Button>
         </motion.div>
       </div>

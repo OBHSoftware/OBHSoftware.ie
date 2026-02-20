@@ -1,39 +1,39 @@
 {
   "heroTitle": "Our Partners",
-  "heroSubtitle": "Trusted collaborations that extend our capabilities and deliver exceptional results for our clients",
-  "intro": "At Quantum Harbour, we believe in the power of collaboration. We've partnered with industry-leading specialists to offer our clients a complete ecosystem of technology services — from custom software development to stunning digital design.",
+  "heroSubtitle": "Trusted collaborations that extend our capabilities and deliver exceptional results",
+  "intro": "At OBH Software, we believe in the power of collaboration. We work closely with industry partners to offer clients a complete ecosystem of technology services and solutions.",
   "partners": [
     {
-      "id": "obh-software",
-      "slug": "obh-software",
-      "name": "OBH Software",
-      "tagline": "Custom Software Development",
-      "description": "OBH Software specialises in building bespoke software solutions that solve real business problems. From web applications to complex enterprise systems, their team of experienced developers creates robust, scalable software tailored to your exact requirements.",
+      "id": "quantum-harbour",
+      "slug": "quantum-harbour",
+      "name": "Quantum Harbour",
+      "tagline": "Managed IT Services",
+      "description": "Quantum Harbour is a trusted managed service provider supporting businesses across Ireland and the UK. They deliver proactive IT management, cybersecurity solutions and hosting services that keep businesses running around the clock.",
       "services": [
-        "Custom Web Applications",
-        "Enterprise Software Development",
-        "API Development & Integration",
-        "Database Design & Optimization",
-        "Legacy System Modernisation",
-        "Mobile App Development"
+        "Managed IT Services",
+        "Cybersecurity & Endpoint Protection",
+        "Data Backup & Recovery",
+        "Cloud Solutions & Hosting",
+        "IT Consulting & Strategy",
+        "24/7 Monitoring & Support"
       ],
       "highlights": [
         {
-          "title": "Tailored Solutions",
-          "description": "Every project is built from the ground up to match your specific business needs"
+          "title": "Proactive IT Management",
+          "description": "Prevention-first approach that stops issues before they impact your business"
         },
         {
-          "title": "Modern Tech Stack",
-          "description": "Using the latest technologies to ensure performance, security, and maintainability"
+          "title": "Enterprise-Grade Security",
+          "description": "Multi-layered cybersecurity protecting businesses of all sizes"
         },
         {
-          "title": "Ongoing Support",
-          "description": "Long-term partnership approach with continued development and support"
+          "title": "Local Support",
+          "description": "Ireland and UK-based engineers providing responsive, on-site support when needed"
         }
       ],
       "colors": {
-        "primary": "#f7892b",
-        "secondary": "#1c5200"
+        "primary": "#072a59",
+        "secondary": "#190d4e"
       }
     },
     {
@@ -41,7 +41,7 @@
       "slug": "buzzworks-design",
       "name": "Buzzworks Design Studio",
       "tagline": "Digital Design & Creative Services",
-      "description": "Buzzworks Design Studio brings brands to life through exceptional digital design. Their creative team combines aesthetic excellence with strategic thinking to deliver designs that not only look stunning but drive real business results.",
+      "description": "Buzzworks Design Studio brings brands to life through exceptional digital design. Their creative team combines aesthetic excellence with strategic thinking to deliver designs that drive real business results.",
       "services": [
         "Brand Identity & Logo Design",
         "UI/UX Design",
@@ -71,8 +71,8 @@
     }
   ],
   "cta": {
-    "title": "Work With Our Partners",
-    "description": "Whether you need custom software, beautiful design, or a complete digital transformation, our partner network has you covered. Contact us to discuss your project.",
+    "title": "Work With Us & Our Partners",
+    "description": "Whether you need custom software, managed IT, or beautiful design, our network has you covered. Contact us to discuss your project.",
     "buttonText": "Get in Touch"
   }
 }

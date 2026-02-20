@@ -1,111 +1,107 @@
 {
   "heroTitle": "How We Work",
-  "heroSubtitle": "A clear, structured approach to transforming your IT operations",
-  "intro": "We don't just 'take over your IT' — we follow a proven process that stabilises your environment, reduces risk, and sets you up for long-term success. Here's exactly what to expect when you work with us.",
+  "heroSubtitle": "A clear, structured approach to bringing your ideas to life",
+  "intro": "At OBH, we follow a proven four-step process that ensures every project is aligned with your business goals, delivered on time and built to last. Here's exactly what to expect when you work with us.",
   "phases": [
     {
       "step": 1,
-      "title": "Discovery & Audit",
-      "duration": "Week 1-2",
-      "description": "We start by understanding where you are. Our free IT audit covers your infrastructure, security posture, backup status, and pain points. No sales pressure — just an honest assessment of your current state.",
+      "title": "Discovery & Consultation",
+      "duration": "Week 1",
+      "description": "We begin with a free consultation, analysing your existing workflows and IT infrastructure to understand your needs and identify pain points. No sales pressure — just an honest assessment of where technology can make the biggest impact.",
       "activities": [
-        "Initial discovery call to understand your business",
-        "On-site or remote infrastructure assessment",
-        "Security vulnerability scan",
-        "Backup and recovery review",
-        "Documentation of existing systems and contracts",
-        "Stakeholder interviews"
+        "Initial discovery call to understand your business and goals",
+        "Analysis of existing workflows and IT infrastructure",
+        "Identify pain points and automation opportunities",
+        "Research industry-specific requirements and regulations",
+        "Stakeholder interviews and requirement gathering"
       ],
       "deliverables": [
-        "IT Audit Report with findings and recommendations",
-        "Risk assessment with prioritised issues",
-        "Proposed service plan and pricing"
+        "Comprehensive needs assessment",
+        "Identified pain points and opportunities",
+        "Initial recommendations and approach"
       ]
     },
     {
       "step": 2,
-      "title": "Stabilise",
-      "duration": "Week 2-4",
-      "description": "Before we can optimise, we need to stabilise. This phase addresses critical risks and gets foundational tools in place. We fix the things that are most likely to cause problems first.",
+      "title": "Proposal & Planning",
+      "duration": "Week 1-2",
+      "description": "After analysis, we propose a tailored solution with a clear roadmap, cost estimate and integration plan. We define the tech stack, design wireframes and prototypes, and gather your feedback to ensure we're building exactly what you need.",
       "activities": [
-        "Deploy monitoring and management agents",
-        "Implement or verify backup solutions",
-        "Address critical security vulnerabilities",
-        "Set up endpoint protection",
-        "Establish secure remote access",
-        "Create emergency contact procedures"
+        "Define project scope and tech stack selection",
+        "Wireframing, UI/UX design and prototyping",
+        "Cost estimation and integration planning",
+        "Stakeholder feedback and iteration",
+        "Project roadmap and milestone definition"
       ],
       "deliverables": [
-        "All endpoints under management",
-        "Verified working backups",
-        "Critical security gaps closed",
-        "24/7 monitoring active"
+        "Detailed project proposal and roadmap",
+        "Cost estimate and timeline",
+        "Design prototypes and wireframes",
+        "Integration and deployment plan"
       ]
     },
     {
       "step": 3,
-      "title": "Standardise",
-      "duration": "Week 4-8",
-      "description": "With the foundation stable, we implement consistent standards across your environment. This is where you start seeing the benefits of proactive management — fewer issues, faster resolution, better documentation.",
+      "title": "Development & Implementation",
+      "duration": "Varies by project",
+      "description": "Our team builds your solution using modern technologies and agile methodologies. You'll receive regular progress updates, participate in sprint reviews and see your product take shape through rigorous development and testing cycles.",
       "activities": [
-        "Roll out standardised security policies",
-        "Implement patch management schedules",
-        "Deploy security awareness training",
-        "Set up dark web monitoring",
-        "Document all systems and procedures",
-        "Establish regular maintenance windows",
-        "Configure alerting and escalation rules"
+        "Agile development with regular sprint cycles",
+        "Backend and frontend development",
+        "API development and system integrations",
+        "Rigorous quality assurance and testing",
+        "Regular progress updates and demos",
+        "Security and performance optimisation"
       ],
       "deliverables": [
-        "Complete system documentation",
-        "Security policies implemented",
-        "Training programme active",
-        "Maintenance schedules established"
+        "Working software delivered in sprints",
+        "Comprehensive testing and QA reports",
+        "Integration with existing systems",
+        "Documentation and technical specifications"
       ]
     },
     {
       "step": 4,
-      "title": "Optimise",
+      "title": "Deployment & Ongoing Support",
       "duration": "Ongoing",
-      "description": "Once stable and standardised, we focus on continuous improvement. Regular reviews identify opportunities to improve performance, reduce costs, and align IT with your business goals.",
+      "description": "We deploy your solution, provide training and documentation, and offer long-term support and upgrades. Our relationship doesn't end at launch — we're your technology partner for the long run.",
       "activities": [
-        "Monthly service reviews",
-        "Quarterly business reviews with stakeholders",
-        "Technology roadmap planning",
-        "Performance optimisation",
-        "Cost optimisation reviews",
-        "Proactive upgrade planning",
-        "Annual DR testing"
+        "Seamless deployment with minimal disruption",
+        "Staff training and onboarding sessions",
+        "Documentation and knowledge transfer",
+        "Performance monitoring and optimisation",
+        "Ongoing support and feature updates",
+        "Strategic technology reviews"
       ],
       "deliverables": [
-        "Monthly service reports",
-        "Quarterly business review presentations",
-        "Annual technology roadmap",
+        "Deployed, production-ready solution",
+        "Training materials and documentation",
+        "Support and maintenance agreement",
         "Continuous improvement recommendations"
       ]
     }
   ],
   "principles": [
     {
-      "title": "No Surprises",
-      "description": "We communicate proactively. You'll know about issues before they become problems, and you'll never be surprised by a bill."
+      "title": "Design Thinking",
+      "description": "We apply human-centred design principles to every project, ensuring solutions are intuitive, efficient and aligned with real user needs."
     },
     {
-      "title": "Documentation First",
-      "description": "Everything is documented. If we get hit by a bus, another team could pick up where we left off. Your knowledge isn't locked in our heads."
+      "title": "Innovation-Driven",
+      "description": "We leverage the latest technologies and methodologies to deliver solutions that give you a competitive edge."
     },
     {
-      "title": "Prevention Over Cure",
-      "description": "We'd rather spend time preventing problems than heroically fixing them. Less drama, more uptime."
+      "title": "Business-First",
+      "description": "Technology is a means to an end. We measure success through tangible results — increased efficiency, reduced costs and improved customer experiences."
     },
     {
-      "title": "Honest Advice",
-      "description": "We'll tell you what you need to hear, not what you want to hear. Sometimes that means recommending against spending money."
+      "title": "Sustainable Approach",
+      "description": "We build solutions that are scalable, maintainable and environmentally conscious — technology that grows with your business."
     }
   ],
   "cta": {
     "title": "Ready to Get Started?",
-    "description": "The first step is a conversation. Book your free IT audit and let's see where you stand.",
-    "buttonText": "Book Your Free Audit"
+    "description": "The first step is a conversation. Book your free consultation and let's discuss how technology can transform your business.",
+    "buttonText": "Book Your Free Consultation"
   }
 }

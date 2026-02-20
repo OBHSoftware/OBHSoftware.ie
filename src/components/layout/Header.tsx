@@ -6,6 +6,7 @@ import styles from './Header.module.css';
 interface DropdownItem {
   label: string;
   href: string;
+  external?: boolean;
 }
 
 interface NavItem {
@@ -141,8 +142,7 @@ export function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <img src="/logo.svg" alt="Quantum Harbour" className={styles.logoIcon} />
-          <span className={styles.logoText}>Quantum Harbour</span>
+          <img src="/logo.png" alt="OBH Software Consulting" className={styles.logoImg} />
         </Link>
 
         <button
@@ -172,21 +172,33 @@ export function Header() {
                       aria-haspopup="true"
                     >
                       {item.label}
-                      <span className={styles.dropdownArrow}>▾</span>
+                      <span className={styles.dropdownArrow}>&#9662;</span>
                     </button>
                     <ul className={`${styles.dropdown} ${openDropdown === item.label ? styles.dropdownVisible : ''}`}>
                       {item.dropdown.map((dropdownItem) => (
                         <li key={dropdownItem.href}>
-                          <a
-                            href={dropdownItem.href}
-                            className={`${styles.dropdownLink} ${isActive(dropdownItem.href) ? styles.active : ''}`}
-                            onClick={(e) => {
-                              handleNavClick(e, dropdownItem.href);
-                              closeDropdown();
-                            }}
-                          >
-                            {dropdownItem.label}
-                          </a>
+                          {(dropdownItem as DropdownItem).external ? (
+                            <a
+                              href={dropdownItem.href}
+                              className={styles.dropdownLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={closeDropdown}
+                            >
+                              {dropdownItem.label}
+                            </a>
+                          ) : (
+                            <a
+                              href={dropdownItem.href}
+                              className={`${styles.dropdownLink} ${isActive(dropdownItem.href) ? styles.active : ''}`}
+                              onClick={(e) => {
+                                handleNavClick(e, dropdownItem.href);
+                                closeDropdown();
+                              }}
+                            >
+                              {dropdownItem.label}
+                            </a>
+                          )}
                         </li>
                       ))}
                     </ul>

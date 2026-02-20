@@ -1,239 +1,125 @@
 {
   "title": "Our Services",
-  "subtitle": "Comprehensive IT solutions for your business",
+  "subtitle": "Comprehensive technology solutions for your business",
   "services": [
     {
-      "id": "update-management",
-      "name": "Windows & Software Update Management",
-      "slug": "update-management",
+      "id": "custom-software",
+      "name": "Custom Software Development",
+      "slug": "custom-software",
       "icon": "shield",
-      "shortDescription": "Automatic patching and performance monitoring that stops issues before they start.",
-      "heroTitle": "Windows & Software Update Management",
-      "heroSubtitle": "Keep your systems secure and running smoothly with automated patching and proactive monitoring",
-      "description": "Outdated software is one of the biggest security vulnerabilities for any business. Our update management service ensures all your Windows systems and applications are always running the latest, most secure versions — without disrupting your team's work.",
+      "shortDescription": "Tailored software solutions built to solve your specific business challenges.",
+      "heroTitle": "Custom Software Development",
+      "heroSubtitle": "From concept to deployment — purpose-built software that transforms your operations",
+      "description": "Off-the-shelf software rarely fits perfectly. OBH builds custom applications tailored to your workflows, your industry and your long-term goals. We combine design thinking with modern engineering to create software that's intuitive, scalable and built to last.",
       "features": [
         {
-          "title": "Automated Patching",
-          "description": "Security and feature updates applied automatically during off-hours to minimize disruption"
+          "title": "Discovery & Strategy",
+          "description": "We identify pain points, choose the right tech stack and define the project scope to align with your business goals"
         },
         {
-          "title": "Performance Monitoring",
-          "description": "Real-time tracking of system health, CPU, memory, and disk usage across all endpoints"
+          "title": "Design & Prototyping",
+          "description": "Wireframing, UI/UX design and interactive prototyping with stakeholder feedback at every stage"
         },
         {
-          "title": "Third-Party Updates",
-          "description": "Not just Windows — we keep browsers, Adobe, Java, and other critical software current"
+          "title": "Agile Development & Testing",
+          "description": "Iterative development with regular sprint demos, rigorous QA and continuous integration"
         },
         {
-          "title": "Patch Testing",
-          "description": "Updates tested before deployment to prevent compatibility issues"
+          "title": "Deployment & Optimisation",
+          "description": "Seamless deployment, staff training, onboarding and ongoing support to ensure long-term success"
         }
       ],
       "benefits": [
-        "Reduce security vulnerabilities by up to 85%",
-        "Minimize system downtime from outdated software",
-        "Free your team from manual update tasks",
-        "Comprehensive reporting on patch compliance"
+        "Solutions tailored to your workflows and long-term goals",
+        "Performance, security and scalability using modern frameworks",
+        "Seamless user experience and system integration",
+        "Ongoing support and continuous innovation",
+        "OBH as a strategic partner for long-term success"
       ],
       "stats": [
-        { "value": "99.9%", "label": "Patch Success Rate" },
-        { "value": "85%", "label": "Fewer Vulnerabilities" },
-        { "value": "24/7", "label": "Monitoring" }
+        { "value": "100%", "label": "Custom Built" },
+        { "value": "Agile", "label": "Methodology" },
+        { "value": "Ongoing", "label": "Support" }
       ]
     },
     {
-      "id": "endpoint-protection",
-      "name": "Antivirus & Endpoint Detection & Response",
-      "slug": "endpoint-protection",
-      "icon": "shield",
-      "shortDescription": "Always-on threat protection with rapid containment of suspicious activity.",
-      "heroTitle": "Antivirus & Endpoint Detection & Response",
-      "heroSubtitle": "Enterprise-grade protection that stops threats before they spread across your network",
-      "description": "Traditional antivirus isn't enough anymore. Our EDR solution combines advanced threat detection with rapid response capabilities, isolating compromised devices instantly and giving you visibility into exactly what's happening across your network.",
-      "features": [
-        {
-          "title": "Real-Time Threat Detection",
-          "description": "AI-powered analysis identifies malware, ransomware, and zero-day threats as they emerge"
-        },
-        {
-          "title": "Automated Containment",
-          "description": "Suspicious devices are instantly isolated to prevent lateral movement"
-        },
-        {
-          "title": "Behavioral Analysis",
-          "description": "Detects unusual patterns that signature-based tools miss"
-        },
-        {
-          "title": "Forensic Investigation",
-          "description": "Detailed logs and timelines help understand how incidents occurred"
-        }
-      ],
-      "benefits": [
-        "Stop ransomware before files are encrypted",
-        "Reduce incident response time from hours to seconds",
-        "Gain visibility into all endpoint activity",
-        "Meet compliance requirements for endpoint security"
-      ],
-      "stats": [
-        { "value": "<1sec", "label": "Detection Time" },
-        { "value": "99.9%", "label": "Threat Block Rate" },
-        { "value": "24/7", "label": "SOC Monitoring" }
-      ]
-    },
-    {
-      "id": "backup-recovery",
-      "name": "Data Backup & Recovery",
-      "slug": "backup-recovery",
+      "id": "business-automation",
+      "name": "Business Process Automation",
+      "slug": "business-automation",
       "icon": "building",
-      "shortDescription": "Local and cloud backups designed for reliability, tested regularly to guarantee recovery.",
-      "heroTitle": "Data Backup & Recovery",
-      "heroSubtitle": "Never lose critical business data with our multi-layered backup strategy",
-      "description": "Data loss can happen in seconds — from ransomware, hardware failure, or human error. Our backup solutions protect your business with multiple redundant copies, regular testing, and the ability to restore operations quickly when disaster strikes.",
+      "shortDescription": "Streamline operations and eliminate manual bottlenecks with intelligent automation.",
+      "heroTitle": "Business Process Automation",
+      "heroSubtitle": "Eliminate repetitive tasks and unlock efficiency with smart automation solutions",
+      "description": "Manual processes waste time, introduce errors and hold back growth. OBH analyses your workflows, identifies automation opportunities and implements smart solutions using AI, RPA and API integrations — transforming how your business operates.",
       "features": [
         {
-          "title": "Hybrid Backup Strategy",
-          "description": "Local backups for fast recovery plus cloud replication for disaster protection"
+          "title": "Analysis & Strategy",
+          "description": "Auditing processes, mapping automation opportunities and selecting the right technologies (AI, RPA, APIs)"
         },
         {
-          "title": "Continuous Protection",
-          "description": "Incremental backups capture changes throughout the day, not just overnight"
+          "title": "Design & Prototyping",
+          "description": "Process modelling, prototyping and user testing to create efficient, intuitive workflows"
         },
         {
-          "title": "Regular Test Restores",
-          "description": "We verify your backups work — not just that they exist"
+          "title": "Development & Integration",
+          "description": "Building automation tools, integrating with existing CRM, ERP and cloud systems with full security and compliance"
         },
         {
-          "title": "Rapid Recovery",
-          "description": "Granular restoration options from single files to full systems"
+          "title": "Deployment & Optimisation",
+          "description": "Implementing automation with minimal disruption, training staff and continuously refining processes"
         }
       ],
       "benefits": [
-        "Recover from ransomware without paying",
-        "Meet insurance and compliance backup requirements",
-        "Minimize downtime with fast restoration",
-        "Peace of mind with verified, tested backups"
+        "Focus on efficiency and sustainable growth",
+        "Seamless integration with existing CRM, ERP and cloud systems",
+        "Scalable and secure solutions built for evolving needs",
+        "Ongoing optimisation and support",
+        "Strategic partnership in digital transformation"
       ],
       "stats": [
-        { "value": "<6min", "label": "Recovery Time" },
-        { "value": "256-bit", "label": "Encryption" },
-        { "value": "30 days", "label": "Retention" }
+        { "value": "80%", "label": "Time Saved" },
+        { "value": "Zero", "label": "Manual Errors" },
+        { "value": "Scalable", "label": "Solutions" }
       ]
     },
     {
-      "id": "email-filtering",
-      "name": "Email Spam Filtering",
-      "slug": "email-filtering",
+      "id": "web-design",
+      "name": "Web Design & Development",
+      "slug": "web-design",
       "icon": "certificate",
-      "shortDescription": "Advanced filtering to block phishing, malware, and spam before it hits your inbox.",
-      "heroTitle": "Email Spam Filtering",
-      "heroSubtitle": "Keep malicious emails out of your inbox with enterprise-grade filtering",
-      "description": "Email remains the primary attack vector for cybercriminals. Our advanced filtering catches phishing attempts, malware attachments, and business email compromise before they reach your users — protecting your business from the threats that traditional spam filters miss.",
+      "shortDescription": "High-performance, SEO-optimised websites that elevate your brand.",
+      "heroTitle": "Web Design & Development",
+      "heroSubtitle": "Beautiful, high-performance websites that drive results and elevate your brand",
+      "description": "Your website is your digital storefront. OBH creates custom, brand-focused websites that are fast, secure, mobile-first and optimised for search engines. We don't use templates — every site is designed and built from scratch to reflect your brand and achieve your goals.",
       "features": [
         {
-          "title": "Advanced Phishing Detection",
-          "description": "AI-powered analysis catches sophisticated spear-phishing and impersonation attacks"
+          "title": "Strategy & Planning",
+          "description": "Discovery sessions, competitor research and site-structure definition to align with your business goals"
         },
         {
-          "title": "Attachment Sandboxing",
-          "description": "Suspicious files are detonated safely to detect hidden malware"
+          "title": "Design & Prototyping",
+          "description": "Custom UI/UX design, wireframing and mobile-first prototypes that bring your brand to life"
         },
         {
-          "title": "Link Protection",
-          "description": "URLs are scanned in real-time to block malicious websites"
+          "title": "Development & Testing",
+          "description": "Frontend and backend development, integrations and rigorous testing for speed, security and cross-device compatibility"
         },
         {
-          "title": "Outbound Filtering",
-          "description": "Prevent data leaks and protect your domain reputation"
+          "title": "Launch & Growth",
+          "description": "SEO optimisation, speed and security enhancements, deployment and ongoing maintenance to keep you growing"
         }
       ],
       "benefits": [
-        "Block 99.9% of spam and phishing emails",
-        "Protect against ransomware delivered via email",
-        "Reduce time staff spend dealing with junk mail",
-        "Prevent business email compromise attacks"
+        "Custom, brand-focused design — never templates",
+        "High-performance, SEO-optimised, mobile-first websites",
+        "Scalable, future-proof technology",
+        "Seamless CMS and e-commerce integrations",
+        "End-to-end support and analytics to refine your strategy"
       ],
       "stats": [
-        { "value": "99.9%", "label": "Spam Blocked" },
-        { "value": "<0.1%", "label": "False Positives" },
-        { "value": "24/7", "label": "Protection" }
-      ]
-    },
-    {
-      "id": "security-training",
-      "name": "Security Awareness Training",
-      "slug": "security-training",
-      "icon": "team",
-      "shortDescription": "Engaging cybersecurity training, including phishing simulations and learning portal.",
-      "heroTitle": "Security Awareness Training",
-      "heroSubtitle": "Transform your employees from security risk to your first line of defense",
-      "description": "Your employees are either your greatest security vulnerability or your strongest defense. Our training program turns staff into security-aware team members who can spot phishing attempts, handle data safely, and respond correctly to potential threats.",
-      "features": [
-        {
-          "title": "Phishing Simulations",
-          "description": "Regular simulated attacks test and reinforce employee awareness"
-        },
-        {
-          "title": "Interactive Learning",
-          "description": "Engaging online modules covering essential security topics"
-        },
-        {
-          "title": "Progress Tracking",
-          "description": "Monitor completion rates and identify employees who need additional support"
-        },
-        {
-          "title": "Compliance Reporting",
-          "description": "Documentation to demonstrate security training for audits and insurance"
-        }
-      ],
-      "benefits": [
-        "Reduce successful phishing attacks by up to 90%",
-        "Meet compliance training requirements",
-        "Build a security-conscious company culture",
-        "Identify high-risk employees for targeted training"
-      ],
-      "stats": [
-        { "value": "90%", "label": "Risk Reduction" },
-        { "value": "Monthly", "label": "Simulations" },
-        { "value": "100%", "label": "Compliance Ready" }
-      ]
-    },
-    {
-      "id": "dark-web-monitoring",
-      "name": "Identity Threat & Dark Web Monitoring",
-      "slug": "dark-web-monitoring",
-      "icon": "money",
-      "shortDescription": "Instant alerts if your business credentials appear online.",
-      "heroTitle": "Identity Threat & Dark Web Monitoring",
-      "heroSubtitle": "Know immediately when your credentials are compromised — before criminals act",
-      "description": "Stolen credentials are sold on the dark web every day. Our monitoring service continuously scans underground markets and data dumps for your company's email addresses, passwords, and sensitive data — alerting you instantly so you can act before attackers do.",
-      "features": [
-        {
-          "title": "Continuous Scanning",
-          "description": "24/7 monitoring of dark web forums, marketplaces, and data dumps"
-        },
-        {
-          "title": "Instant Alerts",
-          "description": "Immediate notification when your credentials appear online"
-        },
-        {
-          "title": "Domain Monitoring",
-          "description": "Track all email addresses associated with your business domain"
-        },
-        {
-          "title": "Remediation Guidance",
-          "description": "Clear steps to secure compromised accounts"
-        }
-      ],
-      "benefits": [
-        "Discover breaches before they're exploited",
-        "Protect against credential stuffing attacks",
-        "Demonstrate due diligence for compliance",
-        "Reduce risk of account takeover"
-      ],
-      "stats": [
-        { "value": "24/7", "label": "Monitoring" },
-        { "value": "<1hr", "label": "Alert Time" },
-        { "value": "1M+", "label": "Sources Scanned" }
+        { "value": "100%", "label": "Custom Design" },
+        { "value": "Mobile", "label": "First" },
+        { "value": "SEO", "label": "Optimised" }
       ]
     }
   ]
