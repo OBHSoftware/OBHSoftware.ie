@@ -95,11 +95,59 @@
         { "value": "End-to-End", "label": "Solution" },
         { "value": "Cloud", "label": "Based" }
       ]
+    },
+    {
+      "id": "solar",
+      "slug": "solar",
+      "name": "Solar",
+      "tagline": "Project Management for Agencies & Consultancies",
+      "status": "available",
+      "description": "Solar is a modern project management platform purpose-built for agencies, consultancies, and service businesses. It sits between heavyweight tools like Jira and lightweight ones like Linear — designed specifically for teams that manage work for other people. The killer differentiator: a fully branded client portal, native AI agent access via MCP, and built-in time tracking and billing.",
+      "features": [
+        {
+          "title": "AI Agent Access (MCP)",
+          "description": "Every project gets an MCP endpoint that AI agents like Claude and Cursor can connect to directly — creating tickets, managing epics, updating knowledge bases with scoped permissions"
+        },
+        {
+          "title": "Branded Client Portal",
+          "description": "A fully white-labelled portal your clients log into under your brand. They submit tickets, track progress, view hours, browse your knowledge base — all without ever seeing our name"
+        },
+        {
+          "title": "Kanban & Sprint Management",
+          "description": "Drag-and-drop boards with custom columns, swimlanes by epic, assignee, priority or queue, WIP limits, sprint planning with velocity tracking and burndown charts"
+        },
+        {
+          "title": "Time Tracking & Billing",
+          "description": "Built-in timesheets, per-issue time logging, prepaid hour buckets with expiration, and client-visible time entries. No more spreadsheets or separate billing tools"
+        },
+        {
+          "title": "Knowledge Base",
+          "description": "Hierarchical docs with sections, tagging, full-text search, revision history, and client visibility controls. Ship internal and client-facing guides from the same system"
+        },
+        {
+          "title": "White-Label Ready",
+          "description": "Custom logo, colours, favicon, and portal branding per organisation. Multi-tenant from day one with organisation-level settings, member roles, and project isolation"
+        }
+      ],
+      "benefits": [
+        "Give clients real-time visibility without sharing your internal tools",
+        "Let AI agents manage your backlog as first-class crew members",
+        "Track time and bill clients from the same platform you manage work in",
+        "Present a fully branded experience — clients never see our name",
+        "Replace Jira, Toggl, Notion, and your client update emails with one tool",
+        "Segment work with queues across teams — frontend, backend, support, design"
+      ],
+      "stats": [
+        { "value": "AI-Native", "label": "MCP Built In" },
+        { "value": "100%", "label": "White-Label" },
+        { "value": "All-in-One", "label": "PM + Billing + Portal" }
+      ],
+      "externalUrl": "https://projectsolar.space"
     }
   ],
   "cta": {
     "title": "Interested in Our Products?",
-    "description": "Get in touch to learn more about qMechanic or register your interest in qHaul.",
+    "description": "Explore Solar for project management, qMechanic for fleet inspections, or register your interest in qHaul.",
     "buttonText": "Contact Us"
   }
 }

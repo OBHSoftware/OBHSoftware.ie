@@ -22,6 +22,7 @@
       "label": "Products",
       "href": "/products",
       "dropdown": [
+        { "label": "Solar", "href": "https://projectsolar.space", "external": true },
         { "label": "qMechanic", "href": "https://qmechanic.autos", "external": true },
         { "label": "qHaul", "href": "/products/qhaul" }
       ]
