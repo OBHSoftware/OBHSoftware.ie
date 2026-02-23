@@ -56,7 +56,10 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div
+          <motion.a
+            href="https://www.independent.ie/business/irish/thirty-under-30-the-sunday-independent-hails-irelands-young-entrepreneurs-of-the-year/a249802745.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.foundersProof}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,7 +67,7 @@ export function Hero() {
           >
             <span className={styles.proofLabel}>Irish Independent 30 Under 30 — 2025</span>
             <span className={styles.proofNames}>Ethan O'Brien &amp; Sarah Jane Hughes</span>
-          </motion.div>
+          </motion.a>
         </div>
 
         <motion.div
