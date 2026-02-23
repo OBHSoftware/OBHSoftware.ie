@@ -7,10 +7,10 @@ export function ClockIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="29" cy="29" r="24" stroke="white" strokeWidth="3" />
+      <circle cx="29" cy="29" r="24" stroke="currentColor" strokeWidth="3" />
       <path
         d="M29 17V29L37 33"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -28,24 +28,24 @@ export function TeamIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="29" cy="20" r="8" stroke="white" strokeWidth="3" />
+      <circle cx="29" cy="20" r="8" stroke="currentColor" strokeWidth="3" />
       <path
         d="M15 45C15 37.268 21.268 31 29 31C36.732 31 43 37.268 43 45"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
       />
-      <circle cx="45" cy="18" r="5" stroke="white" strokeWidth="2" />
+      <circle cx="45" cy="18" r="5" stroke="currentColor" strokeWidth="2" />
       <path
         d="M50 35C50 30.582 46.418 27 42 27"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
       />
-      <circle cx="13" cy="18" r="5" stroke="white" strokeWidth="2" />
+      <circle cx="13" cy="18" r="5" stroke="currentColor" strokeWidth="2" />
       <path
         d="M8 35C8 30.582 11.582 27 16 27"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -68,12 +68,12 @@ export function MoneyIcon() {
         width="42"
         height="28"
         rx="4"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
       />
-      <circle cx="29" cy="29" r="8" stroke="white" strokeWidth="3" />
-      <path d="M29 24V34" stroke="white" strokeWidth="2" />
-      <path d="M26 27H31C32.1046 27 33 27.8954 33 29C33 30.1046 32.1046 31 31 31H27" stroke="white" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="29" cy="29" r="8" stroke="currentColor" strokeWidth="3" />
+      <path d="M29 24V34" stroke="currentColor" strokeWidth="2" />
+      <path d="M26 27H31C32.1046 27 33 27.8954 33 29C33 30.1046 32.1046 31 31 31H27" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -89,18 +89,18 @@ export function TruckIcon() {
     >
       <path
         d="M8 17H34V41H8V17Z"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinejoin="round"
       />
       <path
         d="M34 25H44L50 33V41H34V25Z"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinejoin="round"
       />
-      <circle cx="17" cy="41" r="5" stroke="white" strokeWidth="3" />
-      <circle cx="42" cy="41" r="5" stroke="white" strokeWidth="3" />
+      <circle cx="17" cy="41" r="5" stroke="currentColor" strokeWidth="3" />
+      <circle cx="42" cy="41" r="5" stroke="currentColor" strokeWidth="3" />
     </svg>
   );
 }
@@ -116,13 +116,13 @@ export function ShieldIcon() {
     >
       <path
         d="M29 8L10 16V28C10 40.36 17.82 51.64 29 54C40.18 51.64 48 40.36 48 28V16L29 8Z"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinejoin="round"
       />
       <path
         d="M21 30L26 35L37 24"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -145,7 +145,7 @@ export function BuildingIcon() {
         y="8"
         width="24"
         height="42"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
       />
       <rect
@@ -153,17 +153,17 @@ export function BuildingIcon() {
         y="22"
         width="12"
         height="28"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
       />
-      <rect x="18" y="15" width="6" height="6" fill="white" />
-      <rect x="26" y="15" width="6" height="6" fill="white" />
-      <rect x="18" y="25" width="6" height="6" fill="white" />
-      <rect x="26" y="25" width="6" height="6" fill="white" />
-      <rect x="18" y="35" width="6" height="6" fill="white" />
-      <rect x="26" y="35" width="6" height="6" fill="white" />
-      <rect x="40" y="30" width="4" height="4" fill="white" />
-      <rect x="40" y="38" width="4" height="4" fill="white" />
+      <rect x="18" y="15" width="6" height="6" fill="currentColor" />
+      <rect x="26" y="15" width="6" height="6" fill="currentColor" />
+      <rect x="18" y="25" width="6" height="6" fill="currentColor" />
+      <rect x="26" y="25" width="6" height="6" fill="currentColor" />
+      <rect x="18" y="35" width="6" height="6" fill="currentColor" />
+      <rect x="26" y="35" width="6" height="6" fill="currentColor" />
+      <rect x="40" y="30" width="4" height="4" fill="currentColor" />
+      <rect x="40" y="38" width="4" height="4" fill="currentColor" />
     </svg>
   );
 }
@@ -183,16 +183,16 @@ export function CertificateIcon() {
         width="42"
         height="30"
         rx="2"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="3"
       />
-      <path d="M16 20H42" stroke="white" strokeWidth="2" strokeLinecap="round" />
-      <path d="M16 27H34" stroke="white" strokeWidth="2" strokeLinecap="round" />
-      <path d="M16 34H28" stroke="white" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="42" cy="40" r="8" stroke="white" strokeWidth="3" />
+      <path d="M16 20H42" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M16 27H34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M16 34H28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="42" cy="40" r="8" stroke="currentColor" strokeWidth="3" />
       <path
         d="M39 40L41 42L45 38"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

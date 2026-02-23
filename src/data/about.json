@@ -3,9 +3,13 @@
   "sectionSubtitle": "Founded by Engineers. Driven by Innovation.",
   "intro": [
     "OBH Software was founded at the University of Galway by Ethan O'Brien and Sarah Jane Hughes — two Electronic & Computer Engineering students passionate about technology and problem-solving.",
-    "As Stanford University Innovation Fellows, we bring a fresh, efficiency-driven and sustainable approach to tackling complex business challenges. We empower businesses to streamline operations, enhance productivity and stay ahead in a rapidly evolving digital world."
+    "Named in the Irish Independent 30 Under 30 — Class of 2025, and as Stanford University Innovation Fellows, we bring a fresh, efficiency-driven and sustainable approach to tackling complex business challenges. We empower businesses to streamline operations, enhance productivity and stay ahead in a rapidly evolving digital world."
   ],
   "highlights": [
+    {
+      "icon": "certificate",
+      "text": "Irish Independent 30 Under 30 — Class of 2025"
+    },
     {
       "icon": "team",
       "text": "Stanford University Innovation Fellows"
@@ -17,10 +21,6 @@
     {
       "icon": "building",
       "text": "Industry experience across transport, construction & more"
-    },
-    {
-      "icon": "certificate",
-      "text": "Award-winning founders & proven results"
     }
   ]
 }

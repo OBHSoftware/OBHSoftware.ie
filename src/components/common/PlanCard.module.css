@@ -1,14 +1,16 @@
 .card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 2.5rem 3rem;
-  color: var(--color-primary);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  background-color: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  color: var(--color-text);
+  transition: all var(--transition-base);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
 }
 
 .header {
@@ -22,48 +24,52 @@
 
 .name {
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--text-2xl);
+  color: var(--color-text-bright);
 }
 
 .divider {
   flex: 1;
-  height: 2px;
-  background-color: var(--color-primary);
-  opacity: 0.2;
+  height: 1px;
+  background-color: var(--color-border);
   min-width: 50px;
 }
 
 .priceTag {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-dim);
+  border: 1px solid rgba(243, 139, 42, 0.20);
   border-radius: var(--radius-md);
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   text-align: center;
 }
 
 .price {
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--text-xl);
+  color: var(--color-accent);
 }
 
 .priceUnit {
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--text-sm);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xs);
   margin-left: 0.25rem;
+  color: var(--color-text-muted);
 }
 
 .contactUs {
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-lg);
+  color: var(--color-accent);
 }
 
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--spacing-md) var(--spacing-xl);
+  gap: var(--spacing-sm) var(--spacing-xl);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -72,25 +78,28 @@
   align-items: flex-start;
   gap: 0.5rem;
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
   font-size: var(--text-sm);
+  color: var(--color-text);
 }
 
 .checkmark {
-  color: #F38B2A;
+  color: var(--color-accent);
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .highlight {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-bright);
 }
 
 .footnote {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-regular);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
 }
 
 @media (max-width: 768px) {
@@ -114,10 +123,10 @@
 
   .features {
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: 0.75rem;
   }
 
   .name {
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
   }
 }

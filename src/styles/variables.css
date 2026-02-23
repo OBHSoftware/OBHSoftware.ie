@@ -1,33 +1,56 @@
 :root {
-  /* OBH Brand Colors — orange-forward with green foundation */
+  /* Backgrounds — dark forest green base */
+  --color-bg: #0f1a0a;
+  --color-bg-raised: #162210;
+  --color-bg-subtle: #1d2b16;
+  --color-bg-hover: #253620;
+
+  /* Brand */
   --color-primary: #234E01;
   --color-secondary: #1a3501;
   --color-accent: #F38B2A;
+  --color-accent-hover: #d4700f;
+  --color-accent-dim: rgba(243, 139, 42, 0.10);
+  --color-accent-glow: rgba(243, 139, 42, 0.15);
   --color-orange: #F38B2A;
   --color-orange-dark: #d4700f;
   --color-orange-light: #f5a04e;
-  --color-white: #ffffff;
-  --color-text-muted: #949090;
+
+  /* Text — warm greenish tones */
+  --color-text: #c8d4be;
+  --color-text-bright: #f0f4ec;
+  --color-text-muted: #6b7a60;
+  --color-white: #f0f4ec;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.14);
 
   /* Typography */
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Font weights */
+  --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Font sizes */
-  --text-xs: 0.625rem;    /* 10px */
-  --text-sm: 0.9375rem;   /* 15px */
-  --text-base: 1.25rem;   /* 20px */
-  --text-lg: 1.5625rem;   /* 25px */
-  --text-xl: 1.875rem;    /* 30px */
-  --text-2xl: 2.5rem;     /* 40px */
-  --text-3xl: 3.125rem;   /* 50px */
-  --text-4xl: 3.75rem;    /* 60px */
-  --text-5xl: 4.0625rem;  /* 65px */
+  /* Font sizes — refined, professional scale */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -37,9 +60,14 @@
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
   --spacing-3xl: 6rem;
+  --spacing-4xl: 8rem;
 
   /* Border radius */
-  --radius-md: 1.25rem;   /* 20px */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
 
   /* Container */
   --container-max-width: 1200px;
@@ -48,28 +76,28 @@
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-/* Responsive typography scales */
 @media (max-width: 1024px) {
   :root {
-    --text-5xl: 3rem;
-    --text-4xl: 2.5rem;
-    --text-3xl: 2rem;
-    --text-2xl: 1.75rem;
-    --text-xl: 1.5rem;
-    --text-lg: 1.25rem;
+    --text-7xl: 3.5rem;
+    --text-6xl: 2.75rem;
+    --text-5xl: 2.25rem;
+    --text-4xl: 1.875rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --text-5xl: 2.25rem;
-    --text-4xl: 2rem;
-    --text-3xl: 1.75rem;
-    --text-2xl: 1.5rem;
-    --text-xl: 1.25rem;
-    --text-lg: 1.125rem;
-    --text-base: 1rem;
+    --text-7xl: 2.5rem;
+    --text-6xl: 2rem;
+    --text-5xl: 1.75rem;
+    --text-4xl: 1.5rem;
+    --text-3xl: 1.25rem;
+    --text-2xl: 1.125rem;
+    --text-xl: 1.125rem;
   }
 }

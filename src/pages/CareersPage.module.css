@@ -100,7 +100,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #22c55e;
+  color: var(--color-accent);
 }
 
 .ctaSection {

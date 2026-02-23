@@ -3,15 +3,15 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   text-decoration: none;
   border-radius: var(--radius-md);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: all var(--transition-fast);
+  letter-spacing: 0.01em;
 }
 
 .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .button:active {
@@ -20,20 +20,26 @@
 
 /* Variants */
 .primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(35, 78, 1, 0.3);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  box-shadow: 0 0 0 1px rgba(243, 139, 42, 0.3), 0 2px 8px rgba(243, 139, 42, 0.2);
+}
+
+.primary:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 1px rgba(243, 139, 42, 0.4), 0 8px 20px rgba(243, 139, 42, 0.25);
 }
 
 .secondary {
   background-color: transparent;
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
+  color: var(--color-text-bright);
+  border: 1px solid var(--color-border-hover);
 }
 
 .secondary:hover {
-  background-color: var(--color-white);
-  color: var(--color-primary);
+  background-color: var(--color-bg-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-bright);
 }
 
 /* Sizes */
@@ -43,18 +49,18 @@
 }
 
 .md {
-  padding: 0.875rem 1.5rem;
-  font-size: var(--text-base);
+  padding: 0.625rem 1.25rem;
+  font-size: var(--text-sm);
 }
 
 .lg {
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-size: var(--text-base);
 }
 
 @media (max-width: 768px) {
   .lg {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.625rem 1.25rem;
+    font-size: var(--text-sm);
   }
 }
