@@ -1,23 +1,27 @@
 {
   "sectionTitle": "Why Choose Us?",
-  "sectionSubtitle": "Business-First Technology That Delivers Results.",
-  "intro": "We believe technology should empower your business — not complicate it. OBH takes a design-thinking, innovation-driven approach to every project. From custom software and automation to web development, every solution is tailored to your workflows and built for long-term success.",
+  "sectionSubtitle": "Technology should make your business simpler, not harder.",
+  "intro": "We work closely with you to understand how your business really works, then apply design thinking and practical innovation to build software that fits your workflows. From automation to custom platforms, every solution is designed to deliver real, measurable results.",
   "features": [
     {
       "icon": "clock",
-      "text": "Design-thinking approach to solving complex challenges"
+      "text": "Design thinking focused on solving real business problems"
+    },
+    {
+      "icon": "lightbulb",
+      "text": "Stanford Innovation Fellows with a passion for building"
     },
     {
       "icon": "team",
-      "text": "Stanford Innovation Fellows with deep technical expertise"
+      "text": "Deep technical expertise with real world delivery experience"
     },
     {
       "icon": "money",
-      "text": "Measurable results: increased efficiency, reduced costs"
+      "text": "Measurable outcomes including improved efficiency and lower costs"
     },
     {
       "icon": "truck",
-      "text": "Proven solutions across transport, construction & sustainability"
+      "text": "InnProven work across transport, construction, sustainability, education and finance"
     }
   ]
 }

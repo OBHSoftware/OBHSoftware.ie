@@ -1,14 +1,6 @@
-import { Section, SectionHeader, FeatureItem, AnimatedSection, StaggerChildren, FadeInUp } from '../common';
+import { Section, SectionHeader, AnimatedSection, StaggerChildren, FadeInUp } from '../common';
 import styles from './About.module.css';
-import { TeamIcon, ShieldIcon, BuildingIcon, CertificateIcon } from '../icons';
 import aboutData from '../../data/about.json';
-
-const iconMap: Record<string, React.ReactNode> = {
-  team: <TeamIcon />,
-  shield: <ShieldIcon />,
-  building: <BuildingIcon />,
-  certificate: <CertificateIcon />,
-};
 
 export function About() {
   return (
@@ -27,13 +19,16 @@ export function About() {
           ))}
         </AnimatedSection>
 
-        <StaggerChildren className={styles.highlights} staggerDelay={0.15}>
-          {aboutData.highlights.map((item, index) => (
-            <FadeInUp key={index}>
-              <FeatureItem icon={iconMap[item.icon]} text={item.text} />
-            </FadeInUp>
-          ))}
-        </StaggerChildren>
+        <AnimatedSection delay={0.2}>
+          <h3 className={styles.highlightsTitle}>{aboutData.highlightsTitle}</h3>
+          <StaggerChildren className={styles.highlights} staggerDelay={0.1}>
+            {aboutData.highlights.map((item, index) => (
+              <FadeInUp key={index}>
+                <li className={styles.highlightItem}>{item.text}</li>
+              </FadeInUp>
+            ))}
+          </StaggerChildren>
+        </AnimatedSection>
       </div>
     </Section>
   );

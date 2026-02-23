@@ -105,6 +105,29 @@ export function TruckIcon() {
   );
 }
 
+export function LightbulbIcon() {
+  return (
+    <svg
+      width="58"
+      height="58"
+      viewBox="0 0 58 58"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M22 38V35.27C17.78 32.56 15 27.85 15 22.5C15 14.49 21.49 8 29.5 8C37.51 8 44 14.49 44 22.5C44 27.85 41.22 32.56 37 35.27V38H22Z"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+      <path d="M23 44H36" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <path d="M25 50H34" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <path d="M29.5 16V28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M23.5 22L29.5 28L35.5 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function ShieldIcon() {
   return (
     <svg

@@ -1,10 +1,11 @@
 import { Section, SectionHeader, FeatureItem, AnimatedSection, StaggerChildren, FadeInUp } from '../common';
 import styles from './WhyUs.module.css';
-import { ClockIcon, TeamIcon, MoneyIcon, TruckIcon } from '../icons';
+import { ClockIcon, TeamIcon, MoneyIcon, TruckIcon, LightbulbIcon } from '../icons';
 import whyUsData from '../../data/whyUs.json';
 
 const iconMap: Record<string, React.ReactNode> = {
   clock: <ClockIcon />,
+  lightbulb: <LightbulbIcon />,
   team: <TeamIcon />,
   money: <MoneyIcon />,
   truck: <TruckIcon />,

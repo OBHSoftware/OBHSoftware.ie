@@ -2,25 +2,32 @@
   "sectionTitle": "About Us.",
   "sectionSubtitle": "Founded by Engineers. Driven by Innovation.",
   "intro": [
-    "OBH Software was founded at the University of Galway by Ethan O'Brien and Sarah Jane Hughes — two Electronic & Computer Engineering students passionate about technology and problem-solving.",
-    "Named in the Irish Independent 30 Under 30 — Class of 2025, and as Stanford University Innovation Fellows, we bring a fresh, efficiency-driven and sustainable approach to tackling complex business challenges. We empower businesses to streamline operations, enhance productivity and stay ahead in a rapidly evolving digital world."
+    "OBH Software started when we were working on real industry problems during our engineering studies at the University of Galway. One of us was building compliance systems for construction, the other developing solutions for the haulage sector.",
+    "We became close through the Stanford Innovation Fellowship, started collaborating on projects, and realised we shared the same approach to building technology. That led to OBH Software.",
+    "Today we design and build practical software that helps businesses simplify operations, automate processes, and move faster."
   ],
+  "highlightsTitle": "Recognised for innovation and entrepreneurship",
   "highlights": [
     {
-      "icon": "certificate",
-      "text": "Irish Independent 30 Under 30 — Class of 2025"
+      "text": "Irish Independent 30 Under 30"
     },
     {
-      "icon": "team",
       "text": "Stanford University Innovation Fellows"
     },
     {
-      "icon": "shield",
-      "text": "Design-thinking & innovation-driven approach"
+      "text": "Siemens Innovative Student Engineer of the Year finalists 2024 & 2025"
     },
     {
-      "icon": "building",
-      "text": "Industry experience across transport, construction & more"
+      "text": "Ireland representatives at the Global Student Entrepreneur Awards"
+    },
+    {
+      "text": "Innovation Undergraduate of the Year Winners 2025"
+    },
+    {
+      "text": "Student Entrepreneur of the Year finalists 2025"
+    },
+    {
+      "text": "Web Summit Scholars"
     }
   ]
 }
