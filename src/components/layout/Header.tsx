@@ -127,7 +127,7 @@ export function Header() {
     if (href.startsWith('/#')) {
       return location.pathname === '/' && activeSection === href.slice(2);
     }
-    // For regular routes like /calculator or /sectors
+    // For regular routes like /sectors
     if (location.pathname === href) {
       return true;
     }

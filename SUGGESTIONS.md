@@ -98,26 +98,20 @@ Current form uses mailto: fallback. Consider adding:
 - Allow manual toggle
 - Persist preference in localStorage
 
-### 14. Pricing Calculator
-- Interactive calculator for custom quotes
-- Slider for number of users
-- Checkboxes for add-on services
-- Real-time price display
-
-### 15. Trust Signals
+### 14. Trust Signals
 - **Partner logos**: Display cybersecurity vendor partnerships
 - **Certifications**: ISO, SOC2, or other relevant badges
 - **Client logos**: "Trusted by" section with recognizable brands
 - **Awards/recognition**: Any industry awards or recognition
 
-### 16. Team Section
+### 15. Team Section
 - Photos and bios of key team members
 - LinkedIn links
 - Builds trust and personal connection
 
 ## Component Library Expansion
 
-### 17. Additional Components to Consider
+### 16. Additional Components to Consider
 ```typescript
 // Components that could be added to the library:
 - Accordion (for FAQ)
@@ -133,20 +127,20 @@ Current form uses mailto: fallback. Consider adding:
 - Breadcrumbs
 ```
 
-### 18. Storybook Integration
+### 17. Storybook Integration
 - Document components in Storybook
 - Visual regression testing
 - Design system documentation
 
 ## Infrastructure
 
-### 19. Deployment Options
+### 18. Deployment Options
 - **Vercel**: Zero-config deployment with edge functions
 - **Netlify**: Similar to Vercel, great for static sites
 - **Cloudflare Pages**: Fast global CDN
 - **AWS Amplify**: If using other AWS services
 
-### 20. CI/CD Pipeline
+### 19. CI/CD Pipeline
 - GitHub Actions for:
   - Linting on PR
   - Build verification
@@ -172,7 +166,7 @@ If implementing incrementally, suggested priority:
 
 1. **High Priority**: ~~Contact form~~, SEO basics, Analytics
 2. **Medium Priority**: ~~Animations~~, testimonials carousel, FAQ
-3. **Lower Priority**: Blog, live chat, pricing calculator
+3. **Lower Priority**: Blog, live chat
 4. **Nice to Have**: Dark mode, team section, Storybook
 
 ---

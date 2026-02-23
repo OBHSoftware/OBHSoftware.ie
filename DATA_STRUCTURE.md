@@ -30,7 +30,6 @@ src/data/
 ├── careers.json            # Job listings
 ├── about.json              # About section
 ├── whyUs.json              # Why choose us content
-├── calculator.json         # Pricing calculator config
 ├── clientPortal.json       # Client portal info
 ├── process.json            # How we work process
 └── subsites/

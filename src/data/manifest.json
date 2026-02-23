@@ -69,11 +69,6 @@
         "about": "about.json"
       }
     },
-    "calculator": {
-      "path": "/calculator",
-      "title": "Project Estimator",
-      "dataFile": "calculator.json"
-    },
     "sectors": {
       "path": "/sectors",
       "title": "Industries We Serve",

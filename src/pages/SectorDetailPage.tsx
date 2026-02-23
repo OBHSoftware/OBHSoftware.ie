@@ -1,4 +1,4 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
 import { ShieldIcon, MoneyIcon, CertificateIcon, BuildingIcon, TruckIcon, TeamIcon } from '../components/icons';
@@ -136,9 +136,6 @@ export function SectorDetailPage() {
             <Button href="/#contact" size="lg">
               Schedule a Consultation
             </Button>
-            <Link to="/calculator" className={styles.secondaryButton}>
-              Calculate Your Costs →
-            </Link>
           </div>
         </div>
       </Section>

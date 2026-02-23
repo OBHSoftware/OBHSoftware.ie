@@ -3,7 +3,6 @@ import { Header, Footer } from './components/layout';
 import { BackToTop, ScrollToTop } from './components/common';
 import {
   HomePage,
-  CalculatorPage,
   SectorsPage,
   SectorDetailPage,
   ServiceDetailPage,
@@ -63,7 +62,6 @@ function App() {
         {/* Main site pages with Header/Footer */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/sectors" element={<SectorsPage />} />
           <Route path="/sectors/:slug" element={<SectorDetailPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />

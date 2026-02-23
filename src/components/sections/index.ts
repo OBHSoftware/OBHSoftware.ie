@@ -6,4 +6,3 @@ export { ExtendedServices } from './ExtendedServices';
 export { About } from './About';
 export { Testimonial } from './Testimonial';
 export { Contact } from './Contact';
-export { CostCalculator } from './CostCalculator';
