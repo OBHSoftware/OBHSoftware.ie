@@ -4,17 +4,17 @@
   "services": [
     {
       "title": "Custom Software Development",
-      "description": "Tailored software solutions built to solve your specific business challenges, from web applications to complex enterprise systems.",
+      "description": "We build custom software that brings your ideas to life. Whether it is a web app, an internal tool, or something completely new, we help you go from concept to launch.",
       "slug": "custom-software"
     },
     {
       "title": "Business Process Automation",
-      "description": "Streamline operations and eliminate manual bottlenecks with intelligent automation powered by AI, RPA and smart integrations.",
+      "description": "We help automate the work that slows you down so your team can focus on higher value work. The result is smoother operations, fewer mistakes, and more time to grow.",
       "slug": "business-automation"
     },
     {
       "title": "Web Design & Development",
-      "description": "High-performance, SEO-optimised websites and web applications that elevate your brand and convert visitors into customers.",
+      "description": "We design and build modern websites that look great, load fast, and make it easier for visitors to become customers.",
       "slug": "web-design"
     }
   ]
