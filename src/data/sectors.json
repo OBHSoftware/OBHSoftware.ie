@@ -46,38 +46,79 @@
       "name": "Construction",
       "slug": "construction",
       "icon": "building",
-      "shortDescription": "Compliance automation and digital project management",
-      "heroTitle": "Construction Industry Solutions",
-      "heroSubtitle": "Automate BCAR inspections, streamline project workflows and drive sustainable construction practices",
-      "description": "Construction is evolving rapidly with increasing demands for compliance, sustainability and digital transformation. Paper-based workflows slow projects and make compliance tracking difficult. OBH offers construction-focused software that automates inspections, manages projects digitally and integrates with existing BIM and ERP tools.",
+      "shortDescription": "Platforms for property transactions, compliance, project management and multi-stakeholder coordination",
+      "heroTitle": "Construction & Property Solutions",
+      "heroSubtitle": "We build software that connects the people involved in construction and property — from developers and buyers to solicitors and estate agents",
+      "description": "The construction and property industry involves multiple parties who all need to work together — developers managing projects and units, buyers going through the purchase journey, solicitors handling legal milestones, estate agents coordinating viewings and sales. We've built platforms that give each stakeholder their own dedicated experience while keeping everything connected through a shared backend — document management, payment processing, legal tracking and real-time communication all in one place.",
       "features": [
         {
-          "title": "BCAR Inspection Software",
-          "description": "Automated Building Control Amendment Regulations inspection platform with guided workflows"
+          "title": "Property Transaction Platforms",
+          "description": "End-to-end platforms covering the full property lifecycle — from listings and viewings through reservations, legal processes and completion"
         },
         {
-          "title": "Digital Project Management",
-          "description": "Scheduling, documentation and workflow management tools built for construction teams"
+          "title": "Multi-Stakeholder Portals",
+          "description": "Dedicated interfaces for each party involved — buyers, developers, solicitors, estate agents and administrators — each seeing what's relevant to them"
         },
         {
-          "title": "ERP & CRM Integration",
-          "description": "Seamless integration with existing enterprise systems and project management tools"
+          "title": "Document & Legal Process Management",
+          "description": "Structured document handling for contracts, legal files and property records, with milestone tracking and progress visibility across all parties"
         },
         {
-          "title": "AI-Driven Analytics",
-          "description": "Risk assessment, forecasting and data-driven insights for smarter decision-making"
+          "title": "Payments & Reservation Systems",
+          "description": "Integrated payment processing for reservations and invoicing, coordinated with the legal and sales workflow"
         }
       ],
       "challenges": [
-        "Complex BCAR compliance and tracking requirements",
-        "Paper-based workflows slowing project delivery",
-        "Sustainability demands and reporting",
-        "Integration with existing BIM and ERP systems"
+        "Multiple parties working from disconnected tools and email chains",
+        "No single view of where a property transaction stands",
+        "Manual document handling across buyers, solicitors and developers",
+        "Payment and reservation processes managed outside the workflow",
+        "Lack of visibility for buyers into their purchase journey"
       ],
       "stats": [
-        { "value": "100%", "label": "BCAR Compliant" },
-        { "value": "3x", "label": "Faster Inspections" },
-        { "value": "Real-time", "label": "Project Insights" }
+        { "value": "Multi-Party", "label": "Platforms" },
+        { "value": "Full", "label": "Lifecycle" },
+        { "value": "Real-time", "label": "Coordination" }
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance & Compliance",
+      "slug": "finance",
+      "icon": "shield",
+      "shortDescription": "Custom platforms for compliance, verification, investment management and secure document handling",
+      "heroTitle": "Finance & Compliance Solutions",
+      "heroSubtitle": "We build software that helps financial services teams streamline compliance, manage verification and simplify complex workflows",
+      "description": "Financial services teams deal with heavy compliance requirements, manual document handling and fragmented communication. We've built platforms that digitise onboarding and verification workflows, manage secure document storage, support investment management and keep everything auditable — replacing scattered emails, paper processes and disconnected tools.",
+      "features": [
+        {
+          "title": "Compliance & Verification Platforms",
+          "description": "Structured workflows for customer onboarding, identity verification, document collection and review — with full audit trails"
+        },
+        {
+          "title": "Secure Document Management",
+          "description": "Centralised document storage with controlled access, secure sharing and detailed logging of who viewed or downloaded what"
+        },
+        {
+          "title": "Investment Management Platforms",
+          "description": "Tools for managing investment opportunities, investor onboarding, event coordination and contact management"
+        },
+        {
+          "title": "Role-Based Access & Data Isolation",
+          "description": "Separate environments and permissions for different user types — ensuring the right people see the right data"
+        }
+      ],
+      "challenges": [
+        "Manual compliance processes with documents scattered across email and messaging apps",
+        "Repetitive document collection across different workflows and institutions",
+        "Inconsistent processes across teams and account managers",
+        "No clear audit trail for document sharing or communication",
+        "Complex multi-party workflows with different access requirements"
+      ],
+      "stats": [
+        { "value": "Auditable", "label": "Workflows" },
+        { "value": "Secure", "label": "Access" },
+        { "value": "Scalable", "label": "Architecture" }
       ]
     },
     {
@@ -117,6 +158,45 @@
         { "value": "Custom", "label": "Solutions" },
         { "value": "Scalable", "label": "Architecture" },
         { "value": "Data-Driven", "label": "Insights" }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education & Training",
+      "slug": "education",
+      "icon": "certificate",
+      "shortDescription": "Custom platforms for delivering courses, assessments and training online",
+      "heroTitle": "Education & Training Solutions",
+      "heroSubtitle": "Custom platforms that help educators deliver courses, assess learners and manage operations more effectively",
+      "description": "Off-the-shelf tools rarely fit the way educators actually work. Whether it's delivering live sessions, running assessments or tracking student progress, most platforms force you to work around their limitations. We build custom education software that matches your specific workflow — from live session delivery and digital assessments to student management and results reporting.",
+      "features": [
+        {
+          "title": "Custom Learning Platforms",
+          "description": "Purpose-built platforms for delivering courses, live sessions and training programmes online — designed around how you actually teach"
+        },
+        {
+          "title": "Assessment & Results Automation",
+          "description": "Digital assessments with automated scoring, per-topic breakdowns and results tracking — replacing manual marking and spreadsheets"
+        },
+        {
+          "title": "Live Session Integration",
+          "description": "Embedded video and real-time collaboration tools built directly into the platform, keeping everything in one place for students and educators"
+        },
+        {
+          "title": "Student & Access Management",
+          "description": "Role-based access control, student onboarding flows and admin dashboards to manage users, permissions and enrolments"
+        }
+      ],
+      "challenges": [
+        "Off-the-shelf tools not fitting specific teaching workflows",
+        "Manual assessment and results tracking across spreadsheets",
+        "Managing student access and permissions at scale",
+        "Transitioning from in-person to hybrid or online delivery"
+      ],
+      "stats": [
+        { "value": "Custom", "label": "Platforms" },
+        { "value": "Automated", "label": "Assessments" },
+        { "value": "Real-time", "label": "Delivery" }
       ]
     }
   ]

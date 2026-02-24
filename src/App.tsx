@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Header, Footer } from './components/layout';
 import { BackToTop, ScrollToTop } from './components/common';
 import {
+  AboutPage,
   HomePage,
   SectorsPage,
   SectorDetailPage,
@@ -77,6 +78,7 @@ function App() {
           <Route path="/insights" element={<BlogPage />} />
           <Route path="/insights/:slug" element={<BlogPostPage />} />
           <Route path="/how-we-work" element={<ProcessPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/careers" element={<CareersPage />} />
         </Route>
       </Routes>

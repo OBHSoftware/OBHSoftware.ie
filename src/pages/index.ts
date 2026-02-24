@@ -1,3 +1,4 @@
+export { AboutPage } from './AboutPage';
 export { HomePage } from './HomePage';
 export { SectorsPage } from './SectorsPage';
 export { SectorDetailPage } from './SectorDetailPage';

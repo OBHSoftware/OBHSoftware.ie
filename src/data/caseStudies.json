@@ -6,32 +6,33 @@
     {
       "id": "ascert-pro",
       "slug": "ascert-pro",
-      "title": "Ascert Pro — Cutting-Edge Inspection & Compliance Platform",
+      "title": "AscertPro — Construction Inspection & Compliance App",
       "client": "Construction Industry",
       "sectorSlug": "construction",
       "industry": "Construction",
       "services": ["custom-software"],
-      "summary": "A cutting-edge inspection and compliance platform for the construction industry, designed to streamline BCAR inspections with guided workflows, automated reports and real-time data integration.",
+      "summary": "A field-ready iOS/iPadOS inspection app for assigned certifiers and inspectors, purpose-built around Irish building regulations. Digitises the inspection process with 120+ compliance questions across 12 work stages, automated PDF reports and offline functionality.",
       "heroImage": null,
-      "challenge": "Construction inspections suffer from inconsistent procedures, language barriers, time-consuming manual reports and the risk of non-compliance. Paper-based methods increase costs, delay projects and expose firms to regulatory risk. The industry needed a standardised, digital-first approach to BCAR compliance.",
+      "challenge": "Inspectors on-site were relying on paper drawings and handwritten notes, spending hours writing detailed reports afterwards. Photos were taken on phones and uploaded later — disconnected from the inspection record. Each inspector recorded things differently with no standardised approach. Ireland's target of 300,000 new houses by 2030 means inspections are a known bottleneck, with inefficiencies increasing project timelines by 10–20%.",
       "approach": [
-        "Designed guided inspection workflows that standardise procedures across sites",
-        "Built automated BCAR-compliant report generation engine",
-        "Integrated real-time data sources including weather and site conditions",
-        "Developed multi-language support for diverse construction teams",
-        "Implemented offline functionality for sites with limited connectivity",
-        "Added AI-powered predictive analytics for risk assessment"
+        "Built structured digital inspection workflows across 12 BCAR work stages with 120+ compliance questions",
+        "Developed automated PDF report generation directly from inspection data — eliminating manual write-up",
+        "Implemented batch inspections to apply the same data across multiple units simultaneously",
+        "Photos captured in context — attached directly to specific compliance questions, not floating on a camera roll",
+        "Auto-save drafts via local storage to prevent inspection data loss",
+        "Designed for iPhone (in-hand on site) and iPad (desk review) with adaptive layouts",
+        "Full offline functionality — no internet dependency on site"
       ],
       "outcome": {
         "stats": [
-          { "value": "3x", "label": "Faster Inspections" },
-          { "value": "100%", "label": "BCAR Compliant" },
-          { "value": "Multi", "label": "Language Support" },
-          { "value": "AI", "label": "Predictive Analytics" }
+          { "value": "BCAR", "label": "Aligned" },
+          { "value": "Reduced", "label": "Report Time" },
+          { "value": "120+", "label": "Compliance Checks" },
+          { "value": "Offline", "label": "Ready" }
         ],
         "testimonial": {
-          "quote": "Ascert Pro has completely transformed how we handle BCAR inspections. What used to take hours of paperwork now happens digitally in a fraction of the time, with complete compliance guaranteed.",
-          "author": "Site Manager, Construction Industry"
+          "quote": "AscertPro is launching on building sites in 2026 — bringing structured digital inspections, automated reporting and offline compliance tools to assigned certifiers across Ireland.",
+          "author": ""
         }
       },
       "featured": true

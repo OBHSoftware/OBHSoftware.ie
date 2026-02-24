@@ -100,10 +100,12 @@ export function CaseStudyDetailPage() {
         <FadeInUp>
           <div className={styles.testimonialCard}>
             <blockquote className={styles.quote}>
-              <p>"{caseStudy.outcome.testimonial.quote}"</p>
-              <footer className={styles.quoteAuthor}>
-                <cite>— {caseStudy.outcome.testimonial.author}</cite>
-              </footer>
+              <p>{caseStudy.outcome.testimonial.author ? `"${caseStudy.outcome.testimonial.quote}"` : caseStudy.outcome.testimonial.quote}</p>
+              {caseStudy.outcome.testimonial.author && (
+                <footer className={styles.quoteAuthor}>
+                  <cite>— {caseStudy.outcome.testimonial.author}</cite>
+                </footer>
+              )}
             </blockquote>
           </div>
         </FadeInUp>

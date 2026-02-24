@@ -6,6 +6,8 @@
       "dropdown": [
         { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
         { "label": "Construction", "href": "/sectors/construction" },
+        { "label": "Finance & Compliance", "href": "/sectors/finance" },
+        { "label": "Education & Training", "href": "/sectors/education" },
         { "label": "Entertainment", "href": "/sectors/entertainment" }
       ]
     },
@@ -27,16 +29,7 @@
         { "label": "qHaul", "href": "/products/qhaul" }
       ]
     },
-    {
-      "label": "Projects",
-      "href": "/case-studies",
-      "dropdown": [
-        { "label": "Ascert Pro", "href": "/case-studies/ascert-pro" },
-        { "label": "Quantum Mechanics", "href": "/case-studies/quantum-mechanics" },
-        { "label": "ECOnstruction", "href": "/case-studies/econstruction" }
-      ]
-    },
-    { "label": "About", "href": "/#about" },
+    { "label": "About", "href": "/about" },
     { "label": "Contact", "href": "/#contact" }
   ],
   "footerLinks": {
@@ -44,10 +37,9 @@
       { "label": "Services", "href": "/#services" },
       { "label": "Industries", "href": "/sectors" },
       { "label": "Products", "href": "/products" },
-      { "label": "Projects", "href": "/case-studies" },
       { "label": "How We Work", "href": "/how-we-work" },
       { "label": "FAQ", "href": "/faq" },
-      { "label": "About", "href": "/#about" },
+      { "label": "About", "href": "/about" },
       { "label": "Contact", "href": "/#contact" }
     ],
     "services": [
@@ -58,12 +50,13 @@
     "sectors": [
       { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
       { "label": "Construction", "href": "/sectors/construction" },
+      { "label": "Finance & Compliance", "href": "/sectors/finance" },
+      { "label": "Education & Training", "href": "/sectors/education" },
       { "label": "Entertainment", "href": "/sectors/entertainment" }
     ],
     "clients": [
       { "label": "Book a Consultation", "href": "/#contact" },
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "Insights", "href": "/insights" }
+      { "label": "FAQ", "href": "/faq" }
     ]
   }
 }

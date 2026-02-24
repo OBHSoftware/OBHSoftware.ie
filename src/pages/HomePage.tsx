@@ -5,7 +5,6 @@ import {
   Pricing,
   ExtendedServices,
   About,
-  Testimonial,
   Contact,
 } from '../components/sections';
 
@@ -18,7 +17,6 @@ export function HomePage() {
       <Pricing />
       <ExtendedServices />
       <About />
-      <Testimonial />
       <Contact />
     </main>
   );
