@@ -7,6 +7,7 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   className?: string;
+  type?: 'button' | 'submit';
 }
 
 export function Button({
@@ -16,6 +17,7 @@ export function Button({
   href,
   onClick,
   className = '',
+  type = 'button',
 }: ButtonProps) {
   const classes = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
 
@@ -28,7 +30,7 @@ export function Button({
   }
 
   return (
-    <button type="button" className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick}>
       {children}
     </button>
   );

@@ -1,12 +1,14 @@
 /**
  * Solar Webhook — Form-to-Board Integration
  *
- * Submits form data to a Solar project board via webhook.
- * Creates an issue with structured markdown, queue routing, and priority.
+ * Builds the issue payload client-side and sends it to /api/contact,
+ * a Vercel serverless function that proxies to Solar (avoids CORS).
  *
- * Environment variables (prefixed with VITE_ for Vite):
- *   VITE_SOLAR_WEBHOOK_URL      — Solar webhook endpoint (required)
- *   VITE_SOLAR_WEBHOOK_TOKEN    — Bearer token for auth (required)
+ * Server-side environment variables (set in Vercel, NOT prefixed with VITE_):
+ *   SOLAR_WEBHOOK_URL      — Solar webhook endpoint
+ *   SOLAR_WEBHOOK_TOKEN    — Bearer token for auth
+ *
+ * Client-side environment variables (prefixed with VITE_ for Vite):
  *   VITE_SOLAR_QUEUE_ID         — Fallback queue for all form types
  *   VITE_SOLAR_QUEUE_ID_CONTACT — Queue for contact submissions
  *   VITE_SOLAR_QUEUE_ID_DEMO    — Queue for demo requests & pricing inquiries
@@ -32,15 +34,6 @@ export async function submitToSolar({
   message,
   formType = "contact",
 }: SolarSubmission) {
-  const webhookUrl = import.meta.env.VITE_SOLAR_WEBHOOK_URL;
-  const webhookToken = import.meta.env.VITE_SOLAR_WEBHOOK_TOKEN;
-
-  if (!webhookUrl || !webhookToken) {
-    throw new Error(
-      "Solar webhook not configured — set VITE_SOLAR_WEBHOOK_URL and VITE_SOLAR_WEBHOOK_TOKEN"
-    );
-  }
-
   // Queue routing — specific queues fall back to the generic QUEUE_ID
   const queueId =
     {
@@ -81,12 +74,9 @@ export async function submitToSolar({
     .filter(Boolean)
     .join("\n");
 
-  const response = await fetch(webhookUrl, {
+  const response = await fetch("/api/contact", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${webhookToken}`,
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       title,
       description,

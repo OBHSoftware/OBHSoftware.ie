@@ -178,7 +178,7 @@ export function Contact() {
                 {errors.message && <span className={styles.error}>{errors.message}</span>}
               </div>
 
-              <Button size="lg" onClick={() => {}}>
+              <Button size="lg" type="submit">
                 {isSubmitting ? 'Sending...' : 'Book Your Free Consultation'}
               </Button>
 
