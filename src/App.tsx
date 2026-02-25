@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { Header, Footer } from './components/layout';
 import { BackToTop, ScrollToTop } from './components/common';
 import {
@@ -46,6 +47,7 @@ function MainLayout() {
 function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <ScrollToTop />
       <Routes>
         {/* External redirect for remote support */}

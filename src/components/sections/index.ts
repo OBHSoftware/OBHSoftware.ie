@@ -5,4 +5,5 @@ export { Pricing } from './Pricing';
 export { ExtendedServices } from './ExtendedServices';
 export { About } from './About';
 export { Testimonial } from './Testimonial';
+export { CostCalculator } from './CostCalculator';
 export { Contact } from './Contact';

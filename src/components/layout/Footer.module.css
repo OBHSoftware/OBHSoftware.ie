@@ -30,10 +30,17 @@
 }
 
 .logoImg {
-  height: 50px;
+  height: 36px;
   width: auto;
-  border-radius: var(--radius-sm);
   transition: transform var(--transition-base);
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-base);
+  color: #E8872A;
+  letter-spacing: 0.02em;
 }
 
 .logo:hover .logoImg {

@@ -142,7 +142,8 @@ export function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <img src="/logo.png" alt="OBH Software Consulting" className={styles.logoImg} />
+          <img src="/logo.png" alt="OBH Software" className={styles.logoImg} />
+          <span className={styles.logoText}>OBH Software</span>
         </Link>
 
         <button

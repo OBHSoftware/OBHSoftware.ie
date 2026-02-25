@@ -17,7 +17,8 @@ export function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <img src="/logo.png" alt="OBH Software Consulting" className={styles.logoImg} />
+              <img src="/logo.png" alt="OBH Software" className={styles.logoImg} />
+              <span className={styles.logoText}>OBH Software</span>
             </Link>
             <p className={styles.tagline}>
               Innovating industries through sustainable technology solutions.
