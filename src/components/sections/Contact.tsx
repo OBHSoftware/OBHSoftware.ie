@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Section, SectionHeader, Button, AnimatedSection } from '../common';
+import { submitToSolar } from '../../lib/solar-webhook';
 import styles from './Contact.module.css';
 
 interface FormData {
@@ -65,11 +66,14 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const mailtoLink = `mailto:info@obhsoftware.ie?subject=Consultation Request from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
-      )}`;
-
-      window.location.href = mailtoLink;
+      await submitToSolar({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || undefined,
+        phone: formData.phone || undefined,
+        message: formData.message,
+        formType: 'contact',
+      });
       setSubmitStatus('success');
       setFormData({ name: '', email: '', company: '', phone: '', message: '' });
     } catch {
