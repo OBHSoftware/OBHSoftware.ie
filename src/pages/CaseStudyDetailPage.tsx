@@ -1,17 +1,18 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
+import { useParams, Navigate } from 'react-router-dom';
+import {
+  Button,
+  Masthead,
+  Section,
+  SectionHeader,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
 import caseStudiesData from '../data/caseStudies.json';
 import styles from './CaseStudyDetailPage.module.css';
 
 interface Stat {
   value: string;
   label: string;
-}
-
-interface Testimonial {
-  quote: string;
-  author: string;
 }
 
 interface CaseStudy {
@@ -27,103 +28,106 @@ interface CaseStudy {
   approach: string[];
   outcome: {
     stats: Stat[];
-    testimonial: Testimonial;
+    testimonial: { quote: string; author: string };
   };
 }
 
+/* One completed docket: what came in, what we did about it, what it produced.
+   The stamp says DELIVERED because it was. */
 export function CaseStudyDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const caseStudy = caseStudiesData.caseStudies.find((c: CaseStudy) => c.slug === slug);
+  const study = (caseStudiesData.caseStudies as CaseStudy[]).find(
+    (c) => c.slug === slug,
+  );
 
-  if (!caseStudy) {
+  if (!study) {
     return <Navigate to="/case-studies" replace />;
   }
 
+  const { testimonial, stats } = study.outcome;
+
   return (
     <main>
-      <PageHero
-        title={caseStudy.title}
-        subtitle={caseStudy.summary}
-      >
-        <span className={styles.industry}>{caseStudy.industry}</span>
-        <Button href="/#contact" size="lg">
-          Discuss Your Project
-        </Button>
-      </PageHero>
+      <Masthead
+        serial={study.industry}
+        stamp="Delivered"
+        crumbs={[
+          { label: 'Case studies', to: '/case-studies' },
+          { label: study.client },
+        ]}
+        title={study.title}
+        lede={study.summary}
+        fields={[
+          { key: 'Client', value: study.client },
+          { key: 'Sector', value: study.industry },
+          ...study.services.map((s, i) => ({ key: `Scope ${i + 1}`, value: s })),
+        ]}
+      />
 
-      <Section>
-        <div className={styles.statsRow}>
-          {caseStudy.outcome.stats.map((stat: Stat, index: number) => (
-            <motion.div
-              key={index}
-              className={styles.stat}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-            >
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{stat.label}</span>
-            </motion.div>
+      {/* The numbers first — they are the reason to read the rest. */}
+      <Section tight sunk ruled>
+        <div className={styles.results}>
+          {stats.map((stat) => (
+            <div className={styles.result} key={stat.label}>
+              <span className={styles.resultValue}>{stat.value}</span>
+              <span className={styles.resultLabel}>{stat.label}</span>
+            </div>
           ))}
         </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="The Challenge" />
-        </AnimatedSection>
-        <FadeInUp>
-          <p className={styles.content}>{caseStudy.challenge}</p>
-        </FadeInUp>
+      <Section ruled>
+        <div className={styles.split}>
+          <SectionHeader eyebrow="Reported fault" title="The problem." />
+          <p className={styles.body}>{study.challenge}</p>
+        </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="Our Approach" />
-        </AnimatedSection>
-        <StaggerChildren className={styles.approachList} staggerDelay={0.08}>
-          {caseStudy.approach.map((item: string, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.approachItem}>
-                <span className={styles.approachNumber}>{index + 1}</span>
-                <span>{item}</span>
+      <Section ruled>
+        <SectionHeader
+          eyebrow="Work carried out"
+          title="What we did."
+          subtitle="In order, and nothing that was not asked for."
+        />
+
+        <StaggerChildren className={styles.steps} staggerDelay={0.06}>
+          {study.approach.map((item, i) => (
+            <FadeInUp key={item}>
+              <div className={styles.step}>
+                <span className={styles.stepNo}>{String(i + 1).padStart(2, '0')}</span>
+                <p className={styles.stepText}>{item}</p>
               </div>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="The Results" />
-        </AnimatedSection>
-        <FadeInUp>
-          <div className={styles.testimonialCard}>
-            <blockquote className={styles.quote}>
-              <p>{caseStudy.outcome.testimonial.author ? `"${caseStudy.outcome.testimonial.quote}"` : caseStudy.outcome.testimonial.quote}</p>
-              {caseStudy.outcome.testimonial.author && (
-                <footer className={styles.quoteAuthor}>
-                  <cite>— {caseStudy.outcome.testimonial.author}</cite>
-                </footer>
-              )}
-            </blockquote>
-          </div>
-        </FadeInUp>
-      </Section>
+      {testimonial.quote && (
+        <Section ruled>
+          <figure className={styles.signoff}>
+            <span className={styles.signoffLabel}>Signed off by the client</span>
+            <blockquote className={styles.quote}>{testimonial.quote}</blockquote>
+            {testimonial.author && (
+              <figcaption className={styles.attribution}>
+                {testimonial.author}
+              </figcaption>
+            )}
+          </figure>
+        </Section>
+      )}
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>Ready for Similar Results?</h2>
-          <p className={styles.ctaDescription}>
-            Let's discuss how we can help transform your IT operations.
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>Got one like this?</h2>
+          <p className={styles.tailText}>
+            Tell us what it costs you today. We will tell you straight whether it is
+            worth building.
           </p>
-          <div className={styles.ctaButtons}>
-            <Button href="/#contact" size="lg">
-              Start the Conversation
+          <div className={styles.tailActions}>
+            <Button href="/#contact">Book a consultation</Button>
+            <Button to="/case-studies" variant="ghost">
+              ← Back to the register
             </Button>
-            <Link to="/case-studies" className={styles.secondaryButton}>
-              ← More Case Studies
-            </Link>
           </div>
         </div>
       </Section>

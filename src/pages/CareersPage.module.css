@@ -1,164 +1,232 @@
-.description {
+/* Vacancy notice. Posts are pinned plates; terms are a checked list. */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.body {
   font-family: var(--font-body);
   font-size: var(--text-lg);
-  color: var(--color-white);
-  opacity: 0.9;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 62ch;
 }
 
-.cultureGrid {
+/* ── Culture ────────────────────────────────────────────────── */
+
+.culture {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0;
+  border-top: var(--rule-weight) solid var(--color-keyline);
+  border-left: var(--rule-weight) solid var(--color-keyline);
 }
 
-.cultureCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl);
-  border: 2px solid var(--color-keyline);
+.cultureItem {
+  height: 100%;
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-raised);
+  border-right: var(--rule-weight) solid var(--color-keyline);
+  border-bottom: var(--rule-weight) solid var(--color-keyline);
 }
 
 .cultureTitle {
   font-family: var(--font-heading);
+  font-weight: 800;
   font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text-bright);
 }
 
-.cultureDescription {
+.cultureText {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
   line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
 }
 
-.rolesGrid {
+/* ── Posts ──────────────────────────────────────────────────── */
+
+.roles {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.roleCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl);
-  border: 2px solid var(--color-keyline);
+.role {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-raised);
+  border: var(--rule-weight) solid var(--color-keyline);
+  box-shadow: var(--shadow-plate);
+}
+
+.roleStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: 0.45rem 0.8rem;
+  background-color: var(--color-ink);
+}
+
+.roleNo {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(238, 241, 233, 0.7);
+}
+
+.roleStamp {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.roleBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
 }
 
 .roleTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
-}
-
-.roleDescription {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.7;
-  line-height: 1.6;
-}
-
-.benefitsCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl);
-  border: 2px solid var(--color-keyline);
-  max-width: 600px;
-  margin: var(--spacing-xl) auto 0;
-}
-
-.benefitsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-sm);
-}
-
-.benefitsList li {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  padding-left: var(--spacing-lg);
-  position: relative;
-}
-
-.benefitsList li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--color-accent-text);
-}
-
-.ctaSection {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-}
-
-.ctaTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-}
-
-.ctaDescription {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  margin-bottom: var(--spacing-lg);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ctaEmail {
-  display: block;
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.roleText {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.6rem;
+}
+
+.apply {
+  margin-top: var(--spacing-md);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-text);
   text-decoration: none;
-  margin-bottom: var(--spacing-xl);
-  transition: opacity var(--transition-fast);
+  align-self: flex-start;
+  border-bottom: 2px solid currentColor;
 }
 
-.ctaEmail:hover {
-  opacity: 0.8;
+.apply:hover {
+  color: var(--color-text-bright);
 }
 
-@media (max-width: 768px) {
-  .cultureGrid {
-    grid-template-columns: 1fr;
-  }
+/* ── Terms ──────────────────────────────────────────────────── */
 
-  .benefitsList {
-    grid-template-columns: 1fr;
-  }
+.benefitsWrap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
 
-  .ctaSection {
-    padding: var(--spacing-xl);
-  }
+.benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .ctaEmail {
-    font-size: var(--text-lg);
+.benefit {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.benefit:first-child {
+  border-top: 1px solid var(--color-rule);
+}
+
+.tick {
+  flex: none;
+  width: 0.85rem;
+  height: 0.45rem;
+  border-left: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(-45deg) translateY(-0.1rem);
+}
+
+/* ── Tail ───────────────────────────────────────────────────── */
+
+.tail {
+  max-width: 62ch;
+}
+
+.tailTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.tailText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.email {
+  display: inline-block;
+  margin-top: var(--spacing-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-accent-text);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+
+.email:hover {
+  color: var(--color-text-bright);
+}
+
+.tailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 900px) {
+  .about,
+  .benefitsWrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-lg);
   }
 }

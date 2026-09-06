@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Section, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
+import { Button, Masthead, Section, StaggerChildren, FadeInUp } from '../components/common';
 import resourcesData from '../data/resources.json';
 import styles from './ResourcesPage.module.css';
 
@@ -19,111 +19,139 @@ interface Category {
   resources: Resource[];
 }
 
+const typeLabels: Record<string, string> = {
+  checklist: 'Checklist',
+  template: 'Template',
+  spreadsheet: 'Spreadsheet',
+  guide: 'Guide',
+};
+
+const typeLabel = (type: string) => typeLabels[type] || type;
+
+/* A stores list. Every item has a stock code, a type stamp and a state:
+   either it is on the shelf or you sign for it with an email first. */
 export function ResourcesPage() {
-  const [emailInputs, setEmailInputs] = useState<Record<string, string>>({});
-  const [unlockedResources, setUnlockedResources] = useState<Set<string>>(new Set());
+  const [emails, setEmails] = useState<Record<string, string>>({});
+  const [unlocked, setUnlocked] = useState<Set<string>>(new Set());
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleEmailChange = (resourceId: string, email: string) => {
-    setEmailInputs(prev => ({ ...prev, [resourceId]: email }));
-    if (errors[resourceId]) {
-      setErrors(prev => ({ ...prev, [resourceId]: '' }));
-    }
+  const categories = resourcesData.categories as Category[];
+  const total = categories.reduce((n, c) => n + c.resources.length, 0);
+
+  /* Stock codes run straight through every category, so a category needs the
+     count of everything before it. Computed rather than carried in a running
+     counter mutated during render. */
+  const offsetOf = (index: number) =>
+    categories.slice(0, index).reduce((n, c) => n + c.resources.length, 0);
+
+  const setEmail = (id: string, value: string) => {
+    setEmails((prev) => ({ ...prev, [id]: value }));
+    if (errors[id]) setErrors((prev) => ({ ...prev, [id]: '' }));
   };
 
-  const handleUnlock = (resourceId: string) => {
-    const email = emailInputs[resourceId] || '';
-    if (!email || !email.includes('@')) {
-      setErrors(prev => ({ ...prev, [resourceId]: 'Please enter a valid email address' }));
+  const unlock = (id: string) => {
+    const email = emails[id] || '';
+    if (!email.includes('@')) {
+      setErrors((prev) => ({ ...prev, [id]: 'Enter a valid email address' }));
       return;
     }
-    setUnlockedResources(prev => new Set(prev).add(resourceId));
-  };
-
-  const getTypeLabel = (type: string) => {
-    const labels: Record<string, string> = {
-      checklist: 'Checklist',
-      template: 'Template',
-      spreadsheet: 'Spreadsheet',
-      guide: 'Guide',
-    };
-    return labels[type] || type;
+    setUnlocked((prev) => new Set(prev).add(id));
   };
 
   return (
     <main>
-      <PageHero
+      <Masthead
+        serial="Stores — free to take"
+        stamp={`${total} items`}
         title={resourcesData.heroTitle}
-        subtitle={resourcesData.heroSubtitle}
-      >
-        <Button href="/#contact" size="lg">
-          Get Expert Help
-        </Button>
-      </PageHero>
+        lede={resourcesData.intro}
+      />
 
-      <Section>
-        <AnimatedSection>
-          <p className={styles.intro}>{resourcesData.intro}</p>
-        </AnimatedSection>
-      </Section>
+      {categories.map((category, catIndex) => (
+        <Section key={category.name} ruled>
+          <h2 className={styles.category}>
+            <span className={styles.categoryName}>{category.name}</span>
+            <span className={styles.categoryCount}>
+              {String(category.resources.length).padStart(2, '0')} items
+            </span>
+          </h2>
 
-      {resourcesData.categories.map((category: Category, catIndex: number) => (
-        <Section key={catIndex}>
-          <AnimatedSection>
-            <h2 className={styles.categoryTitle}>{category.name}</h2>
-          </AnimatedSection>
-          <StaggerChildren className={styles.resourcesGrid} staggerDelay={0.1}>
-            {category.resources.map((resource: Resource) => (
-              <FadeInUp key={resource.id}>
-                <div className={styles.resourceCard}>
-                  {resource.featured && <span className={styles.featuredBadge}>Popular</span>}
-                  <span className={styles.typeBadge}>{getTypeLabel(resource.type)}</span>
-                  <h3 className={styles.resourceTitle}>{resource.title}</h3>
-                  <p className={styles.resourceDescription}>{resource.description}</p>
+          <StaggerChildren className={styles.stores} staggerDelay={0.05}>
+            {category.resources.map((resource, i) => {
+              const code = offsetOf(catIndex) + i + 1;
+              const open = !resource.requiresEmail || unlocked.has(resource.id);
 
-                  {!resource.requiresEmail || unlockedResources.has(resource.id) ? (
-                    <a
-                      href={resource.downloadUrl}
-                      className={styles.downloadButton}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Download {getTypeLabel(resource.type)}
-                    </a>
-                  ) : (
-                    <div className={styles.emailGate}>
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={emailInputs[resource.id] || ''}
-                        onChange={(e) => handleEmailChange(resource.id, e.target.value)}
-                        className={`${styles.emailInput} ${errors[resource.id] ? styles.inputError : ''}`}
-                      />
-                      {errors[resource.id] && (
-                        <span className={styles.errorMessage}>{errors[resource.id]}</span>
-                      )}
-                      <button
-                        onClick={() => handleUnlock(resource.id)}
-                        className={styles.unlockButton}
-                      >
-                        Unlock Download
-                      </button>
+              return (
+                <FadeInUp key={resource.id}>
+                  <article className={styles.item}>
+                    <div className={styles.itemHead}>
+                      <span className={styles.code}>
+                        OBH-{String(code).padStart(3, '0')}
+                      </span>
+                      <span className={styles.type}>{typeLabel(resource.type)}</span>
+                      {resource.featured && <span className={styles.popular}>Popular</span>}
                     </div>
-                  )}
-                </div>
-              </FadeInUp>
-            ))}
+
+                    <h3 className={styles.title}>{resource.title}</h3>
+                    <p className={styles.description}>{resource.description}</p>
+
+                    {open ? (
+                      <a
+                        className={styles.download}
+                        href={resource.downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Take {typeLabel(resource.type).toLowerCase()} →
+                      </a>
+                    ) : (
+                      <div className={styles.gate}>
+                        <label className={styles.gateLabel} htmlFor={`email-${resource.id}`}>
+                          Sign for it
+                        </label>
+                        <div className={styles.gateRow}>
+                          <input
+                            id={`email-${resource.id}`}
+                            className={`${styles.input} ${errors[resource.id] ? styles.inputError : ''}`}
+                            type="email"
+                            placeholder="you@company.ie"
+                            value={emails[resource.id] || ''}
+                            onChange={(e) => setEmail(resource.id, e.target.value)}
+                            aria-invalid={Boolean(errors[resource.id])}
+                            aria-describedby={
+                              errors[resource.id] ? `err-${resource.id}` : undefined
+                            }
+                          />
+                          <button
+                            className={styles.unlock}
+                            type="button"
+                            onClick={() => unlock(resource.id)}
+                          >
+                            Unlock
+                          </button>
+                        </div>
+                        {errors[resource.id] && (
+                          <span className={styles.error} id={`err-${resource.id}`} role="alert">
+                            {errors[resource.id]}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </article>
+                </FadeInUp>
+              );
+            })}
           </StaggerChildren>
         </Section>
       ))}
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>{resourcesData.cta.title}</h2>
-          <p className={styles.ctaDescription}>{resourcesData.cta.description}</p>
-          <Button href="/#contact" size="lg">
-            {resourcesData.cta.buttonText}
-          </Button>
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>{resourcesData.cta.title}</h2>
+          <p className={styles.tailText}>{resourcesData.cta.description}</p>
+          <div className={styles.tailActions}>
+            <Button href="/#contact">{resourcesData.cta.buttonText}</Button>
+          </div>
         </div>
       </Section>
     </main>

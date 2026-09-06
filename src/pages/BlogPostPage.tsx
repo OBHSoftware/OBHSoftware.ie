@@ -1,6 +1,6 @@
-import React from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
-import { Section, PageHero, AnimatedSection, FadeInUp, Button } from '../components/common';
+import type { ReactNode } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import { Button, Masthead, Section } from '../components/common';
 import blogData from '../data/blog.json';
 import styles from './BlogPostPage.module.css';
 
@@ -17,126 +17,127 @@ interface Post {
   readTime: string;
 }
 
+const formatDate = (value: string) =>
+  new Date(value).toLocaleDateString('en-IE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+/* Inline **bold** only. Split on the delimiter and render the odd segments as
+   <strong> — the previous version pushed the line through
+   dangerouslySetInnerHTML, which is a needless HTML injection sink for a
+   feature that needs exactly one tag. */
+function inline(text: string): ReactNode[] {
+  return text.split(/\*\*(.*?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
+  );
+}
+
+/* A very small subset of markdown: h2, h3, unordered and ordered lists, and
+   paragraphs. That is everything the posts actually use. */
+function renderContent(content: string): ReactNode[] {
+  const out: ReactNode[] = [];
+  let list: string[] = [];
+
+  const flush = () => {
+    if (!list.length) return;
+    out.push(
+      <ul className={styles.list} key={`list-${out.length}`}>
+        {list.map((item) => (
+          <li key={item}>{inline(item)}</li>
+        ))}
+      </ul>,
+    );
+    list = [];
+  };
+
+  content.split('\n').forEach((line, i) => {
+    const t = line.trim();
+
+    if (t.startsWith('## ')) {
+      flush();
+      out.push(
+        <h2 className={styles.h2} key={i}>
+          {t.slice(3)}
+        </h2>,
+      );
+    } else if (t.startsWith('### ')) {
+      flush();
+      out.push(
+        <h3 className={styles.h3} key={i}>
+          {t.slice(4)}
+        </h3>,
+      );
+    } else if (t.startsWith('- ') || t.startsWith('* ')) {
+      list.push(t.slice(2));
+    } else if (/^\d+\.\s/.test(t)) {
+      list.push(t.replace(/^\d+\.\s/, ''));
+    } else if (t) {
+      flush();
+      out.push(
+        <p className={styles.p} key={i}>
+          {inline(t)}
+        </p>,
+      );
+    }
+  });
+
+  flush();
+  return out;
+}
+
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogData.posts.find((p: Post) => p.slug === slug);
+  const post = (blogData.posts as Post[]).find((p) => p.slug === slug);
 
   if (!post) {
     return <Navigate to="/insights" replace />;
   }
 
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('en-IE', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  // Simple markdown-ish parsing for headings and paragraphs
-  const renderContent = (content: string) => {
-    const lines = content.split('\n');
-    const elements: React.ReactNode[] = [];
-    let listItems: string[] = [];
-
-    const flushList = () => {
-      if (listItems.length > 0) {
-        elements.push(
-          <ul key={`list-${elements.length}`} className={styles.contentList}>
-            {listItems.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        );
-        listItems = [];
-      }
-    };
-
-    lines.forEach((line, index) => {
-      const trimmed = line.trim();
-
-      if (trimmed.startsWith('## ')) {
-        flushList();
-        elements.push(
-          <h2 key={index} className={styles.contentH2}>
-            {trimmed.replace('## ', '')}
-          </h2>
-        );
-      } else if (trimmed.startsWith('### ')) {
-        flushList();
-        elements.push(
-          <h3 key={index} className={styles.contentH3}>
-            {trimmed.replace('### ', '')}
-          </h3>
-        );
-      } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-        listItems.push(trimmed.substring(2));
-      } else if (trimmed.match(/^\d+\. /)) {
-        listItems.push(trimmed.replace(/^\d+\. /, ''));
-      } else if (trimmed) {
-        flushList();
-        // Handle bold text
-        const processed = trimmed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        elements.push(
-          <p key={index} className={styles.contentP} dangerouslySetInnerHTML={{ __html: processed }} />
-        );
-      }
-    });
-
-    flushList();
-    return elements;
-  };
-
   return (
     <main>
-      <PageHero
+      <Masthead
+        serial={post.category}
+        stamp={post.readTime}
+        crumbs={[{ label: 'Insights', to: '/insights' }, { label: post.category }]}
         title={post.title}
-        subtitle={post.excerpt}
-      >
-        <div className={styles.postMeta}>
-          <span className={styles.category}>{post.category}</span>
-          <span className={styles.metaDivider}>•</span>
-          <span>{formatDate(post.publishedAt)}</span>
-          <span className={styles.metaDivider}>•</span>
-          <span>{post.readTime}</span>
-        </div>
-      </PageHero>
+        lede={post.excerpt}
+        fields={[
+          { key: 'Written by', value: post.author },
+          { key: 'Filed', value: formatDate(post.publishedAt) },
+        ]}
+      />
 
       <Section>
-        <FadeInUp>
-          <article className={styles.article}>
-            {renderContent(post.content)}
-          </article>
-        </FadeInUp>
-      </Section>
+        <article className={styles.article}>{renderContent(post.content)}</article>
 
-      <Section>
-        <AnimatedSection>
-          <div className={styles.tagsSection}>
-            <span className={styles.tagsLabel}>Topics:</span>
-            <div className={styles.tags}>
-              {post.tags.map((tag: string, index: number) => (
-                <span key={index} className={styles.tag}>{tag}</span>
+        {post.tags.length > 0 && (
+          <div className={styles.tags}>
+            <span className={styles.tagsLabel}>Topics</span>
+            <ul className={styles.tagList}>
+              {post.tags.map((tag) => (
+                <li className={styles.tag} key={tag}>
+                  {tag}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </AnimatedSection>
+        )}
       </Section>
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>Found This Helpful?</h2>
-          <p className={styles.ctaDescription}>
-            We write about what we know. If you'd like to discuss any of these topics for your business, we're always happy to chat.
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>Found this useful?</h2>
+          <p className={styles.tailText}>
+            We write about what we actually run into. If any of it applies to your
+            business, we are happy to talk it through.
           </p>
-          <div className={styles.ctaButtons}>
-            <Button href="/#contact" size="lg">
-              Get in Touch
+          <div className={styles.tailActions}>
+            <Button href="/#contact">Get in touch</Button>
+            <Button to="/insights" variant="ghost">
+              ← More entries
             </Button>
-            <Link to="/insights" className={styles.secondaryButton}>
-              ← More Articles
-            </Link>
           </div>
         </div>
       </Section>

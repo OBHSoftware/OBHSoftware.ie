@@ -1,209 +1,198 @@
-.heroIcon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--color-bg-raised);
+/* Work order. Line items are leader-dotted and marked INCLUDED, the way a
+   quote is set out, rather than dropped into a feature grid. */
+
+.mark {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-lg);
-  border: 2px solid var(--color-keyline);
+  justify-content: flex-end;
+  color: var(--color-accent);
 }
 
-.heroIcon svg {
-  width: 40px;
-  height: 40px;
+.mark svg {
+  width: 8rem;
+  height: 8rem;
 }
 
-.statsRow {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-3xl);
-  flex-wrap: wrap;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--spacing-lg);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-  min-width: 150px;
-}
-
-.statValue {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-}
-
-.statLabel {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
-  margin-top: var(--spacing-xs);
-}
-
-.description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.9;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.featuresGrid {
+.overview {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-xl);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--spacing-2xl);
+  align-items: start;
 }
 
-.featureCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl);
-  border: 2px solid var(--color-keyline);
-  transition: background var(--transition-base), border-color var(--transition-base);
-}
-
-.featureCard:hover {
-  background: var(--color-bg-raised);
-  border-color: var(--color-keyline);
-}
-
-.featureTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
-}
-
-.featureDescription {
+.body {
   font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
-  line-height: 1.6;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 62ch;
 }
 
-.benefitsList {
+/* ── Line items ─────────────────────────────────────────────── */
+
+.items {
   display: flex;
   flex-direction: column;
+  border-top: var(--rule-weight) solid var(--color-keyline);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) minmax(1.5rem, auto) auto;
   gap: var(--spacing-md);
-  max-width: 700px;
-  margin: var(--spacing-xl) auto 0;
+  align-items: baseline;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-rule);
 }
 
-.benefitItem {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  padding: var(--spacing-md);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-}
-
-.checkmark {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--color-bg-raised);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  border: 2px solid var(--color-keyline);
-}
-
-.ctaSection {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-}
-
-.ctaTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-}
-
-.ctaDescription {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  margin-bottom: var(--spacing-xl);
-}
-
-.ctaButtons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
-}
-
-.secondaryButton {
-  font-family: var(--font-heading);
+.itemNo {
+  font-family: var(--font-mono);
   font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-white);
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity var(--transition-fast);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-text);
 }
 
-.secondaryButton:hover {
-  opacity: 1;
+.itemBody {
+  min-width: 0;
 }
 
-@media (max-width: 1024px) {
-  .featuresGrid {
-    grid-template-columns: 1fr;
-  }
+.itemTitle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text-bright);
 }
 
-@media (max-width: 768px) {
-  .statsRow {
+.itemText {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+  max-width: 64ch;
+}
+
+.itemLeader {
+  border-bottom: 1px dotted var(--color-border);
+  transform: translateY(-0.2em);
+}
+
+.itemMark {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-pass);
+  white-space: nowrap;
+}
+
+/* ── Outcome ────────────────────────────────────────────────── */
+
+.outcome {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.benefit {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.benefit:first-child {
+  border-top: 1px solid var(--color-rule);
+}
+
+.tick {
+  flex: none;
+  width: 0.85rem;
+  height: 0.45rem;
+  border-left: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(-45deg) translateY(-0.1rem);
+}
+
+/* ── Tail ───────────────────────────────────────────────────── */
+
+.tail {
+  max-width: 62ch;
+}
+
+.tailTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.tailText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.tailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 900px) {
+  .overview,
+  .outcome {
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-lg);
   }
 
-  .stat {
-    min-width: 120px;
-    padding: var(--spacing-md);
+  .mark {
+    justify-content: flex-start;
   }
 
-  .statValue {
-    font-size: var(--text-2xl);
+  .mark svg {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Drop the leader and the mark — a quote line does not survive 360px. */
+  .item {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: var(--spacing-sm);
   }
 
-  .ctaSection {
-    padding: var(--spacing-xl);
+  .itemLeader {
+    display: none;
   }
 
-  .ctaButtons {
-    flex-direction: column;
-    gap: var(--spacing-md);
+  .itemMark {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0.4rem;
   }
 }

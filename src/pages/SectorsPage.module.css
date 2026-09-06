@@ -1,88 +1,141 @@
-.sectorsGrid {
+/* A notice board: posted sheets on plates, one of them posted large. */
+
+.board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.sectorCard {
+.wide {
+  grid-column: span 2;
+}
+
+.notice {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--spacing-xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
+  height: 100%;
+  background-color: var(--color-bg-raised);
+  border: var(--rule-weight) solid var(--color-keyline);
+  box-shadow: var(--shadow-plate);
   text-decoration: none;
-  transition: transform var(--transition-base), background var(--transition-base), border-color var(--transition-base);
+  color: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.sectorCard:hover {
-  transform: translateY(-4px);
-  background: var(--color-bg-raised);
-  border-color: var(--color-keyline);
+.notice:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-plate-hover);
 }
 
-.iconWrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-bg-raised) 0%, var(--color-bg-raised) 100%);
+/* ── Head ───────────────────────────────────────────────────── */
+
+.head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.8rem;
+  background-color: var(--color-ink);
+}
+
+.no {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(238, 241, 233, 0.7);
+}
+
+/* The tack holding the notice up. */
+.pin {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+
+.bodyArea {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
   margin-bottom: var(--spacing-md);
-  border: 2px solid var(--color-keyline);
+  color: var(--color-accent-text);
 }
 
-.iconWrapper svg {
-  width: 40px;
-  height: 40px;
+.icon svg {
+  width: 100%;
+  height: 100%;
 }
 
-.sectorName {
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
 }
 
-.sectorDescription {
+.wide .name {
+  font-size: var(--text-4xl);
+}
+
+.description {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
   line-height: 1.6;
-  margin-bottom: var(--spacing-md);
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  max-width: 54ch;
 }
 
-.learnMore {
-  font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-white);
-  opacity: 0.8;
-  transition: opacity var(--transition-fast);
+.wide .description {
+  font-size: var(--text-base);
 }
 
-.sectorCard:hover .learnMore {
-  opacity: 1;
+.more {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-text);
 }
 
-@media (max-width: 1024px) {
-  .sectorsGrid {
-    grid-template-columns: repeat(2, 1fr);
+.notice:hover .more {
+  color: var(--color-text-bright);
+}
+
+@media (max-width: 900px) {
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wide {
+    grid-column: span 2;
   }
 }
 
-@media (max-width: 768px) {
-  .sectorsGrid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .sectorCard {
-    padding: var(--spacing-lg);
+  .wide {
+    grid-column: span 1;
+  }
+
+  .wide .name {
+    font-size: var(--text-2xl);
   }
 }

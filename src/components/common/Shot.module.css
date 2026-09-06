@@ -1,0 +1,135 @@
+/* Real product screenshots, framed as objects rather than floated as
+   weightless images. The frame is the same cut-and-bolted plate the rest of
+   the site is built from, so a dark app screen sits on the concrete without
+   looking like it landed there by accident. */
+
+.shot {
+  margin: 0;
+  min-width: 0;
+}
+
+.frame {
+  background-color: var(--color-ink);
+  border: var(--rule-weight) solid var(--color-keyline);
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ── Plate ──────────────────────────────────────────────────
+   A wide UI panel, thrown proud of the page like every other plate. */
+
+.plate .frame {
+  box-shadow: var(--shadow-plate);
+  padding: 0.5rem;
+}
+
+/* ── Phone ──────────────────────────────────────────────────
+   The app captures are 1290×2796. Cap the width so a 9:19.5 screen does not
+   run the length of the page, and keep the bezel thin — it is a frame, not a
+   piece of illustration. */
+
+.phone {
+  max-width: 260px;
+}
+
+.phone .frame {
+  padding: 0.55rem 0.55rem 0.9rem;
+  box-shadow: var(--shadow-plate);
+  position: relative;
+}
+
+/* The speaker slot. One detail, stamped, no gloss. */
+.phone .frame::before {
+  content: '';
+  position: absolute;
+  top: 0.22rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 4px;
+  background-color: var(--color-keyline);
+  z-index: 1;
+}
+
+.phone .image {
+  border: 1px solid rgba(238, 241, 233, 0.14);
+}
+
+/* ── Row ────────────────────────────────────────────────────
+   Handsets laid out on the bench. They overlap, and the middle one sits
+   forward, so three portrait screens read as one object. */
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  max-width: 100%;
+}
+
+/* Three 200px handsets less two 2.2rem overlaps comes to ~530px, which clears
+   the narrowest column this row is used in. Wider bases overflowed and clipped
+   the outer two. */
+.row > * {
+  flex: 0 1 200px;
+  min-width: 0;
+}
+
+.row > *:nth-child(1) {
+  transform: translateY(1.5rem) rotate(-1.4deg);
+  z-index: 1;
+}
+
+.row > *:nth-child(2) {
+  margin-left: -2.2rem;
+  margin-right: -2.2rem;
+  z-index: 3;
+}
+
+.row > *:nth-child(3) {
+  transform: translateY(1.5rem) rotate(1.4deg);
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row > *:nth-child(1),
+  .row > *:nth-child(3) {
+    transform: translateY(1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+
+  .row > * {
+    flex: 0 0 168px;
+  }
+
+  /* Straighten them out on a narrow screen — overlapped, rotated cards do
+     not survive a 360px viewport. */
+  .row > *:nth-child(1),
+  .row > *:nth-child(2),
+  .row > *:nth-child(3) {
+    transform: none;
+    margin: 0;
+  }
+}

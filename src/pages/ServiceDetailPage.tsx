@@ -1,7 +1,20 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
-import { ShieldIcon, MoneyIcon, CertificateIcon, BuildingIcon, TruckIcon, TeamIcon } from '../components/icons';
+import {
+  Button,
+  Masthead,
+  Section,
+  SectionHeader,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
+import {
+  ShieldIcon,
+  MoneyIcon,
+  CertificateIcon,
+  BuildingIcon,
+  TruckIcon,
+  TeamIcon,
+} from '../components/icons';
 import serviceDetailsData from '../data/serviceDetails.json';
 import styles from './ServiceDetailPage.module.css';
 
@@ -29,7 +42,6 @@ interface Service {
   name: string;
   slug: string;
   icon: string;
-  shortDescription: string;
   heroTitle: string;
   heroSubtitle: string;
   description: string;
@@ -38,103 +50,94 @@ interface Service {
   stats: Stat[];
 }
 
+/* A work order. The masthead is the ink slab so this reads as the thing you
+   sign, not the thing you browse. */
 export function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const service = serviceDetailsData.services.find((s: Service) => s.slug === slug);
+  const service = (serviceDetailsData.services as Service[]).find(
+    (s) => s.slug === slug,
+  );
 
   if (!service) {
     return <Navigate to="/#services" replace />;
   }
 
-  const IconComponent = iconMap[service.icon] || ShieldIcon;
+  const Icon = iconMap[service.icon] || ShieldIcon;
 
   return (
     <main>
-      <PageHero
+      <Masthead
+        tone="plate"
+        serial="Work order"
+        stamp={service.name}
+        crumbs={[{ label: 'Services', to: '/#services' }, { label: service.name }]}
         title={service.heroTitle}
-        subtitle={service.heroSubtitle}
-      >
-        <div className={styles.heroIcon}>
-          <IconComponent />
-        </div>
-        <Button href="/#contact" size="lg">
-          Get Started
-        </Button>
-      </PageHero>
+        lede={service.heroSubtitle}
+        fields={service.stats.map((s) => ({ key: s.label, value: s.value }))}
+        aside={
+          <span className={styles.mark} aria-hidden="true">
+            <Icon />
+          </span>
+        }
+        actions={<Button href="/#contact">Scope a job</Button>}
+      />
 
-      <Section>
-        <div className={styles.statsRow}>
-          {service.stats.map((stat: Stat, index: number) => (
-            <motion.div
-              key={index}
-              className={styles.stat}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-            >
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{stat.label}</span>
-            </motion.div>
-          ))}
+      <Section ruled>
+        <div className={styles.overview}>
+          <SectionHeader eyebrow="Scope" title="What this covers." />
+          <p className={styles.body}>{service.description}</p>
         </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="Overview" />
-        </AnimatedSection>
-        <FadeInUp>
-          <p className={styles.description}>{service.description}</p>
-        </FadeInUp>
-      </Section>
+      <Section ruled sunk>
+        <SectionHeader
+          eyebrow="Line items"
+          title="What you get."
+          subtitle="Priced and scoped before anything is built."
+        />
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Key Features"
-            subtitle="What's included in this service"
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.featuresGrid} staggerDelay={0.1}>
-          {service.features.map((feature: Feature, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.featureCard}>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+        <StaggerChildren className={styles.items} staggerDelay={0.05}>
+          {service.features.map((feature, i) => (
+            <FadeInUp key={feature.title}>
+              <div className={styles.item}>
+                <span className={styles.itemNo}>{String(i + 1).padStart(2, '0')}</span>
+                <div className={styles.itemBody}>
+                  <h3 className={styles.itemTitle}>{feature.title}</h3>
+                  <p className={styles.itemText}>{feature.description}</p>
+                </div>
+                <span className={styles.itemLeader} aria-hidden="true" />
+                <span className={styles.itemMark}>Included</span>
               </div>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Benefits"
-            subtitle="How this service helps your business"
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.benefitsList} staggerDelay={0.08}>
-          {service.benefits.map((benefit: string, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.benefitItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>{benefit}</span>
-              </div>
-            </FadeInUp>
-          ))}
-        </StaggerChildren>
+      <Section ruled>
+        <div className={styles.outcome}>
+          <SectionHeader eyebrow="On completion" title="What you end up with." />
+          <ul className={styles.benefits}>
+            {service.benefits.map((benefit) => (
+              <li className={styles.benefit} key={benefit}>
+                <span className={styles.tick} aria-hidden="true" />
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
-          <p className={styles.ctaDescription}>
-            Let's discuss how {service.name.toLowerCase()} can strengthen your business.
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>Start the job.</h2>
+          <p className={styles.tailText}>
+            A free half-hour call. We scope it properly before quoting, and we will
+            say so if you do not need us.
           </p>
-          <div className={styles.ctaButtons}>
-            <Button href="/#contact" size="lg">
-              Schedule a Consultation
+          <div className={styles.tailActions}>
+            <Button href="/#contact">Book a consultation</Button>
+            <Button to="/how-we-work" variant="ghost">
+              How we work →
             </Button>
           </div>
         </div>

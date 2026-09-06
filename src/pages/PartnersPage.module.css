@@ -1,148 +1,164 @@
-.intro {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  color: var(--color-white);
-  opacity: 0.9;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
+/* Approved-supplier register. */
 
-.partnersGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
-}
-
-.partnerCard {
+.register {
   display: flex;
-  gap: var(--spacing-xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-2xl);
-  border: 2px solid var(--color-keyline);
+  flex-direction: column;
+  border-top: var(--rule-weight) solid var(--color-keyline);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: var(--spacing-lg);
+  align-items: start;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  border-bottom: 1px solid var(--color-rule);
   text-decoration: none;
-  transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+  color: inherit;
+  transition: background-color var(--transition-fast);
 }
 
-.partnerCard:hover {
-  background: var(--color-bg-raised);
-  border-color: var(--color-keyline);
-  transform: translateY(-4px);
+.row:hover {
+  background-color: var(--color-bg-raised);
 }
 
-.partnerBadge {
-  width: 80px;
-  height: 80px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--partner-primary), var(--partner-secondary));
+/* ── Mark ───────────────────────────────────────────────────── */
+
+.markCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* The supplier's own colour, used once, on their own mark. */
+.mark {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-}
-
-.badgeInitial {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-}
-
-.partnerInfo {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.partnerName {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-xs);
-}
-
-.partnerTagline {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
-  margin-bottom: var(--spacing-md);
-}
-
-.partnerDescription {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.8;
-  line-height: 1.7;
-  flex: 1;
-}
-
-.learnMore {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
-  margin-top: var(--spacing-md);
-  transition: opacity var(--transition-fast);
-}
-
-.partnerCard:hover .learnMore {
-  opacity: 1;
-}
-
-.ctaSection {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-}
-
-.ctaTitle {
-  font-family: var(--font-heading);
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--partner-primary, var(--color-ink));
+  color: var(--color-enamel);
+  border: var(--rule-weight) solid var(--color-keyline);
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
+  line-height: 1;
 }
 
-.ctaDescription {
+.no {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+
+.body {
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.row:hover .name {
+  color: var(--color-accent-text);
+}
+
+.tagline {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.7rem;
+  max-width: 64ch;
+}
+
+.more {
+  display: inline-block;
+  margin-top: var(--spacing-md);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent-text);
+}
+
+.approved {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-pass);
+  border: 1px solid var(--color-pass);
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* ── Tail ───────────────────────────────────────────────────── */
+
+.tail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.tailTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.tailText {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  margin-bottom: var(--spacing-xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--color-text-muted);
+  margin-top: 0.6rem;
+  max-width: 54ch;
 }
 
-@media (max-width: 768px) {
-  .partnersGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: var(--spacing-md);
   }
 
-  .partnerCard {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .approved {
+    grid-column: 2;
+    justify-self: start;
   }
 
-  .partnerBadge {
-    width: 64px;
-    height: 64px;
-  }
-
-  .badgeInitial {
-    font-size: var(--text-2xl);
-  }
-
-  .ctaSection {
-    padding: var(--spacing-xl);
+  .markCol {
+    gap: 0.35rem;
   }
 }

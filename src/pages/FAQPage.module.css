@@ -1,133 +1,189 @@
-.categoryTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--color-keyline);
+/* A numbered register. Each question is a ruled row; opening one drops the
+   answer underneath it like a note added to the file. */
+
+.category {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-bottom: 0.6rem;
+  margin-bottom: var(--spacing-md);
+  border-bottom: var(--rule-weight) solid var(--color-keyline);
 }
 
-.faqList {
+.categoryName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.categoryCount {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.register {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
 }
 
-.faqItem {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
-  overflow: hidden;
-  transition: border-color var(--transition-base);
+.entry {
+  border-bottom: 1px solid var(--color-rule);
 }
 
-.faqItem:hover {
-  border-color: var(--color-keyline);
-}
+/* ── Question row ───────────────────────────────────────────── */
 
-.faqItem.open {
-  border-color: var(--color-keyline);
-}
-
-.faqQuestion {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.question {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) 1.5rem;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg);
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: var(--font-heading);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-white);
-  transition: background var(--transition-fast);
-}
-
-.faqQuestion:hover {
-  background: var(--color-bg-raised);
-}
-
-.faqIcon {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--color-bg-raised);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  padding: var(--spacing-md) 0;
+  cursor: pointer;
+  list-style: none;
 }
 
-.faqItem.open .faqIcon {
-  background: var(--color-bg-raised);
+/* Kill the default disclosure triangle in both engines. */
+.question::-webkit-details-marker {
+  display: none;
 }
 
-.faqAnswer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+.question::marker {
+  content: '';
 }
 
-.faqItem.open .faqAnswer {
-  max-height: 500px;
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+.question:hover .questionText {
+  color: var(--color-accent-text);
 }
 
-.faqAnswer p {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  line-height: 1.7;
-  margin: 0;
+.question:focus-visible {
+  outline: var(--rule-weight) solid var(--color-accent);
+  outline-offset: 3px;
 }
 
-.ctaSection {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
+.no {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
 }
 
-.ctaTitle {
+.questionText {
   font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text-bright);
 }
 
-.ctaDescription {
+/* A drawn plus that becomes a minus when the entry is open. No glyph, so it
+   cannot be knocked out by a missing font. */
+.toggle {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  justify-self: end;
+}
+
+.toggle::before,
+.toggle::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-keyline);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.toggle::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.toggle::after {
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.entry[open] .toggle::after {
+  opacity: 0;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.entry[open] .toggle::before {
+  background-color: var(--color-accent);
+}
+
+/* ── Answer ─────────────────────────────────────────────────── */
+
+.answer {
+  padding: 0 0 var(--spacing-md) 3rem;
+  max-width: 74ch;
+}
+
+.answer p {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  margin-bottom: var(--spacing-xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  border-left: var(--rule-weight) solid var(--color-accent);
+  padding-left: var(--spacing-md);
 }
 
-@media (max-width: 768px) {
-  .faqQuestion {
-    padding: var(--spacing-md);
-    font-size: var(--text-sm);
+/* ── Tail ───────────────────────────────────────────────────── */
+
+.tail {
+  max-width: 62ch;
+}
+
+.tailTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.tailText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.tailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 600px) {
+  .question {
+    grid-template-columns: 2rem minmax(0, 1fr) 1.25rem;
+    gap: var(--spacing-sm);
   }
 
-  .faqItem.open .faqAnswer {
-    padding: 0 var(--spacing-md) var(--spacing-md);
-  }
-
-  .ctaSection {
-    padding: var(--spacing-xl);
+  .answer {
+    padding-left: 2rem;
   }
 }

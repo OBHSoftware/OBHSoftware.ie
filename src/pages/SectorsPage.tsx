@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
-import { Section, PageHero, StaggerChildren, FadeInUp } from '../components/common';
-import { ShieldIcon, MoneyIcon, CertificateIcon, BuildingIcon, TruckIcon, TeamIcon } from '../components/icons';
+import { Masthead, Section, StaggerChildren, FadeInUp } from '../components/common';
+import {
+  ShieldIcon,
+  MoneyIcon,
+  CertificateIcon,
+  BuildingIcon,
+  TruckIcon,
+  TeamIcon,
+} from '../components/icons';
 import sectorsData from '../data/sectors.json';
 import styles from './SectorsPage.module.css';
 
@@ -21,27 +28,48 @@ interface Sector {
   shortDescription: string;
 }
 
+/* A notice board. Each sector is a posted notice, and the first one is posted
+   large because transport is where most of the work comes from. */
 export function SectorsPage() {
+  const sectors = sectorsData.sectors as Sector[];
+
   return (
     <main>
-      <PageHero
+      <Masthead
+        tone="hazard"
+        serial="Notice — where we work"
+        stamp={`${sectors.length} sectors`}
         title={sectorsData.title}
-        subtitle={sectorsData.subtitle}
+        lede={sectorsData.subtitle}
       />
 
       <Section>
-        <StaggerChildren className={styles.sectorsGrid} staggerDelay={0.1}>
-          {sectorsData.sectors.map((sector: Sector) => {
-            const IconComponent = iconMap[sector.icon] || ShieldIcon;
+        <StaggerChildren className={styles.board} staggerDelay={0.07}>
+          {sectors.map((sector, i) => {
+            const Icon = iconMap[sector.icon] || ShieldIcon;
+
             return (
-              <FadeInUp key={sector.id}>
-                <Link to={`/sectors/${sector.slug}`} className={styles.sectorCard}>
-                  <div className={styles.iconWrapper}>
-                    <IconComponent />
+              <FadeInUp
+                className={i === 0 ? styles.wide : undefined}
+                key={sector.id}
+              >
+                <Link className={styles.notice} to={`/sectors/${sector.slug}`}>
+                  <div className={styles.head}>
+                    <span className={styles.no}>
+                      Sector {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className={styles.pin} aria-hidden="true" />
                   </div>
-                  <h3 className={styles.sectorName}>{sector.name}</h3>
-                  <p className={styles.sectorDescription}>{sector.shortDescription}</p>
-                  <span className={styles.learnMore}>Learn More →</span>
+
+                  <div className={styles.bodyArea}>
+                    <span className={styles.icon} aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <h2 className={styles.name}>{sector.name}</h2>
+                    <p className={styles.description}>{sector.shortDescription}</p>
+                  </div>
+
+                  <span className={styles.more}>See the work →</span>
                 </Link>
               </FadeInUp>
             );

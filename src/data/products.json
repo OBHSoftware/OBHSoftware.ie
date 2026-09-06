@@ -57,7 +57,27 @@
           "label": "Access"
         }
       ],
-      "externalUrl": "https://qmechanic.autos"
+      "externalUrl": "https://qmechanic.autos",
+      "shots": {
+        "frame": "phone",
+        "items": [
+          {
+            "src": "/shots/qmechanic-inspection.png",
+            "alt": "A DVSA walk-around check in progress, each item marked pass or defect",
+            "caption": "Walk-around check"
+          },
+          {
+            "src": "/shots/qmechanic-dashboard.png",
+            "alt": "The qMechanic home screen showing inspections, job cards, defects and timesheets",
+            "caption": "Dashboard"
+          },
+          {
+            "src": "/shots/qmechanic-job-detail.png",
+            "alt": "A job card showing the assigned repair and its history",
+            "caption": "Job card"
+          }
+        ]
+      }
     },
     {
       "id": "solar",
@@ -114,7 +134,27 @@
           "label": "PM + Billing + Portal"
         }
       ],
-      "externalUrl": "https://projectsolar.space"
+      "externalUrl": "https://projectsolar.space",
+      "shots": {
+        "frame": "plate",
+        "items": [
+          {
+            "src": "/shots/solar-activity.png",
+            "alt": "A project activity log with agent and human actions interleaved",
+            "caption": "Activity log"
+          },
+          {
+            "src": "/shots/solar-mcp.png",
+            "alt": "An agent creating and querying tickets over the MCP endpoint",
+            "caption": "MCP session"
+          },
+          {
+            "src": "/shots/solar-time.png",
+            "alt": "Hours logged this week, rolled up per client",
+            "caption": "Time tracking"
+          }
+        ]
+      }
     },
     {
       "id": "cashish",
@@ -169,7 +209,17 @@
           "value": "No",
           "label": "Subscription"
         }
-      ]
+      ],
+      "shots": {
+        "frame": "plate",
+        "items": [
+          {
+            "src": "/shots/cashish-vat.png",
+            "alt": "A cash-basis VAT return with T1, T2 and the payable figure",
+            "caption": "VAT return"
+          }
+        ]
+      }
     },
     {
       "id": "qhaul",

@@ -1,4 +1,11 @@
-import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
+import {
+  Button,
+  Masthead,
+  Section,
+  SectionHeader,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
 import careersData from '../data/careers.json';
 import styles from './CareersPage.module.css';
 
@@ -12,84 +19,97 @@ interface RoleType {
   description: string;
 }
 
+/* A vacancy notice. There are no numbered openings to list, so the page is
+   honest about that and posts the kinds of people we want to hear from. */
 export function CareersPage() {
+  const email = careersData.cta.email;
+
   return (
     <main>
-      <PageHero
+      <Masthead
+        tone="hazard"
+        serial="Vacancy notice"
+        stamp="Open speculative"
         title={careersData.heroTitle}
-        subtitle={careersData.heroSubtitle}
-      >
-        <Button href={`mailto:${careersData.cta.email}`} size="lg">
-          Get in Touch
-        </Button>
-      </PageHero>
+        lede={careersData.heroSubtitle}
+        actions={<Button href={`mailto:${email}`}>Get in touch</Button>}
+      />
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title={careersData.about.title} />
-        </AnimatedSection>
-        <FadeInUp>
-          <p className={styles.description}>{careersData.about.description}</p>
-        </FadeInUp>
+      <Section ruled>
+        <div className={styles.about}>
+          <SectionHeader eyebrow="The shop" title={careersData.about.title} />
+          <p className={styles.body}>{careersData.about.description}</p>
+        </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="Our Culture" subtitle="What it's like to work here" />
-        </AnimatedSection>
-        <StaggerChildren className={styles.cultureGrid} staggerDelay={0.1}>
-          {careersData.about.culture.map((item: CultureItem, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.cultureCard}>
+      <Section ruled>
+        <SectionHeader eyebrow="Conditions" title="What it is like here." />
+        <StaggerChildren className={styles.culture} staggerDelay={0.06}>
+          {(careersData.about.culture as CultureItem[]).map((item) => (
+            <FadeInUp key={item.title}>
+              <div className={styles.cultureItem}>
                 <h3 className={styles.cultureTitle}>{item.title}</h3>
-                <p className={styles.cultureDescription}>{item.description}</p>
+                <p className={styles.cultureText}>{item.description}</p>
               </div>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title={careersData.roles.title} subtitle={careersData.roles.description} />
-        </AnimatedSection>
-        <StaggerChildren className={styles.rolesGrid} staggerDelay={0.1}>
-          {careersData.roles.types.map((role: RoleType, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.roleCard}>
-                <h3 className={styles.roleTitle}>{role.title}</h3>
-                <p className={styles.roleDescription}>{role.description}</p>
-              </div>
+      <Section ruled sunk>
+        <SectionHeader
+          eyebrow="Posts"
+          title={careersData.roles.title}
+          subtitle={careersData.roles.description}
+        />
+
+        <div className={styles.roles}>
+          {(careersData.roles.types as RoleType[]).map((role, i) => (
+            <FadeInUp key={role.title}>
+              <article className={styles.role}>
+                <div className={styles.roleStrip}>
+                  <span className={styles.roleNo}>
+                    Post {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className={styles.roleStamp}>Speculative</span>
+                </div>
+                <div className={styles.roleBody}>
+                  <h3 className={styles.roleTitle}>{role.title}</h3>
+                  <p className={styles.roleText}>{role.description}</p>
+                  <a className={styles.apply} href={`mailto:${email}`}>
+                    Apply for this →
+                  </a>
+                </div>
+              </article>
             </FadeInUp>
           ))}
-        </StaggerChildren>
+        </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title={careersData.benefits.title} />
-        </AnimatedSection>
-        <FadeInUp>
-          <div className={styles.benefitsCard}>
-            <ul className={styles.benefitsList}>
-              {careersData.benefits.items.map((benefit: string, index: number) => (
-                <li key={index}>{benefit}</li>
-              ))}
-            </ul>
-          </div>
-        </FadeInUp>
+      <Section ruled>
+        <div className={styles.benefitsWrap}>
+          <SectionHeader eyebrow="Terms" title={careersData.benefits.title} />
+          <ul className={styles.benefits}>
+            {careersData.benefits.items.map((benefit: string) => (
+              <li className={styles.benefit} key={benefit}>
+                <span className={styles.tick} aria-hidden="true" />
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>{careersData.cta.title}</h2>
-          <p className={styles.ctaDescription}>{careersData.cta.description}</p>
-          <a href={`mailto:${careersData.cta.email}`} className={styles.ctaEmail}>
-            {careersData.cta.email}
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>{careersData.cta.title}</h2>
+          <p className={styles.tailText}>{careersData.cta.description}</p>
+          <a className={styles.email} href={`mailto:${email}`}>
+            {email}
           </a>
-          <Button href={`mailto:${careersData.cta.email}`} size="lg">
-            {careersData.cta.buttonText}
-          </Button>
+          <div className={styles.tailActions}>
+            <Button href={`mailto:${email}`}>{careersData.cta.buttonText}</Button>
+          </div>
         </div>
       </Section>
     </main>

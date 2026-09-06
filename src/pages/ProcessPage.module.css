@@ -1,193 +1,226 @@
-.intro {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  color: var(--color-white);
-  opacity: 0.9;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
+/* Method statement. A single rail runs down the page and the phases hang off
+   it in order — the sequence is the layout. */
 
-.phasesContainer {
+.rail {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
-  margin-top: var(--spacing-xl);
 }
 
-.phaseCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-2xl);
-  border: 2px solid var(--color-keyline);
+/* The rail itself. Sits under the markers, stops at the last one. */
+.rail::before {
+  content: '';
+  position: absolute;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  width: var(--rule-weight);
+  background-color: var(--color-keyline);
 }
 
-.phaseHeader {
-  display: flex;
-  align-items: flex-start;
+.phase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr);
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  align-items: start;
 }
 
-.phaseNumber {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--color-bg-raised);
-  color: var(--color-white);
+.marker {
+  position: relative;
+  z-index: 1;
+}
+
+.step {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  border: 2px solid var(--color-keyline);
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--color-accent);
+  color: var(--color-enamel);
+  border: var(--rule-weight) solid var(--color-keyline);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.phaseTitleGroup {
-  flex: 1;
+.phaseBody {
+  background-color: var(--color-bg-raised);
+  border: var(--rule-weight) solid var(--color-keyline);
+  box-shadow: var(--shadow-plate);
+  padding: var(--spacing-lg);
+  min-width: 0;
+}
+
+.phaseHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--color-rule);
 }
 
 .phaseTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
 }
 
-.phaseDuration {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.6;
+.duration {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
 }
 
-.phaseDescription {
+.phaseText {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  line-height: 1.7;
-  margin-bottom: var(--spacing-xl);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-top: 0.9rem;
+  max-width: 68ch;
 }
 
-.phaseDetails {
+.columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-rule);
 }
 
-.detailSection {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-lg);
-}
-
-.detailTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-bold);
+.colTitle {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-white);
-  opacity: 0.6;
-  margin-bottom: var(--spacing-md);
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
 }
 
-.detailList {
+.list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-.detailList li {
+.listItem {
+  position: relative;
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.8;
-  line-height: 1.6;
-  padding-left: var(--spacing-md);
-  position: relative;
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.55;
+  color: var(--color-text);
+  padding: 0.3rem 0 0.3rem 1rem;
 }
 
-.detailList li::before {
-  content: '→';
+/* A stamped square rather than a bullet. */
+.listItem::before {
+  content: '';
   position: absolute;
   left: 0;
-  opacity: 0.5;
+  top: 0.72rem;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-keyline);
 }
 
-.principlesGrid {
+.delivered::before {
+  background-color: var(--color-accent);
+}
+
+/* ── Principles ─────────────────────────────────────────────── */
+
+.principles {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border-top: var(--rule-weight) solid var(--color-keyline);
+  border-left: var(--rule-weight) solid var(--color-keyline);
 }
 
-.principleCard {
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-xl);
-  border: 2px solid var(--color-keyline);
+.principle {
+  height: 100%;
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-raised);
+  border-right: var(--rule-weight) solid var(--color-keyline);
+  border-bottom: var(--rule-weight) solid var(--color-keyline);
 }
 
 .principleTitle {
   font-family: var(--font-heading);
+  font-weight: 800;
   font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text-bright);
 }
 
-.principleDescription {
+.principleText {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--color-white);
-  opacity: 0.7;
   line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
 }
 
-.ctaSection {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--color-bg-raised);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--color-keyline);
+/* ── Tail ───────────────────────────────────────────────────── */
+
+.tail {
+  max-width: 62ch;
 }
 
-.ctaTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  margin-bottom: var(--spacing-md);
+.tailTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
 }
 
-.ctaDescription {
+.tailText {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-white);
-  opacity: 0.8;
-  margin-bottom: var(--spacing-xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
 }
 
-@media (max-width: 768px) {
-  .phaseDetails {
-    grid-template-columns: 1fr;
+.tailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 700px) {
+  /* The rail costs too much width on a phone — drop it and let the phases
+     stack as plain plates with their number on top. */
+  .rail::before {
+    display: none;
   }
 
-  .principlesGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .ctaSection {
-    padding: var(--spacing-xl);
+  .phase {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-sm);
   }
 }

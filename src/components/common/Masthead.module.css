@@ -1,0 +1,260 @@
+/* The page opener. Replaces the old PageHero, which put the same centred
+   title block on top of eighteen different pages. This one is a printed
+   header: a mono strip across the top, the title set hard left, and the
+   facts of the page listed underneath as spec rows. */
+
+.masthead {
+  position: relative;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  border-bottom: var(--rule-weight) solid var(--color-keyline);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ── Tones ──────────────────────────────────────────────────── */
+
+.ground {
+  background-color: var(--color-bg);
+}
+
+/* Reversed out of the ink. The slab runs full-bleed. */
+.plate {
+  background-color: var(--color-ink);
+  border-bottom: none;
+}
+
+.plate .title,
+.plate .fieldValue {
+  color: var(--color-text-invert);
+}
+
+.plate .lede,
+.plate .fieldKey,
+.plate .crumbLink,
+.plate .crumb {
+  color: rgba(238, 241, 233, 0.68);
+}
+
+.plate .crumbLink:hover {
+  color: var(--color-accent);
+}
+
+.plate .serial,
+.plate .stamp {
+  color: rgba(238, 241, 233, 0.6);
+  border-color: rgba(238, 241, 233, 0.22);
+}
+
+.plate .strip {
+  border-bottom-color: rgba(238, 241, 233, 0.16);
+}
+
+.plate .fieldLeader {
+  border-bottom-color: rgba(238, 241, 233, 0.22);
+}
+
+/* The boundary below is the hazard rail — used where the page is a notice. */
+.hazard {
+  background-color: var(--color-bg);
+  border-bottom: none;
+}
+
+.hazard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  background-image: var(--hazard);
+}
+
+/* ── Top strip ──────────────────────────────────────────────── */
+
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-bottom: 0.65rem;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.serial,
+.stamp {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.stamp {
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+
+.body {
+  display: block;
+}
+
+.split .body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--spacing-2xl);
+  align-items: center;
+}
+
+.main {
+  min-width: 0;
+}
+
+.aside {
+  min-width: 0;
+}
+
+/* ── Crumbs ─────────────────────────────────────────────────── */
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.crumbLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.crumbLink:hover {
+  color: var(--color-accent-text);
+  border-bottom-color: currentColor;
+}
+
+.crumbSep {
+  color: var(--color-accent);
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-5xl);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+  text-wrap: balance;
+}
+
+/* One marked phrase per title, as elsewhere on the site. */
+.title em {
+  font-style: normal;
+  background-color: var(--color-hivis);
+  color: var(--color-ink);
+  box-shadow: 0.25rem 0 0 var(--color-hivis), -0.25rem 0 0 var(--color-hivis);
+}
+
+/* A phrase that should read as a stamped fill rather than a highlight. */
+.title strong {
+  font-weight: 800;
+  background-color: var(--color-accent);
+  color: var(--color-enamel);
+  padding: 0 0.3rem;
+}
+
+.lede {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-top: 1.15rem;
+  max-width: 60ch;
+}
+
+/* ── Spec fields ────────────────────────────────────────────── */
+
+.fields {
+  margin-top: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.4rem var(--spacing-lg);
+  max-width: 760px;
+}
+
+.field {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+}
+
+.fieldKey {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.fieldLeader {
+  flex: 1;
+  border-bottom: 1px dotted var(--color-border);
+  transform: translateY(-0.2em);
+}
+
+.fieldValue {
+  color: var(--color-text-bright);
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 900px) {
+  .split .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+  }
+
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

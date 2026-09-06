@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Section, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
+import {
+  Button,
+  Masthead,
+  Section,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
 import caseStudiesData from '../data/caseStudies.json';
 import styles from './CaseStudiesPage.module.css';
 
@@ -14,63 +20,80 @@ interface CaseStudy {
   title: string;
   client: string;
   industry: string;
+  services: string[];
   summary: string;
-  outcome: {
-    stats: Stat[];
-  };
+  outcome: { stats: Stat[] };
   featured: boolean;
 }
 
+/* A register of completed jobs. Each row is a filed docket: reference on the
+   left, what it was in the middle, what came out of it on the right. */
 export function CaseStudiesPage() {
+  const studies = caseStudiesData.caseStudies as CaseStudy[];
+
   return (
     <main>
-      <PageHero
+      <Masthead
+        serial="Register — completed jobs"
+        stamp={`${studies.length} on file`}
         title={caseStudiesData.heroTitle}
-        subtitle={caseStudiesData.heroSubtitle}
-      >
-        <Button href="/#contact" size="lg">
-          Become a Success Story
-        </Button>
-      </PageHero>
+        lede={caseStudiesData.intro}
+      />
 
       <Section>
-        <AnimatedSection>
-          <p className={styles.intro}>{caseStudiesData.intro}</p>
-        </AnimatedSection>
-      </Section>
+        <div className={styles.head} aria-hidden="true">
+          <span>Ref</span>
+          <span>Job</span>
+          <span>Outcome</span>
+        </div>
 
-      <Section>
-        <StaggerChildren className={styles.caseStudiesGrid} staggerDelay={0.15}>
-          {caseStudiesData.caseStudies.map((study: CaseStudy) => (
+        <StaggerChildren className={styles.register} staggerDelay={0.06}>
+          {studies.map((study, i) => (
             <FadeInUp key={study.id}>
-              <Link to={`/case-studies/${study.slug}`} className={styles.caseStudyCard}>
-                {study.featured && <span className={styles.featuredBadge}>Featured</span>}
-                <span className={styles.industry}>{study.industry}</span>
-                <h2 className={styles.title}>{study.title}</h2>
-                <p className={styles.client}>{study.client}</p>
-                <p className={styles.summary}>{study.summary}</p>
-                <div className={styles.statsPreview}>
-                  {study.outcome.stats.slice(0, 3).map((stat, index) => (
-                    <div key={index} className={styles.statItem}>
+              <Link className={styles.row} to={`/case-studies/${study.slug}`}>
+                <div className={styles.ref}>
+                  <span className={styles.refNo}>
+                    {String(i + 1).padStart(3, '0')}
+                  </span>
+                  <span className={styles.refIndustry}>{study.industry}</span>
+                  {study.featured && <span className={styles.flag}>Featured</span>}
+                </div>
+
+                <div className={styles.job}>
+                  <h2 className={styles.title}>{study.title}</h2>
+                  <p className={styles.client}>{study.client}</p>
+                  <p className={styles.summary}>{study.summary}</p>
+                  <ul className={styles.services}>
+                    {study.services.map((s) => (
+                      <li className={styles.service} key={s}>
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.outcome}>
+                  {study.outcome.stats.slice(0, 3).map((stat) => (
+                    <div className={styles.stat} key={stat.label}>
                       <span className={styles.statValue}>{stat.value}</span>
                       <span className={styles.statLabel}>{stat.label}</span>
                     </div>
                   ))}
+                  <span className={styles.open}>Open docket →</span>
                 </div>
-                <span className={styles.readMore}>Read case study →</span>
               </Link>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>{caseStudiesData.cta.title}</h2>
-          <p className={styles.ctaDescription}>{caseStudiesData.cta.description}</p>
-          <Button href="/#contact" size="lg">
-            {caseStudiesData.cta.buttonText}
-          </Button>
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <div>
+            <h2 className={styles.tailTitle}>{caseStudiesData.cta.title}</h2>
+            <p className={styles.tailText}>{caseStudiesData.cta.description}</p>
+          </div>
+          <Button href="/#contact">{caseStudiesData.cta.buttonText}</Button>
         </div>
       </Section>
     </main>

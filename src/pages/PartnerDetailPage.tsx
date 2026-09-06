@@ -1,5 +1,12 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
-import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
+import { useParams, Navigate } from 'react-router-dom';
+import {
+  Button,
+  Masthead,
+  Section,
+  SectionHeader,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
 import partnersData from '../data/partners.json';
 import styles from './PartnerDetailPage.module.css';
 
@@ -16,107 +23,93 @@ interface Partner {
   description: string;
   services: string[];
   highlights: Highlight[];
-  colors: {
-    primary: string;
-    secondary: string;
-  };
+  colors: { primary: string; secondary: string };
 }
 
+/* A supplier record. Same register language as the index, opened up. */
 export function PartnerDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const partner = partnersData.partners.find((p: Partner) => p.slug === slug);
+  const partner = (partnersData.partners as Partner[]).find((p) => p.slug === slug);
 
   if (!partner) {
     return <Navigate to="/partners" replace />;
   }
 
+  const short = partner.name.split(' ')[0];
+
   return (
     <main>
-      <PageHero
-        title={partner.name}
-        subtitle={partner.tagline}
-      >
-        <div
-          className={styles.heroBadge}
-          style={{
+      <div
+        style={
+          {
             '--partner-primary': partner.colors.primary,
-            '--partner-secondary': partner.colors.secondary
-          } as React.CSSProperties}
-        >
-          <span className={styles.badgeInitial}>{partner.name.charAt(0)}</span>
-        </div>
-        <Button href="/#contact" size="lg">
-          Work With {partner.name.split(' ')[0]}
-        </Button>
-      </PageHero>
+            '--partner-secondary': partner.colors.secondary,
+          } as React.CSSProperties
+        }
+      >
+        <Masthead
+          serial="Supplier record"
+          stamp="Approved"
+          crumbs={[{ label: 'Partners', to: '/partners' }, { label: partner.name }]}
+          title={partner.name}
+          lede={partner.tagline}
+          aside={
+            <span className={styles.mark} aria-hidden="true">
+              {partner.name.charAt(0)}
+            </span>
+          }
+          actions={<Button href="/#contact">Work with {short}</Button>}
+        />
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="About" />
-        </AnimatedSection>
-        <FadeInUp>
-          <p className={styles.description}>{partner.description}</p>
-        </FadeInUp>
-      </Section>
-
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Services"
-            subtitle={`What ${partner.name.split(' ')[0]} offers`}
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.servicesGrid} staggerDelay={0.05}>
-          {partner.services.map((service: string, index: number) => (
-            <FadeInUp key={index}>
-              <div
-                className={styles.serviceCard}
-                style={{ '--partner-primary': partner.colors.primary } as React.CSSProperties}
-              >
-                <span className={styles.serviceCheck}>✓</span>
-                <span>{service}</span>
-              </div>
-            </FadeInUp>
-          ))}
-        </StaggerChildren>
-      </Section>
-
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title={`Why Choose ${partner.name.split(' ')[0]}`}
-            subtitle="What sets them apart"
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.highlightsGrid} staggerDelay={0.1}>
-          {partner.highlights.map((highlight: Highlight, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.highlightCard}>
-                <h3 className={styles.highlightTitle}>{highlight.title}</h3>
-                <p className={styles.highlightDescription}>{highlight.description}</p>
-              </div>
-            </FadeInUp>
-          ))}
-        </StaggerChildren>
-      </Section>
-
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
-          <p className={styles.ctaDescription}>
-            Contact us to discuss how {partner.name} can help with your project.
-            As an OBH Software partner, they understand our clients' needs and deliver exceptional results.
-          </p>
-          <div className={styles.ctaButtons}>
-            <Button href="/#contact" size="lg">
-              Get in Touch
-            </Button>
-            <Link to="/partners" className={styles.secondaryButton}>
-              ← Back to Partners
-            </Link>
+        <Section ruled>
+          <div className={styles.about}>
+            <SectionHeader eyebrow="Record" title="Who they are." />
+            <p className={styles.body}>{partner.description}</p>
           </div>
-        </div>
-      </Section>
+        </Section>
+
+        <Section ruled sunk>
+          <SectionHeader eyebrow="Capability" title={`What ${short} does.`} />
+          <ul className={styles.services}>
+            {partner.services.map((service) => (
+              <li className={styles.service} key={service}>
+                <span className={styles.tick} aria-hidden="true" />
+                {service}
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section ruled>
+          <SectionHeader eyebrow="Why them" title={`What sets ${short} apart.`} />
+          <StaggerChildren className={styles.highlights} staggerDelay={0.06}>
+            {partner.highlights.map((highlight) => (
+              <FadeInUp key={highlight.title}>
+                <div className={styles.highlight}>
+                  <h3 className={styles.highlightTitle}>{highlight.title}</h3>
+                  <p className={styles.highlightText}>{highlight.description}</p>
+                </div>
+              </FadeInUp>
+            ))}
+          </StaggerChildren>
+        </Section>
+
+        <Section ruled tight>
+          <div className={styles.tail}>
+            <h2 className={styles.tailTitle}>Bring {short} onto your job.</h2>
+            <p className={styles.tailText}>
+              As an OBH partner they already know how we work, so there is no
+              handover tax when we run a job together.
+            </p>
+            <div className={styles.tailActions}>
+              <Button href="/#contact">Get in touch</Button>
+              <Button to="/partners" variant="ghost">
+                ← All partners
+              </Button>
+            </div>
+          </div>
+        </Section>
+      </div>
     </main>
   );
 }

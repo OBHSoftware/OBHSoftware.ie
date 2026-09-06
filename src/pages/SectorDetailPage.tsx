@@ -1,7 +1,20 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Section, SectionHeader, PageHero, AnimatedSection, StaggerChildren, FadeInUp, Button } from '../components/common';
-import { ShieldIcon, MoneyIcon, CertificateIcon, BuildingIcon, TruckIcon, TeamIcon } from '../components/icons';
+import {
+  Button,
+  Masthead,
+  Section,
+  SectionHeader,
+  StaggerChildren,
+  FadeInUp,
+} from '../components/common';
+import {
+  ShieldIcon,
+  MoneyIcon,
+  CertificateIcon,
+  BuildingIcon,
+  TruckIcon,
+  TeamIcon,
+} from '../components/icons';
 import sectorsData from '../data/sectors.json';
 import styles from './SectorDetailPage.module.css';
 
@@ -29,7 +42,6 @@ interface Sector {
   name: string;
   slug: string;
   icon: string;
-  shortDescription: string;
   heroTitle: string;
   heroSubtitle: string;
   description: string;
@@ -38,103 +50,95 @@ interface Sector {
   stats: Stat[];
 }
 
+/* The sector notice: what goes wrong in this industry, then what we put in
+   its place. Faults are marked as faults — that is the point of the page. */
 export function SectorDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const sector = sectorsData.sectors.find((s: Sector) => s.slug === slug);
+  const sector = (sectorsData.sectors as Sector[]).find((s) => s.slug === slug);
 
   if (!sector) {
     return <Navigate to="/sectors" replace />;
   }
 
-  const IconComponent = iconMap[sector.icon] || ShieldIcon;
+  const Icon = iconMap[sector.icon] || ShieldIcon;
 
   return (
     <main>
-      <PageHero
+      <Masthead
+        tone="hazard"
+        serial={sector.name}
+        stamp="Sector notice"
+        crumbs={[{ label: 'Industries', to: '/sectors' }, { label: sector.name }]}
         title={sector.heroTitle}
-        subtitle={sector.heroSubtitle}
-      >
-        <div className={styles.heroIcon}>
-          <IconComponent />
-        </div>
-        <Button href="/#contact" size="lg">
-          Get Started
-        </Button>
-      </PageHero>
+        lede={sector.heroSubtitle}
+        fields={sector.stats.map((s) => ({ key: s.label, value: s.value }))}
+        aside={
+          <span className={styles.mark} aria-hidden="true">
+            <Icon />
+          </span>
+        }
+        actions={<Button href="/#contact">Book a consultation</Button>}
+      />
 
-      <Section>
-        <div className={styles.statsRow}>
-          {sector.stats.map((stat: Stat, index: number) => (
-            <motion.div
-              key={index}
-              className={styles.stat}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-            >
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{stat.label}</span>
-            </motion.div>
-          ))}
+      <Section ruled>
+        <div className={styles.overview}>
+          <SectionHeader eyebrow="Overview" title={`The ${sector.name} picture.`} />
+          <p className={styles.body}>{sector.description}</p>
         </div>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader title="Overview" />
-        </AnimatedSection>
-        <FadeInUp>
-          <p className={styles.description}>{sector.description}</p>
-        </FadeInUp>
-      </Section>
+      {/* Faults first. Every one of these is something an operator told us. */}
+      <Section ruled sunk>
+        <SectionHeader
+          eyebrow="Faults found"
+          title="What goes wrong."
+          subtitle="The problems that keep coming up in this sector."
+        />
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Key Features"
-            subtitle="What we offer for your industry"
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.featuresGrid} staggerDelay={0.1}>
-          {sector.features.map((feature: Feature, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.featureCard}>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+        <StaggerChildren className={styles.faults} staggerDelay={0.05}>
+          {sector.challenges.map((challenge, i) => (
+            <FadeInUp key={challenge}>
+              <div className={styles.fault}>
+                <span className={styles.faultNo}>{String(i + 1).padStart(2, '0')}</span>
+                <p className={styles.faultText}>{challenge}</p>
+                <span className={styles.faultStamp}>Fault</span>
               </div>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Challenges We Address"
-            subtitle="Common IT challenges in your industry"
-          />
-        </AnimatedSection>
-        <StaggerChildren className={styles.challengesList} staggerDelay={0.08}>
-          {sector.challenges.map((challenge: string, index: number) => (
-            <FadeInUp key={index}>
-              <div className={styles.challengeItem}>
-                <span className={styles.checkmark}>✓</span>
-                <span>{challenge}</span>
+      <Section ruled>
+        <SectionHeader
+          eyebrow="Remedy"
+          title="What we put in its place."
+        />
+
+        <StaggerChildren className={styles.remedies} staggerDelay={0.06}>
+          {sector.features.map((feature) => (
+            <FadeInUp key={feature.title}>
+              <div className={styles.remedy}>
+                <h3 className={styles.remedyTitle}>{feature.title}</h3>
+                <p className={styles.remedyText}>{feature.description}</p>
               </div>
             </FadeInUp>
           ))}
         </StaggerChildren>
       </Section>
 
-      <Section>
-        <div className={styles.ctaSection}>
-          <h2 className={styles.ctaTitle}>Ready to Transform Your IT?</h2>
-          <p className={styles.ctaDescription}>
-            Let's discuss how we can help your {sector.name.toLowerCase()} organization succeed.
+      <Section ruled tight>
+        <div className={styles.tail}>
+          <h2 className={styles.tailTitle}>
+            Working in {sector.name.toLowerCase()}?
+          </h2>
+          <p className={styles.tailText}>
+            Half an hour on the phone and we will tell you whether software fixes
+            your problem or whether it does not.
           </p>
-          <div className={styles.ctaButtons}>
-            <Button href="/#contact" size="lg">
-              Schedule a Consultation
+          <div className={styles.tailActions}>
+            <Button href="/#contact">Book a consultation</Button>
+            <Button to="/sectors" variant="ghost">
+              ← All sectors
             </Button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Section, PageHero, AnimatedSection, StaggerChildren, FadeInUp } from '../components/common';
+import { Masthead, Section, StaggerChildren, FadeInUp } from '../components/common';
 import clientPortalData from '../data/clientPortal.json';
 import styles from './ClientPortalPage.module.css';
 
@@ -21,79 +21,91 @@ interface ResourceLink {
   url: string;
 }
 
+/* A control panel. Every tile is a switch that does one thing, and the
+   emergency line is marked as an emergency line — hazard rail, fail colour,
+   the number set large enough to read off a screen at arm's length. */
 export function ClientPortalPage() {
+  const { emergencySupport, resources } = clientPortalData;
+
   return (
     <main>
-      <PageHero
+      <Masthead
+        tone="plate"
+        serial="Client access"
+        stamp="Existing clients"
         title={clientPortalData.heroTitle}
-        subtitle={clientPortalData.heroSubtitle}
+        lede={clientPortalData.intro}
       />
 
-      <Section>
-        <AnimatedSection>
-          <p className={styles.intro}>{clientPortalData.intro}</p>
-        </AnimatedSection>
-      </Section>
+      {(clientPortalData.sections as PortalSection[]).map((section) => (
+        <Section key={section.title} ruled>
+          <h2 className={styles.sectionTitle}>{section.title}</h2>
 
-      {clientPortalData.sections.map((section: PortalSection, sIndex: number) => (
-        <Section key={sIndex}>
-          <AnimatedSection>
-            <h2 className={styles.sectionTitle}>{section.title}</h2>
-          </AnimatedSection>
-          <StaggerChildren className={styles.itemsGrid} staggerDelay={0.1}>
-            {section.items.map((item: PortalItem, iIndex: number) => (
-              <FadeInUp key={iIndex}>
-                <div className={styles.itemCard}>
-                  <h3 className={styles.itemTitle}>{item.title}</h3>
-                  <p className={styles.itemDescription}>{item.description}</p>
+          <StaggerChildren className={styles.panel} staggerDelay={0.05}>
+            {section.items.map((item) => {
+              const external = item.linkType === 'external';
+              return (
+                <FadeInUp key={item.title}>
                   <a
+                    className={styles.switch}
                     href={item.url}
-                    target={item.linkType === 'external' ? '_blank' : undefined}
-                    rel={item.linkType === 'external' ? 'noopener noreferrer' : undefined}
-                    className={styles.itemButton}
+                    {...(external
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
                   >
-                    {item.buttonText}
-                    {item.linkType === 'external' && <span className={styles.externalIcon}>↗</span>}
+                    <span className={styles.switchTitle}>{item.title}</span>
+                    <span className={styles.switchText}>{item.description}</span>
+                    <span className={styles.switchAction}>
+                      {item.buttonText}
+                      {external && <span aria-hidden="true"> ↗</span>}
+                    </span>
                   </a>
-                </div>
-              </FadeInUp>
-            ))}
+                </FadeInUp>
+              );
+            })}
           </StaggerChildren>
         </Section>
       ))}
 
-      <Section>
-        <div className={styles.emergencySection}>
-          <h2 className={styles.emergencyTitle}>{clientPortalData.emergencySupport.title}</h2>
-          <p className={styles.emergencyDescription}>{clientPortalData.emergencySupport.description}</p>
-          <ul className={styles.emergencyInstructions}>
-            {clientPortalData.emergencySupport.instructions.map((instruction: string, index: number) => (
-              <li key={index}>{instruction}</li>
-            ))}
-          </ul>
-          <a href={`tel:${clientPortalData.emergencySupport.phone.replace(/\s/g, '')}`} className={styles.phoneNumber}>
-            {clientPortalData.emergencySupport.phone}
-          </a>
-          <p className={styles.emergencyNote}>{clientPortalData.emergencySupport.note}</p>
-        </div>
+      <Section ruled>
+        <aside className={styles.emergency}>
+          <div className={styles.emergencyRail} aria-hidden="true" />
+          <div className={styles.emergencyBody}>
+            <span className={styles.emergencyLabel}>Emergency</span>
+            <h2 className={styles.emergencyTitle}>{emergencySupport.title}</h2>
+            <p className={styles.emergencyText}>{emergencySupport.description}</p>
+
+            <ol className={styles.instructions}>
+              {emergencySupport.instructions.map((instruction: string) => (
+                <li key={instruction}>{instruction}</li>
+              ))}
+            </ol>
+
+            <a
+              className={styles.phone}
+              href={`tel:${emergencySupport.phone.replace(/\s/g, '')}`}
+            >
+              {emergencySupport.phone}
+            </a>
+            <p className={styles.note}>{emergencySupport.note}</p>
+          </div>
+        </aside>
       </Section>
 
-      <Section>
-        <AnimatedSection>
-          <h2 className={styles.sectionTitle}>{clientPortalData.resources.title}</h2>
-        </AnimatedSection>
-        <FadeInUp>
-          <div className={styles.resourcesCard}>
-            <p className={styles.resourcesDescription}>{clientPortalData.resources.description}</p>
-            <ul className={styles.resourcesList}>
-              {clientPortalData.resources.links.map((link: ResourceLink, index: number) => (
-                <li key={index}>
-                  <a href={link.url}>{link.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </FadeInUp>
+      <Section ruled tight>
+        <h2 className={styles.sectionTitle}>{resources.title}</h2>
+        <p className={styles.resourcesText}>{resources.description}</p>
+        <ul className={styles.links}>
+          {(resources.links as ResourceLink[]).map((link) => (
+            <li key={link.title}>
+              <a className={styles.link} href={link.url}>
+                {link.title}
+                <span className={styles.linkLeader} aria-hidden="true" />
+                <span className={styles.linkGo}>Open →</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </Section>
     </main>
   );
