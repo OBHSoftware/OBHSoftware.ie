@@ -7,3 +7,8 @@ export { AnimatedSection, StaggerChildren, FadeInUp, fadeInUpVariant } from './A
 export { BackToTop } from './BackToTop';
 export { PageHero } from './PageHero';
 export { ScrollToTop } from './ScrollToTop';
+export { Docket } from './Docket';
+export type { DocketField, StampTone } from './Docket';
+export { ProductPane } from './ProductPane';
+export type { PaneKind } from './ProductPane';
+export { Logo, LogoMark } from './Logo';

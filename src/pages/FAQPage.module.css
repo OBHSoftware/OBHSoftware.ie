@@ -5,7 +5,7 @@
   color: var(--color-white);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--color-keyline);
 }
 
 .faqList {
@@ -15,19 +15,19 @@
 }
 
 .faqItem {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   overflow: hidden;
   transition: border-color var(--transition-base);
 }
 
 .faqItem:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-keyline);
 }
 
 .faqItem.open {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-keyline);
 }
 
 .faqQuestion {
@@ -49,7 +49,7 @@
 }
 
 .faqQuestion:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--color-bg-raised);
 }
 
 .faqIcon {
@@ -57,7 +57,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@
 }
 
 .faqItem.open .faqIcon {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
 }
 
 .faqAnswer {
@@ -93,9 +93,9 @@
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

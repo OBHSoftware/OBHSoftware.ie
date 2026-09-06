@@ -1,7 +1,7 @@
 {
   "heroTitle": "Our Products",
   "heroSubtitle": "Purpose-built software products you can use today",
-  "intro": "Beyond consulting, we build and sell specialised software products that address real industry challenges. Our products are born from hands-on experience working with businesses just like yours.",
+  "intro": "Beyond consulting, we build and sell specialised software products that address real industry challenges. Every one of them started as a job for a real operator and became a product.",
   "products": [
     {
       "id": "qmechanic",
@@ -44,57 +44,20 @@
         "Never miss an inspection deadline"
       ],
       "stats": [
-        { "value": "50%", "label": "Less Paperwork" },
-        { "value": "100%", "label": "Digital Records" },
-        { "value": "24/7", "label": "Access" }
-      ],
-      "externalUrl": "https://qmechanic.autos"
-    },
-    {
-      "id": "qhaul",
-      "slug": "qhaul",
-      "name": "qHaul",
-      "tagline": "Transport Management System",
-      "status": "coming-soon",
-      "description": "qHaul is our upcoming transport management system designed to give haulage operators complete control over their operations. From job booking to proof of delivery, qHaul streamlines every aspect of transport management.",
-      "features": [
         {
-          "title": "Job Management",
-          "description": "Book, schedule, and manage transport jobs with customer and load details"
+          "value": "50%",
+          "label": "Less Paperwork"
         },
         {
-          "title": "Driver App",
-          "description": "Mobile app for drivers with job details, navigation, and digital POD capture"
+          "value": "100%",
+          "label": "Digital Records"
         },
         {
-          "title": "Real-Time Tracking",
-          "description": "Live visibility of vehicle locations and job status updates"
-        },
-        {
-          "title": "Customer Portal",
-          "description": "Self-service portal for customers to book jobs and track deliveries"
-        },
-        {
-          "title": "Invoicing Integration",
-          "description": "Automatic invoice generation based on completed jobs and rates"
-        },
-        {
-          "title": "Analytics Dashboard",
-          "description": "Insights into fleet utilisation, revenue, and operational efficiency"
+          "value": "24/7",
+          "label": "Access"
         }
       ],
-      "benefits": [
-        "Streamline job booking and dispatch",
-        "Eliminate paper-based proof of delivery",
-        "Improve customer communication and visibility",
-        "Reduce admin time with automated invoicing",
-        "Make data-driven decisions with analytics"
-      ],
-      "stats": [
-        { "value": "2025", "label": "Launch Year" },
-        { "value": "End-to-End", "label": "Solution" },
-        { "value": "Cloud", "label": "Based" }
-      ]
+      "externalUrl": "https://qmechanic.autos"
     },
     {
       "id": "solar",
@@ -138,16 +101,135 @@
         "Segment work with queues across teams — frontend, backend, support, design"
       ],
       "stats": [
-        { "value": "AI-Native", "label": "MCP Built In" },
-        { "value": "100%", "label": "White-Label" },
-        { "value": "All-in-One", "label": "PM + Billing + Portal" }
+        {
+          "value": "AI-Native",
+          "label": "MCP Built In"
+        },
+        {
+          "value": "100%",
+          "label": "White-Label"
+        },
+        {
+          "value": "All-in-One",
+          "label": "PM + Billing + Portal"
+        }
       ],
       "externalUrl": "https://projectsolar.space"
+    },
+    {
+      "id": "cashish",
+      "slug": "cashish",
+      "name": "cashish",
+      "tagline": "Irish Books & Cash-Basis VAT",
+      "status": "available",
+      "description": "cashish is lightweight accounting for small Irish businesses. It covers the parts of a full accounting package people actually open — bank statement import, invoicing from a product library, reporting and a cash-receipts VAT return — without the monthly subscription or the features nobody uses.",
+      "features": [
+        {
+          "title": "Bank Statement Import",
+          "description": "Upload a bank CSV and import safely — transactions are matched on the provider's own ID, so re-uploading an overlapping statement never duplicates anything"
+        },
+        {
+          "title": "Categorisation Rules",
+          "description": "Categorise inline or in bulk, then save the decision as a rule so the same transaction categorises itself next time"
+        },
+        {
+          "title": "Invoicing",
+          "description": "A reusable product and service library with prices and VAT rates, live VAT and total calculation, and a clean PDF to send"
+        },
+        {
+          "title": "Cash-Basis VAT Return",
+          "description": "A cash receipts basis VAT return computed from what actually moved through the account, ready to transcribe to Revenue"
+        },
+        {
+          "title": "Financial Health",
+          "description": "Runway, committed cash, what you are owed and where revenue is concentrated — the questions you ask before you commit to anything"
+        },
+        {
+          "title": "Reporting",
+          "description": "Profit and loss, spending by category and customer concentration over any period"
+        }
+      ],
+      "benefits": [
+        "Replace the accounting subscription you barely use",
+        "Import a statement twice without creating duplicates",
+        "Categorise once and let rules do it thereafter",
+        "File a cash-basis VAT return without a spreadsheet",
+        "See your runway before you commit to spending"
+      ],
+      "stats": [
+        {
+          "value": "EUR",
+          "label": "Ireland Only"
+        },
+        {
+          "value": "Cash",
+          "label": "Receipts Basis"
+        },
+        {
+          "value": "No",
+          "label": "Subscription"
+        }
+      ]
+    },
+    {
+      "id": "qhaul",
+      "slug": "qhaul",
+      "name": "qHaul",
+      "tagline": "Transport Management System",
+      "status": "coming-soon",
+      "description": "qHaul is our upcoming transport management system designed to give haulage operators complete control over their operations. From job booking to proof of delivery, qHaul streamlines every aspect of transport management.",
+      "features": [
+        {
+          "title": "Job Management",
+          "description": "Book, schedule, and manage transport jobs with customer and load details"
+        },
+        {
+          "title": "Driver App",
+          "description": "Mobile app for drivers with job details, navigation, and digital POD capture"
+        },
+        {
+          "title": "Real-Time Tracking",
+          "description": "Live visibility of vehicle locations and job status updates"
+        },
+        {
+          "title": "Customer Portal",
+          "description": "Self-service portal for customers to book jobs and track deliveries"
+        },
+        {
+          "title": "Invoicing Integration",
+          "description": "Automatic invoice generation based on completed jobs and rates"
+        },
+        {
+          "title": "Analytics Dashboard",
+          "description": "Insights into fleet utilisation, revenue, and operational efficiency"
+        }
+      ],
+      "benefits": [
+        "Streamline job booking and dispatch",
+        "Eliminate paper-based proof of delivery",
+        "Improve customer communication and visibility",
+        "Reduce admin time with automated invoicing",
+        "Make data-driven decisions with analytics"
+      ],
+      "stats": [
+        {
+          "value": "In Build",
+          "label": "Status"
+        },
+        {
+          "value": "End-to-End",
+          "label": "Booking to POD"
+        },
+        {
+          "value": "Cloud",
+          "label": "Based"
+        }
+      ]
     }
   ],
   "cta": {
     "title": "Interested in Our Products?",
-    "description": "Explore Solar for project management, qMechanic for fleet inspections, or register your interest in qHaul.",
+    "description": "Explore Solar for project delivery, qMechanic for fleet compliance, cashish for the books, or register your interest in qHaul.",
     "buttonText": "Contact Us"
   }
 }

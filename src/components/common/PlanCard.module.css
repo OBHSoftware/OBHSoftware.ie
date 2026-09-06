@@ -48,7 +48,7 @@
   font-family: var(--font-heading);
   font-weight: var(--font-weight-semibold);
   font-size: var(--text-xl);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .priceUnit {
@@ -63,7 +63,7 @@
   font-family: var(--font-heading);
   font-weight: var(--font-weight-semibold);
   font-size: var(--text-lg);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .features {
@@ -84,7 +84,7 @@
 }
 
 .checkmark {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   font-weight: bold;
   flex-shrink: 0;
 }

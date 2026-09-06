@@ -17,10 +17,10 @@
 }
 
 .phaseCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-2xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .phaseHeader {
@@ -35,7 +35,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--color-keyline);
 }
 
 .phaseTitleGroup {
@@ -81,7 +81,7 @@
 }
 
 .detailSection {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-sm);
   padding: var(--spacing-lg);
 }
@@ -129,10 +129,10 @@
 }
 
 .principleCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .principleTitle {
@@ -154,9 +154,9 @@
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

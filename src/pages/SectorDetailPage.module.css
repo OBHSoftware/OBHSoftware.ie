@@ -2,12 +2,12 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--spacing-lg);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--color-keyline);
 }
 
 .heroIcon svg {
@@ -28,9 +28,9 @@
   align-items: center;
   text-align: center;
   padding: var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   min-width: 150px;
 }
 
@@ -68,16 +68,16 @@
 }
 
 .featureCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .featureCard:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
 }
 
 .featureTitle {
@@ -112,9 +112,9 @@
   font-size: var(--text-base);
   color: var(--color-white);
   padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .checkmark {
@@ -122,22 +122,22 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

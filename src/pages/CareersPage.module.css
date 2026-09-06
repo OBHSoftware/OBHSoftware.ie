@@ -17,10 +17,10 @@
 }
 
 .cultureCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .cultureTitle {
@@ -47,10 +47,10 @@
 }
 
 .roleCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .roleTitle {
@@ -70,10 +70,10 @@
 }
 
 .benefitsCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   max-width: 600px;
   margin: var(--spacing-xl) auto 0;
 }
@@ -100,15 +100,15 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

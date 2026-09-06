@@ -1,5 +1,12 @@
-import { motion, useInView, type Variants } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/* Reveals are driven by `whileInView` with a viewport threshold rather than a
+   manual useInView + animate pair. The manual version could leave a section
+   stranded at opacity 0 if the viewport changed after the observer had already
+   fired — which is exactly what happened on tall screens and in print/capture.
+   Anyone who asks for reduced motion gets the content with no movement at all. */
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -7,21 +14,24 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export function AnimatedSection({ children, className = '', delay = 0 }: AnimatedSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+export function AnimatedSection({
+  children,
+  className = '',
+  delay = 0,
+}: AnimatedSectionProps) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
-      ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{
-        duration: 0.6,
-        delay,
-        ease: [0.22, 1, 0.36, 1] as const,
-      }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.55, delay, ease: EASE }}
     >
       {children}
     </motion.div>
@@ -34,23 +44,26 @@ interface StaggerChildrenProps {
   staggerDelay?: number;
 }
 
-export function StaggerChildren({ children, className = '', staggerDelay = 0.1 }: StaggerChildrenProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
+export function StaggerChildren({
+  children,
+  className = '',
+  staggerDelay = 0.1,
+}: StaggerChildrenProps) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
-      ref={ref}
       className={className}
       initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
       variants={{
         hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: staggerDelay,
-          },
-        },
+        visible: { transition: { staggerChildren: staggerDelay } },
       }}
     >
       {children}
@@ -59,18 +72,27 @@ export function StaggerChildren({ children, className = '', staggerDelay = 0.1 }
 }
 
 export const fadeInUpVariant: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
+    transition: { duration: 0.5, ease: EASE },
   },
 };
 
-export function FadeInUp({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function FadeInUp({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div className={className} variants={fadeInUpVariant}>
       {children}

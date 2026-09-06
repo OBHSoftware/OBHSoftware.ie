@@ -1,32 +1,24 @@
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 140px 0 var(--spacing-3xl);
-  overflow: hidden;
+  padding: 8.5rem 0 var(--section-y);
   background-color: var(--color-bg);
+  overflow: hidden;
 }
 
-.gridBg {
+/* Concrete tooth. A fine dot screen so the ground has grain rather than
+   reading as flat fill. */
+.rule {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(20, 22, 19, 0.14) 1px, transparent 1px);
+  background-size: 5px 5px;
+  opacity: 0.55;
   z-index: 0;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
 }
 
 .glow {
-  position: absolute;
-  top: -30%;
-  left: -15%;
-  width: 70%;
-  height: 90%;
-  background: radial-gradient(ellipse, rgba(243, 139, 42, 0.08) 0%, transparent 70%);
-  z-index: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .container {
@@ -35,286 +27,194 @@
   padding: 0 var(--container-padding);
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--spacing-2xl);
-  align-items: center;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+.intro {
+  margin-bottom: var(--spacing-xl);
 }
 
-.badge {
+/* Site-notice tag */
+.eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-accent);
-  background-color: var(--color-accent-dim);
-  border: 1px solid rgba(243, 139, 42, 0.20);
-  border-radius: 100px;
-  padding: 0.4rem 1rem;
-  width: fit-content;
-  letter-spacing: 0.02em;
+  gap: 0.55rem;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-text-invert);
+  background-color: var(--color-ink);
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 1.5rem;
 }
 
-.badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+.eyebrowDot {
+  width: 8px;
+  height: 8px;
   background-color: var(--color-accent);
-  animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2.4s steps(1, end) infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0.2; }
 }
 
+/* The poster line. Set as tight and as large as it will go. */
 .title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-7xl);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  /* Fluid rather than stepped: the longest word has to fit the viewport at
+     every width, and "PAPERWORK" set in expanded 800 overruns a phone at any
+     fixed step large enough to work on a desktop. */
+  font-size: clamp(2.25rem, 8.4vw, var(--text-7xl));
   color: var(--color-text-bright);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  max-width: 14ch;
 }
 
+/* Marked, the way someone runs a highlighter over the line that matters. */
 .titleAccent {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--color-accent);
-  font-weight: var(--font-weight-regular);
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+  padding: 0 0.12em 0.04em;
+  /* Cancels the block's own left padding so the marked line's first letter
+     sits flush with the line above it. */
+  margin-left: -0.12em;
 }
 
 .description {
   font-family: var(--font-body);
-  font-weight: var(--font-weight-regular);
   font-size: var(--text-xl);
   color: var(--color-text);
-  line-height: 1.7;
-  max-width: 480px;
+  line-height: 1.55;
+  max-width: 54ch;
+  margin-top: 1.6rem;
+  border-left: var(--rule-weight) solid var(--color-keyline);
+  padding-left: 1.1rem;
 }
 
-.actions {
-  display: flex;
-  gap: var(--spacing-sm);
-  flex-wrap: wrap;
-  padding-top: var(--spacing-xs);
-}
+/* ── The split ─────────────────────────────────────────────────
+   Two plates, divided by a hazard stripe. Not a decorative rule:
+   it marks the point where the two routes diverge. */
 
-/* Founders social proof */
-.rightColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--spacing-md);
-}
-
-.foundersProof {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.25rem 1.75rem;
-  background: rgba(243, 139, 42, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(243, 139, 42, 0.4);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.foundersProof:hover {
-  background: rgba(243, 139, 42, 0.18);
-  border-color: rgba(243, 139, 42, 0.6);
-  transform: translateY(-2px);
-}
-
-.proofLabel {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-accent);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.proofNames {
-  font-family: var(--font-heading);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-text);
-}
-
-.proofWrapper {
-  position: relative;
-}
-
-.proofCallout {
-  position: absolute;
-  top: -5.5rem;
-  left: -2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
   gap: 0;
-  transform: rotate(-8deg);
 }
 
-.proofCalloutText {
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  font-size: var(--text-sm);
-  color: rgba(243, 139, 42, 0.5);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.proofArrow {
-  color: rgba(243, 139, 42, 0.4);
-  width: 36px;
-  height: 48px;
-  flex-shrink: 0;
-  transform: scaleX(-1);
-}
-
-/* Terminal */
-.terminal {
-  background-color: rgba(22, 34, 16, 0.8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px var(--color-border),
-    0 24px 60px -12px rgba(0, 0, 0, 0.6),
-    0 0 100px -30px var(--color-accent-glow);
-}
-
-.terminalHeader {
+.perforation {
+  position: relative;
+  width: 3.5rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid var(--color-border);
+  justify-content: center;
 }
 
-.terminalDots {
-  display: flex;
-  gap: 6px;
+.perforation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background-image: var(--hazard);
+  background-size: 24px 24px;
 }
 
-.terminalDots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.terminalDots span:first-child {
-  background-color: #ff5f57;
-}
-
-.terminalDots span:nth-child(2) {
-  background-color: #febc2e;
-}
-
-.terminalDots span:nth-child(3) {
-  background-color: #28c840;
-}
-
-.terminalTitle {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
+.perforationLabel {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: var(--color-text-invert);
+  background-color: var(--color-ink);
+  padding: 0.5rem 0.25rem;
+  border: 2px solid var(--color-bg);
+  writing-mode: vertical-rl;
 }
 
-.terminalBody {
-  padding: 1.25rem 1.5rem;
+.docketWrap {
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
 }
 
-.terminalLine {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  display: flex;
-  gap: 0.6rem;
-  align-items: baseline;
-  color: var(--color-text);
+.docket {
+  flex: 1;
 }
 
-.terminalPrompt {
-  color: var(--color-accent);
-  font-weight: var(--font-weight-medium);
+.docketTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  font-stretch: 105%;
+  color: var(--color-text-bright);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
 }
 
-.terminalCheck {
-  color: #22c55e;
-}
-
-.terminalMuted {
+.docketBody {
+  font-family: var(--font-body);
   color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.6;
 }
 
-.terminalCursor {
-  color: var(--color-accent);
-  animation: blink 1s step-end infinite;
+.docketActions {
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .hero {
-    padding-top: 120px;
+    padding-top: 7rem;
   }
 
-  .container {
+  .split {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
   }
 
-  .title {
-    font-size: var(--text-6xl);
+  .perforation {
+    width: auto;
+    height: 3.25rem;
   }
 
-  .terminal {
-    max-width: 500px;
+  .perforation::before {
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 14px;
+    transform: translateY(-50%);
+  }
+
+  .perforationLabel {
+    writing-mode: horizontal-tb;
+    padding: 0.2rem 0.7rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
-    padding: 120px 0 var(--spacing-2xl);
+    padding-top: 6rem;
   }
 
   .title {
-    font-size: var(--text-5xl);
-  }
-
-  .title br {
-    display: none;
+    max-width: none;
   }
 
   .description {
-    font-size: var(--text-lg);
-  }
-
-  .terminal {
-    display: none;
+    font-size: var(--text-base);
   }
 }

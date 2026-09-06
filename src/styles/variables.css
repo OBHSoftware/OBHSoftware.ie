@@ -1,56 +1,108 @@
 :root {
-  /* Backgrounds — dark forest green base */
-  --color-bg: #0f1a0a;
-  --color-bg-raised: #162210;
-  --color-bg-subtle: #1d2b16;
-  --color-bg-hover: #253620;
+  /* Both themes are designed. Declaring support is also what stops Chrome's
+     Auto Dark Theme from algorithmically inverting the page — it only touches
+     pages that claim no dark support, and its guess left the ink headline
+     invisible on a darkened ground. */
+  color-scheme: light dark;
 
-  /* Brand */
-  --color-primary: #234E01;
-  --color-secondary: #1a3501;
-  --color-accent: #F38B2A;
-  --color-accent-hover: #d4700f;
-  --color-accent-dim: rgba(243, 139, 42, 0.10);
-  --color-accent-glow: rgba(243, 139, 42, 0.15);
-  --color-orange: #F38B2A;
-  --color-orange-dark: #d4700f;
-  --color-orange-light: #f5a04e;
+  /* ── Surfaces ────────────────────────────────────────────────
+     Ground is concrete, not paper and not cream. Panels are the
+     white enamel of a machine plate. Ink is the near-black of a
+     stencilled site notice. */
+  --color-bg: #d9dad3;
+  --color-bg-raised: #f3f4f0;
+  --color-bg-subtle: #e6e7e1;
+  --color-bg-hover: #eceee8;
+  --color-bg-sunk: #dcded6;
 
-  /* Text — warm greenish tones */
-  --color-text: #c8d4be;
-  --color-text-bright: #f0f4ec;
-  --color-text-muted: #6b7a60;
-  --color-white: #f0f4ec;
+  /* Ink — the dominant structural colour: slab fills, and type on a bright
+     fill. Keylines are a separate token because in the dark theme the slabs
+     stay dark while the rules have to go light. */
+  --color-ink: #141613;
+  --color-ink-soft: #2c2f2a;
+  --color-keyline: #141613;
 
-  /* Borders */
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.14);
+  /* Brand — safety orange. One loud colour, used for fills and
+     rules; --color-accent-text is the darkened version that clears
+     AA when it has to carry small type on the light ground. */
+  --color-accent: #ff4a00;
+  --color-accent-text: #a32b00;
+  --color-accent-hover: #e04100;
+  --color-accent-dim: rgba(255, 74, 0, 0.10);
+  --color-accent-glow: rgba(255, 74, 0, 0.18);
 
-  /* Typography */
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-heading: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Hi-vis — the vest. Only ever appears in the hazard stripe and
+     as a marker highlight. Never as type on light. */
+  --color-hivis: #dff23b;
 
-  /* Font weights */
-  --font-weight-light: 300;
+  /* Legacy aliases, so inner pages keep resolving. */
+  --color-primary: #141613;
+  --color-secondary: #2c2f2a;
+  --color-orange: #ff4a00;
+  --color-orange-dark: #a32b00;
+  --color-orange-light: #ff7233;
+
+  /* Plate states */
+  --color-pass: #175a2d;
+  --color-pass-dim: rgba(28, 107, 54, 0.12);
+  --color-fail: #a01a0c;
+  --color-fail-dim: rgba(184, 31, 14, 0.10);
+  /* Label that sits on a --color-fail fill; the fill brightens after dark. */
+  --color-fail-label: #f3f4f0;
+  --color-note: #6f4e00;
+  --color-note-dim: rgba(138, 97, 0, 0.12);
+
+  /* Text */
+  --color-text: #2c2f2a;
+  --color-text-bright: #141613;
+  --color-text-muted: #565b53;
+  --color-text-faint: #5a5f57;
+  --color-text-invert: #f3f4f0;
+  /* Enamel — a genuine white surface, for the rare fill that needs one. */
+  --color-enamel: #f3f4f0;
+  /* Inner pages use --color-white for body text, which was right when the
+     ground was dark. It means "brightest text on this ground", so on the
+     concrete it resolves to ink. Surfaces use --color-enamel instead. */
+  --color-white: #141613;
+
+  /* Rules — thick and black, not hairline and faint. */
+  --color-border: rgba(20, 22, 19, 0.18);
+  --color-border-hover: rgba(20, 22, 19, 0.42);
+  --color-rule: rgba(20, 22, 19, 0.22);
+  --color-rule-strong: #141613;
+  --rule-weight: 2px;
+
+  /* Typography — a signage stack. Archivo does the shouting,
+     Barlow does the talking, Barlow Condensed does the labelling,
+     Plex Mono does the numbers. */
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-label: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --font-weight-light: 400;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-bold: 800;
 
-  /* Font sizes — refined, professional scale */
-  --text-xs: 0.75rem;      /* 12px */
-  --text-sm: 0.875rem;     /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg: 1.125rem;     /* 18px */
-  --text-xl: 1.25rem;      /* 20px */
-  --text-2xl: 1.5rem;      /* 24px */
-  --text-3xl: 1.875rem;    /* 30px */
-  --text-4xl: 2.25rem;     /* 36px */
-  --text-5xl: 3rem;        /* 48px */
-  --text-6xl: 3.75rem;     /* 60px */
-  --text-7xl: 4.5rem;      /* 72px */
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  --text-6xl: 5.5rem;
+  --text-7xl: 7.5rem;
+
+  /* Label — condensed, uppercase, wide-tracked, like a plate. */
+  --label-size: 0.8125rem;
+  --label-tracking: 0.1em;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -62,42 +114,116 @@
   --spacing-3xl: 6rem;
   --spacing-4xl: 8rem;
 
-  /* Border radius */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --section-y: 5rem;
+  --section-y-tight: 3rem;
+
+  /* Radius — none. Everything is cut, stamped or bolted. */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
   --radius-full: 9999px;
 
-  /* Container */
-  --container-max-width: 1200px;
+  --container-max-width: 1240px;
   --container-padding: 1.5rem;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-slow: 400ms ease;
+  /* Elevation — a hard offset shadow, like a plate sitting proud. */
+  --shadow-plate: 5px 5px 0 var(--color-ink);
+  --shadow-plate-hover: 8px 8px 0 var(--color-accent);
+  --shadow-docket: none;
+  --shadow-raised: none;
+
+  /* The hazard stripe. The one decorative device on the site, and
+     it only ever marks a boundary. */
+  --hazard: repeating-linear-gradient(
+    135deg,
+    #141613 0 12px,
+    #dff23b 12px 24px
+  );
+
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 320ms ease;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Night shift ──────────────────────────────────────────────
+   The same industrial system after dark: the ground becomes the ink, plates
+   become steel, and the rules go light so the structure still reads. Safety
+   orange and hi-vis are unchanged — they are high-visibility colours and were
+   always meant for low light. The hazard stripe needs no variant at all. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #191d16;
+    --color-bg-raised: #23281f;
+    --color-bg-subtle: #1e2319;
+    --color-bg-hover: #2c3227;
+    --color-bg-sunk: #12150f;
+
+    /* Slabs go darker than the ground so the header, footer and plate strips
+       still read as slabs rather than dissolving into the page. */
+    --color-ink: #0c0e0a;
+    --color-ink-soft: #1a1e17;
+    /* Keylines invert. */
+    --color-keyline: #6c7566;
+
+    --color-enamel: #23281f;
+    /* Brightest text on this ground. */
+    --color-white: #eef1e9;
+
+    --color-text: #cdd4c6;
+    --color-text-bright: #f1f4ed;
+    --color-text-muted: #9aa392;
+    --color-text-faint: #8b947f;
+    --color-text-invert: #f1f4ed;
+
+    /* Small type in the accent colour needs the bright cut on a dark ground,
+       not the darkened one that clears AA on concrete. */
+    --color-accent-text: #ff8a4f;
+
+    --color-pass: #8fd166;
+    --color-pass-dim: rgba(143, 209, 102, 0.14);
+    --color-fail: #ff7a5c;
+    --color-fail-dim: rgba(255, 122, 92, 0.14);
+    --color-fail-label: #2a0d06;
+    --color-note: #e0c14a;
+    --color-note-dim: rgba(224, 193, 74, 0.14);
+
+    --color-border: rgba(238, 241, 233, 0.16);
+    --color-border-hover: rgba(238, 241, 233, 0.34);
+    --color-rule: rgba(238, 241, 233, 0.2);
+    --color-rule-strong: #6c7566;
+
+    /* A black offset shadow disappears on a dark ground; the plate is thrown
+       by the keyline colour instead. */
+    --shadow-plate: 5px 5px 0 #0c0e0a;
+    --shadow-plate-hover: 8px 8px 0 var(--color-accent);
+  }
 }
 
 @media (max-width: 1024px) {
   :root {
-    --text-7xl: 3.5rem;
-    --text-6xl: 2.75rem;
-    --text-5xl: 2.25rem;
-    --text-4xl: 1.875rem;
-    --text-3xl: 1.5rem;
-    --text-2xl: 1.25rem;
+    --text-7xl: 5rem;
+    --text-6xl: 4rem;
+    --text-5xl: 3rem;
+    --text-4xl: 2.25rem;
+    --text-3xl: 1.75rem;
+    --text-2xl: 1.5rem;
+    --section-y: 4rem;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --text-7xl: 2.5rem;
-    --text-6xl: 2rem;
-    --text-5xl: 1.75rem;
-    --text-4xl: 1.5rem;
-    --text-3xl: 1.25rem;
-    --text-2xl: 1.125rem;
-    --text-xl: 1.125rem;
+    --text-7xl: 3.25rem;
+    --text-6xl: 2.75rem;
+    --text-5xl: 2.25rem;
+    --text-4xl: 1.875rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.3125rem;
+    --text-xl: 1.1875rem;
+    --section-y: 3rem;
+    --section-y-tight: 2.25rem;
+    --shadow-plate: 3px 3px 0 #141613;
   }
 }

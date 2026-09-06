@@ -7,3 +7,6 @@ export { About } from './About';
 export { Testimonial } from './Testimonial';
 export { CostCalculator } from './CostCalculator';
 export { Contact } from './Contact';
+export { Proof } from './Proof';
+export { Platforms } from './Platforms';
+export { Work } from './Work';

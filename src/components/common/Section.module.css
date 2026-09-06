@@ -1,9 +1,26 @@
 .section {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--section-y) 0;
   position: relative;
 }
 
-/* sections blend on rich green bg — no divider needed */
+.tight {
+  padding: var(--section-y-tight) 0;
+}
+
+/* A section boundary is a thick black rule, not a hairline. */
+.ruled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--rule-weight);
+  background-color: var(--color-keyline);
+}
+
+.sunk {
+  background-color: var(--color-bg-subtle);
+}
 
 .container {
   width: 100%;
@@ -12,48 +29,63 @@
   padding: 0 var(--container-padding);
 }
 
+/* ── Section header ─────────────────────────────────────────── */
+
 .header {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+  max-width: 900px;
+}
+
+/* The eyebrow is a stencilled tag, reversed out of the ink. */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-text-invert);
+  background-color: var(--color-ink);
+  padding: 0.15rem 0.6rem;
+  margin-bottom: 1.1rem;
 }
 
 .title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-5xl);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: var(--text-4xl);
   color: var(--color-text-bright);
-  margin-bottom: var(--spacing-sm);
-  position: relative;
-  display: inline-block;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.0;
+  text-transform: uppercase;
 }
 
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: -0.4rem;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--color-accent);
-  border-radius: 2px;
+/* The one highlighted phrase per heading: marked, like a highlighter
+   run over a printed notice. */
+.title em {
+  font-style: normal;
+  background-color: var(--color-hivis);
+  box-shadow: 0.25rem 0 0 var(--color-hivis), -0.25rem 0 0 var(--color-hivis);
 }
 
 .subtitle {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-2xl);
-  color: var(--color-text);
-  line-height: 1.4;
-  margin-top: var(--spacing-md);
-  max-width: 700px;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 62ch;
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: var(--spacing-2xl) 0;
+  .header {
+    margin-bottom: var(--spacing-lg);
   }
 
-  .header {
-    margin-bottom: var(--spacing-xl);
+  .subtitle {
+    font-size: var(--text-base);
   }
 }

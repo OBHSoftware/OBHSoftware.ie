@@ -10,29 +10,29 @@
   align-items: center;
   text-align: center;
   padding: var(--spacing-xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   text-decoration: none;
   transition: transform var(--transition-base), background var(--transition-base), border-color var(--transition-base);
 }
 
 .sectorCard:hover {
   transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
 }
 
 .iconWrapper {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(135deg, var(--color-bg-raised) 0%, var(--color-bg-raised) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spacing-md);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--color-keyline);
 }
 
 .iconWrapper svg {

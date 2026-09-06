@@ -1,0 +1,141 @@
+/* The plate: a bolted machine plate / site notice. Hard black keyline,
+   no radius, a stencilled header bar, and a hard offset shadow so it sits
+   proud of the concrete rather than floating on it. */
+
+.docket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-raised);
+  border: var(--rule-weight) solid var(--color-keyline);
+  box-shadow: var(--shadow-plate);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.interactive:hover,
+.interactive:focus-within {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-plate-hover);
+}
+
+/* Header bar — reversed out, the way a plate stamps its part number. */
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: 0.5rem 1.1rem;
+  background-color: var(--color-ink);
+  color: var(--color-text-invert);
+}
+
+.serial {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status stamp */
+.stamp {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--label-size);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  line-height: 1.5;
+  padding: 0.05rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stampPass {
+  background-color: var(--color-hivis);
+  color: var(--color-ink);
+}
+
+.stampNote {
+  background-color: var(--color-text-invert);
+  color: var(--color-ink);
+}
+
+.stampAccent {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.stampMuted {
+  color: var(--color-text-invert);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
+/* Body */
+.body {
+  padding: 1.35rem 1.35rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+/* Spec rows along the bottom of the plate */
+.fields {
+  border-top: var(--rule-weight) solid var(--color-keyline);
+  background-color: var(--color-bg-subtle);
+  padding: 0.8rem 1.35rem 0.9rem;
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.field {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.fieldKey {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: var(--label-size);
+  color: var(--color-text-muted);
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.fieldLeader {
+  flex: 1;
+  border-bottom: 1px solid var(--color-border);
+  transform: translateY(-0.2rem);
+  min-width: 0.75rem;
+}
+
+.fieldValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-bright);
+  text-align: right;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding: 1.1rem 1.1rem 1.2rem;
+  }
+
+  .fields {
+    padding: 0.7rem 1.1rem 0.8rem;
+  }
+
+  .strip {
+    padding: 0.45rem 1.1rem;
+  }
+}

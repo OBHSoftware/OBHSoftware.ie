@@ -18,17 +18,17 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-2xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   text-decoration: none;
   transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
 }
 
 .productCard:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
   transform: translateY(-4px);
 }
 
@@ -60,13 +60,13 @@
 
 .available {
   background: rgba(243, 139, 42, 0.2);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   border: 1px solid rgba(243, 139, 42, 0.3);
 }
 
 .comingsoon {
   background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
+  color: var(--color-note);
   border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
@@ -104,9 +104,9 @@
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

@@ -1,0 +1,64 @@
+/* Full-width rows rather than a card grid: each platform gets poster-scale
+   billing on the left and its actual screen on the right. */
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.card {
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  font-stretch: 112%;
+  color: var(--color-text-bright);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.pane {
+  min-width: 0;
+}
+
+.actions {
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 860px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .actions {
+    margin-top: 0;
+  }
+}

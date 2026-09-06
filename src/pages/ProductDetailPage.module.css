@@ -1,25 +1,25 @@
+/* Sits on the ink masthead, so it is a solid stamp rather than a tinted
+   pill — the dark-on-light text colours do not read against ink. */
 .statusBadge {
-  font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-label);
+  font-size: var(--label-size);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--spacing-lg);
+  letter-spacing: var(--label-tracking);
+  line-height: 1.5;
+  padding: 0.15rem 0.6rem;
+  margin-bottom: var(--spacing-md);
   display: inline-block;
 }
 
 .available {
-  background: rgba(243, 139, 42, 0.2);
-  color: var(--color-accent);
-  border: 1px solid rgba(243, 139, 42, 0.3);
+  background: var(--color-hivis);
+  color: var(--color-ink);
 }
 
 .comingsoon {
-  background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: var(--color-accent);
+  color: var(--color-ink);
 }
 
 .statsRow {
@@ -35,9 +35,9 @@
   align-items: center;
   text-align: center;
   padding: var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   min-width: 150px;
 }
 
@@ -75,16 +75,16 @@
 }
 
 .featureCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .featureCard:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
 }
 
 .featureTitle {
@@ -119,9 +119,9 @@
   font-size: var(--text-base);
   color: var(--color-white);
   padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .checkmark {
@@ -129,22 +129,22 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {
@@ -192,7 +192,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
-  color: var(--color-bg);
+  color: var(--color-ink);
   background: var(--color-accent);
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-xl);

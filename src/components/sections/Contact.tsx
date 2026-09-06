@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Section, SectionHeader, Button, AnimatedSection } from '../common';
+import { Section, SectionHeader, Button, Docket, AnimatedSection } from '../common';
 import { submitToSolar } from '../../lib/solar-webhook';
+import home from '../../data/home.json';
 import styles from './Contact.module.css';
 
 interface FormData {
@@ -18,6 +19,7 @@ interface FormErrors {
 }
 
 export function Contact() {
+  const { contact: copy } = home;
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -33,17 +35,17 @@ export function Contact() {
     const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Add your name so we know who we are talking to';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'We need an email to reply to';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = 'That email address is missing something';
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Tell us what you are trying to fix';
     }
 
     setErrors(newErrors);
@@ -84,18 +86,17 @@ export function Contact() {
   };
 
   return (
-    <Section id="contact">
-      <AnimatedSection>
-        <SectionHeader
-          title="Let's Build Something Great Together."
-          subtitle="Book your free consultation and discover how technology can transform your business."
-        />
-      </AnimatedSection>
+    <Section id="contact" ruled>
+      <SectionHeader
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        subtitle={copy.subtitle}
+      />
 
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection>
         <div className={styles.content}>
-          <div className={styles.formWrapper}>
-            <form onSubmit={handleSubmit} className={styles.form}>
+          <Docket serial="New enquiry" stamp="Unfiled" stampTone="note">
+            <form onSubmit={handleSubmit} className={styles.form} noValidate>
               <div className={styles.row}>
                 <div className={styles.field}>
                   <label htmlFor="name" className={styles.label}>
@@ -108,9 +109,15 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
-                    placeholder="John Smith"
+                    placeholder="Your name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                   />
-                  {errors.name && <span className={styles.error}>{errors.name}</span>}
+                  {errors.name && (
+                    <span className={styles.error} id="name-error">
+                      {errors.name}
+                    </span>
+                  )}
                 </div>
 
                 <div className={styles.field}>
@@ -124,9 +131,15 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
-                    placeholder="john@company.ie"
+                    placeholder="you@company.ie"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                   />
-                  {errors.email && <span className={styles.error}>{errors.email}</span>}
+                  {errors.email && (
+                    <span className={styles.error} id="email-error">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -142,7 +155,7 @@ export function Contact() {
                     value={formData.company}
                     onChange={handleChange}
                     className={styles.input}
-                    placeholder="Your Company Ltd"
+                    placeholder="Optional"
                   />
                 </div>
 
@@ -157,14 +170,14 @@ export function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className={styles.input}
-                    placeholder="+353 1 234 5678"
+                    placeholder="Optional"
                   />
                 </div>
               </div>
 
               <div className={styles.field}>
                 <label htmlFor="message" className={styles.label}>
-                  Message <span className={styles.required}>*</span>
+                  What&rsquo;s the process? <span className={styles.required}>*</span>
                 </label>
                 <textarea
                   id="message"
@@ -172,44 +185,66 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
-                  placeholder="Tell us about your project or business challenge..."
+                  placeholder="What happens today, who does it, and where it falls over."
                   rows={5}
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
                 />
-                {errors.message && <span className={styles.error}>{errors.message}</span>}
+                {errors.message && (
+                  <span className={styles.error} id="message-error">
+                    {errors.message}
+                  </span>
+                )}
               </div>
 
-              <Button size="lg" type="submit">
-                {isSubmitting ? 'Sending...' : 'Book Your Free Consultation'}
-              </Button>
+              <div className={styles.submitRow}>
+                <Button size="lg" type="submit">
+                  {isSubmitting ? 'Sending…' : 'Send it over'}
+                </Button>
+                <span className={styles.submitNote}>We reply within one working day.</span>
+              </div>
 
               {submitStatus === 'success' && (
-                <p className={styles.success}>Thank you! We'll be in touch soon.</p>
+                <p className={styles.success} role="status">
+                  Filed. We&rsquo;ll be in touch within one working day.
+                </p>
               )}
               {submitStatus === 'error' && (
-                <p className={styles.errorMessage}>Something went wrong. Please try again.</p>
+                <p className={styles.errorMessage} role="alert">
+                  That didn&rsquo;t send. Try again, or email info@obhsoftware.ie directly.
+                </p>
               )}
             </form>
-          </div>
+          </Docket>
 
-          <div className={styles.info}>
-            <h3 className={styles.infoTitle}>Get in Touch</h3>
-            <p className={styles.infoText}>
-              Book a free consultation and discover how OBH Software can
-              help you streamline operations, build custom solutions and
-              drive sustainable growth through technology.
-            </p>
-            <div className={styles.contactDetails}>
-              <div className={styles.contactItem}>
-                <span className={styles.contactLabel}>Email</span>
-                <a href="mailto:info@obhsoftware.ie" className={styles.contactValue}>
-                  info@obhsoftware.ie
-                </a>
+          <div className={styles.side}>
+            <Docket serial="Direct" stamp="Galway" stampTone="accent">
+              <p className={styles.infoText}>
+                Prefer to skip the form? Mail us or ring. If one of our platforms
+                already does what you need, we&rsquo;ll tell you that instead of
+                quoting you for a build.
+              </p>
+              <div className={styles.contactDetails}>
+                <div className={styles.contactItem}>
+                  <span className={styles.contactLabel}>Email</span>
+                  <a href="mailto:info@obhsoftware.ie" className={styles.contactValue}>
+                    info@obhsoftware.ie
+                  </a>
+                </div>
+                <div className={styles.contactItem}>
+                  <span className={styles.contactLabel}>Phone</span>
+                  <a href="tel:+353872959063" className={styles.contactValue}>
+                    +353 87 295 9063
+                  </a>
+                </div>
+                <div className={styles.contactItem}>
+                  <span className={styles.contactLabel}>Where</span>
+                  <span className={styles.contactValue}>
+                    University of Galway, Ireland
+                  </span>
+                </div>
               </div>
-              <div className={styles.contactItem}>
-                <span className={styles.contactLabel}>Location</span>
-                <span className={styles.contactValue}>University of Galway, Ireland</span>
-              </div>
-            </div>
+            </Docket>
           </div>
         </div>
       </AnimatedSection>

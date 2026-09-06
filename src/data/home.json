@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "eyebrow": "O'Brien Hughes Software · Galway, Ireland",
+    "titleLead": "The paperwork",
+    "titleAccent": "stops here.",
+    "description": "Haulage, workshops, construction, accounts — industries that still run on carbon paper and a filing cabinet. We're two engineers from Galway who put them on software. Hire us to build yours, or take one we've already built.",
+    "dockets": [
+      {
+        "id": "build",
+        "serial": "Docket 01 — Build",
+        "stamp": "Open",
+        "stampTone": "accent",
+        "title": "Bring us the problem.",
+        "body": "You have a process held together by spreadsheets, WhatsApp and a lever-arch file. We sit with the people doing it, map what actually happens, then build the thing that replaces it — and hand it over working.",
+        "fields": [
+          { "key": "Scope", "value": "Fixed or retained" },
+          { "key": "Sectors", "value": "Transport · Construction · Finance" },
+          { "key": "Start", "value": "Free consultation" }
+        ],
+        "cta": { "label": "Book a consultation", "href": "#contact", "variant": "primary" }
+      },
+      {
+        "id": "buy",
+        "serial": "Docket 02 — Buy",
+        "stamp": "In stock",
+        "stampTone": "pass",
+        "title": "Or take one off the shelf.",
+        "body": "Four platforms we built, run and sell ourselves. Fleet compliance, transport operations, project delivery and the books. Nothing to specify, nothing to wait for.",
+        "fields": [
+          { "key": "Live", "value": "Solar · qMechanic · cashish" },
+          { "key": "Soon", "value": "qHaul" },
+          { "key": "Trial", "value": "Free, no card" }
+        ],
+        "cta": { "label": "See the platforms", "href": "#platforms", "variant": "secondary" }
+      }
+    ]
+  },
+
+  "proof": {
+    "label": "On the record",
+    "items": [
+      {
+        "text": "Irish Independent 30 Under 30",
+        "year": "2025",
+        "href": "https://www.independent.ie/business/irish/thirty-under-30-the-sunday-independent-hails-irelands-young-entrepreneurs-of-the-year/a249802745.html"
+      },
+      { "text": "Innovation Undergraduate of the Year — Winners", "year": "2025" },
+      { "text": "Stanford University Innovation Fellows", "year": "" },
+      { "text": "Siemens Innovative Student Engineer of the Year — Finalists", "year": "2024 & 2025" },
+      { "text": "Student Entrepreneur of the Year — Finalists", "year": "2025" },
+      { "text": "Ireland at the Global Student Entrepreneur Awards", "year": "" },
+      { "text": "Web Summit Scholars", "year": "" }
+    ]
+  },
+
+  "platforms": {
+    "eyebrow": "Section 02 — What you can buy",
+    "title": "Four platforms, already built.",
+    "subtitle": "Each one started as a job for a real operator, then became a product. You get the finished thing, not a discovery phase.",
+    "items": [
+      {
+        "id": "qmechanic",
+        "pane": "qmechanic",
+        "serial": "qMechanic",
+        "stamp": "Live",
+        "stampTone": "pass",
+        "tagline": "HGV inspections & job cards",
+        "description": "Walk-around checks, defect tracking and job cards for workshops and fleet operators. DVSA-shaped, signed on the device, audit-ready without a filing cabinet.",
+        "fields": [
+          { "key": "Replaces", "value": "Paper inspection sheets" },
+          { "key": "Used by", "value": "Workshops & fleet operators" }
+        ],
+        "cta": { "label": "qmechanic.autos", "href": "https://qmechanic.autos" }
+      },
+      {
+        "id": "solar",
+        "pane": "solar",
+        "serial": "Solar",
+        "stamp": "Live",
+        "stampTone": "pass",
+        "tagline": "Project delivery for agencies",
+        "description": "Boards, sprints, timesheets and a fully branded client portal in one place. Clients see progress and hours under your name — and AI agents can work the backlog directly over MCP.",
+        "fields": [
+          { "key": "Replaces", "value": "Jira + Toggl + update emails" },
+          { "key": "Used by", "value": "Agencies & consultancies" }
+        ],
+        "cta": { "label": "projectsolar.space", "href": "https://projectsolar.space" }
+      },
+      {
+        "id": "cashish",
+        "pane": "cashish",
+        "serial": "cashish",
+        "stamp": "Live",
+        "stampTone": "pass",
+        "tagline": "Irish books, cash-basis VAT",
+        "description": "Import the bank statement, categorise once, invoice from a product library, and file a cash-receipts VAT return. The parts of the accounting package people actually open, without the subscription.",
+        "fields": [
+          { "key": "Replaces", "value": "Spreadsheets & QuickBooks" },
+          { "key": "Built for", "value": "Irish small business · EUR" }
+        ],
+        "cta": { "label": "Ask for access", "href": "#contact" }
+      },
+      {
+        "id": "qhaul",
+        "pane": "qhaul",
+        "serial": "qHaul",
+        "stamp": "In build",
+        "stampTone": "note",
+        "tagline": "Transport management",
+        "description": "Booking through to proof of delivery: jobs, drivers, routes and a customer portal that shows where the load is. Invoicing falls out of the completed job instead of a Friday spreadsheet.",
+        "fields": [
+          { "key": "Replaces", "value": "Paper dockets & PODs" },
+          { "key": "Built for", "value": "Haulage operators" }
+        ],
+        "cta": { "label": "Register interest", "href": "#contact" }
+      }
+    ]
+  },
+
+  "services": {
+    "eyebrow": "Section 03 — What we build for you",
+    "title": "Three ways we work.",
+    "subtitle": "Most jobs start as one of these and turn into a mix. We scope it properly before quoting."
+  },
+
+  "work": {
+    "eyebrow": "Section 04 — Shipped",
+    "title": "What it looks like when it's done.",
+    "subtitle": "Three platforms we designed and built end to end, and what changed for the people using them."
+  },
+
+  "about": {
+    "eyebrow": "Section 05 — Who we are",
+    "title": "Two engineers from Galway.",
+    "founders": [
+      { "name": "Ethan O'Brien", "role": "Co-founder · Engineering" },
+      { "name": "Sarah Jane Hughes", "role": "Co-founder · Product" }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "Section 06 — Open a docket",
+    "title": "Tell us what's still on paper.",
+    "subtitle": "A free half-hour call. We'll tell you straight whether it's worth building, whether one of ours already does it, or whether you don't need software at all."
+  }
+}

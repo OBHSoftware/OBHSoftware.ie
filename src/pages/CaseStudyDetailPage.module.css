@@ -23,9 +23,9 @@
   align-items: center;
   text-align: center;
   padding: var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   min-width: 150px;
 }
 
@@ -70,9 +70,9 @@
   font-size: var(--text-base);
   color: var(--color-white);
   padding: var(--spacing-md) var(--spacing-lg);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .approachNumber {
@@ -80,7 +80,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-raised);
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -88,16 +88,16 @@
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-bold);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--color-keyline);
 }
 
 .testimonialCard {
   max-width: 800px;
   margin: var(--spacing-xl) auto 0;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-2xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .quote {
@@ -127,9 +127,9 @@
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

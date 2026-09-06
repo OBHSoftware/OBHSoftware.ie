@@ -16,7 +16,7 @@
   color: var(--color-white);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--color-keyline);
 }
 
 .resourcesGrid {
@@ -26,10 +26,10 @@
 }
 
 .resourceCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -47,7 +47,7 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-full);
   background: rgba(251, 191, 36, 0.2);
-  color: #fbbf24;
+  color: var(--color-note);
   border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
@@ -111,8 +111,8 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   transition: border-color var(--transition-fast);
@@ -120,7 +120,7 @@
 
 .emailInput:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: var(--color-keyline);
 }
 
 .emailInput::placeholder {
@@ -135,7 +135,7 @@
 .errorMessage {
   font-family: var(--font-body);
   font-size: var(--text-xs);
-  color: #ef4444;
+  color: var(--color-fail);
 }
 
 .unlockButton {
@@ -143,8 +143,8 @@
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
@@ -152,16 +152,16 @@
 }
 
 .unlockButton:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
 }
 
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .ctaTitle {

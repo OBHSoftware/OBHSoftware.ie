@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Logo } from '../common';
 import navigationData from '../../data/navigation.json';
 import styles from './Header.module.css';
 
@@ -141,10 +142,7 @@ export function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
-          <img src="/logo.png" alt="OBH Software" className={styles.logoImg} />
-          <span className={styles.logoText}>OBH Software</span>
-        </Link>
+        <Logo invert className={styles.logo} size={32} />
 
         <button
           className={styles.menuButton}
@@ -217,6 +215,14 @@ export function Header() {
             ))}
           </ul>
         </nav>
+
+        <a
+          href="/#contact"
+          className={styles.cta}
+          onClick={(e) => handleNavClick(e, '/#contact')}
+        >
+          Start a job
+        </a>
       </div>
     </header>
   );

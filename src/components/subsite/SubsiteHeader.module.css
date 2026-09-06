@@ -99,7 +99,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-enamel);
   transition: width var(--transition-base);
 }
 
@@ -134,7 +134,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-enamel);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

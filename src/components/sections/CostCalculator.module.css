@@ -40,7 +40,7 @@
 
 .sliderValue {
   font-family: var(--font-mono);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .slider {
@@ -176,7 +176,7 @@
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-xl);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 @media (max-width: 1024px) {

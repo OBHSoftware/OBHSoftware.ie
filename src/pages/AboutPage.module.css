@@ -21,8 +21,8 @@
 }
 
 .founderCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
 }
@@ -47,7 +47,7 @@
 .founderRole {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: var(--spacing-md);
@@ -82,7 +82,7 @@
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* Approach */
@@ -93,8 +93,8 @@
 }
 
 .approachCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
 }
@@ -118,8 +118,8 @@
 .ctaSection {
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-xl);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-lg);
 }
 

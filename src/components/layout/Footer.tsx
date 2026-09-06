@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import navigationData from '../../data/navigation.json';
+import { Logo } from '../common';
 import styles from './Footer.module.css';
 
 interface LinkItem {
@@ -16,12 +17,10 @@ export function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <Link to="/" className={styles.logo}>
-              <img src="/logo.png" alt="OBH Software" className={styles.logoImg} />
-              <span className={styles.logoText}>OBH Software</span>
-            </Link>
+            <Logo invert className={styles.logo} size={34} />
             <p className={styles.tagline}>
-              Innovating industries through sustainable technology solutions.
+              Software for industries that still run on paper.
+              Built and run from Galway.
             </p>
           </div>
 

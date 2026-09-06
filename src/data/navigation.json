@@ -4,59 +4,155 @@
       "label": "Industries",
       "href": "/sectors",
       "dropdown": [
-        { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
-        { "label": "Construction", "href": "/sectors/construction" },
-        { "label": "Finance & Compliance", "href": "/sectors/finance" },
-        { "label": "Education & Training", "href": "/sectors/education" },
-        { "label": "Entertainment", "href": "/sectors/entertainment" }
+        {
+          "label": "Transport & Logistics",
+          "href": "/sectors/transport-logistics"
+        },
+        {
+          "label": "Construction",
+          "href": "/sectors/construction"
+        },
+        {
+          "label": "Finance & Compliance",
+          "href": "/sectors/finance"
+        },
+        {
+          "label": "Education & Training",
+          "href": "/sectors/education"
+        },
+        {
+          "label": "Entertainment",
+          "href": "/sectors/entertainment"
+        }
       ]
     },
     {
       "label": "Services",
       "href": "/#services",
       "dropdown": [
-        { "label": "Custom Software Development", "href": "/services/custom-software" },
-        { "label": "Business Process Automation", "href": "/services/business-automation" },
-        { "label": "Web Design & Development", "href": "/services/web-design" }
+        {
+          "label": "Custom Software Development",
+          "href": "/services/custom-software"
+        },
+        {
+          "label": "Business Process Automation",
+          "href": "/services/business-automation"
+        },
+        {
+          "label": "Web Design & Development",
+          "href": "/services/web-design"
+        }
       ]
     },
     {
       "label": "Products",
       "href": "/products",
       "dropdown": [
-        { "label": "Solar", "href": "https://projectsolar.space", "external": true },
-        { "label": "qMechanic", "href": "https://qmechanic.autos", "external": true },
-        { "label": "qHaul", "href": "/products/qhaul" }
+        {
+          "label": "Solar",
+          "href": "https://projectsolar.space",
+          "external": true
+        },
+        {
+          "label": "qMechanic",
+          "href": "https://qmechanic.autos",
+          "external": true
+        },
+        {
+          "label": "cashish",
+          "href": "/products/cashish"
+        },
+        {
+          "label": "qHaul",
+          "href": "/products/qhaul"
+        }
       ]
     },
-    { "label": "About", "href": "/about" },
-    { "label": "Contact", "href": "/#contact" }
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/#contact"
+    }
   ],
   "footerLinks": {
     "quickLinks": [
-      { "label": "Services", "href": "/#services" },
-      { "label": "Industries", "href": "/sectors" },
-      { "label": "Products", "href": "/products" },
-      { "label": "How We Work", "href": "/how-we-work" },
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "About", "href": "/about" },
-      { "label": "Contact", "href": "/#contact" }
+      {
+        "label": "Services",
+        "href": "/#services"
+      },
+      {
+        "label": "Industries",
+        "href": "/sectors"
+      },
+      {
+        "label": "Products",
+        "href": "/products"
+      },
+      {
+        "label": "How We Work",
+        "href": "/how-we-work"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      }
     ],
     "services": [
-      { "label": "Custom Software", "href": "/services/custom-software" },
-      { "label": "Business Automation", "href": "/services/business-automation" },
-      { "label": "Web Design", "href": "/services/web-design" }
+      {
+        "label": "Custom Software",
+        "href": "/services/custom-software"
+      },
+      {
+        "label": "Business Automation",
+        "href": "/services/business-automation"
+      },
+      {
+        "label": "Web Design",
+        "href": "/services/web-design"
+      }
     ],
     "sectors": [
-      { "label": "Transport & Logistics", "href": "/sectors/transport-logistics" },
-      { "label": "Construction", "href": "/sectors/construction" },
-      { "label": "Finance & Compliance", "href": "/sectors/finance" },
-      { "label": "Education & Training", "href": "/sectors/education" },
-      { "label": "Entertainment", "href": "/sectors/entertainment" }
+      {
+        "label": "Transport & Logistics",
+        "href": "/sectors/transport-logistics"
+      },
+      {
+        "label": "Construction",
+        "href": "/sectors/construction"
+      },
+      {
+        "label": "Finance & Compliance",
+        "href": "/sectors/finance"
+      },
+      {
+        "label": "Education & Training",
+        "href": "/sectors/education"
+      },
+      {
+        "label": "Entertainment",
+        "href": "/sectors/entertainment"
+      }
     ],
     "clients": [
-      { "label": "Book a Consultation", "href": "/#contact" },
-      { "label": "FAQ", "href": "/faq" }
+      {
+        "label": "Book a Consultation",
+        "href": "/#contact"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
     ]
   }
 }

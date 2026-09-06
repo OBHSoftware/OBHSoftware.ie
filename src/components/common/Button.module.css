@@ -2,65 +2,100 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
+  gap: 0.5rem;
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
   text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-  letter-spacing: 0.01em;
+  border: var(--rule-weight) solid var(--color-keyline);
+  white-space: nowrap;
+  line-height: 1.4;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
-.button:hover {
-  transform: translateY(-1px);
+/* Controls press into the page rather than lifting off it. */
+.primary,
+.secondary {
+  box-shadow: 4px 4px 0 var(--color-ink);
 }
 
-.button:active {
-  transform: translateY(0);
+.primary:hover,
+.secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+.primary:active,
+.secondary:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--color-ink);
 }
 
 /* Variants */
 .primary {
   background-color: var(--color-accent);
-  color: var(--color-bg);
-  box-shadow: 0 0 0 1px rgba(243, 139, 42, 0.3), 0 2px 8px rgba(243, 139, 42, 0.2);
+  color: var(--color-ink);
 }
 
 .primary:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 0 0 1px rgba(243, 139, 42, 0.4), 0 8px 20px rgba(243, 139, 42, 0.25);
 }
 
 .secondary {
-  background-color: transparent;
+  background-color: var(--color-bg-raised);
   color: var(--color-text-bright);
-  border: 1px solid var(--color-border-hover);
 }
 
 .secondary:hover {
-  background-color: var(--color-bg-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-text-bright);
+  background-color: var(--color-hivis);
+}
+
+/* A quiet inline action — reads as a reference, not a control. */
+.ghost {
+  background: transparent;
+  color: var(--color-accent-text);
+  border: 0;
+  border-bottom: 2px solid var(--color-accent);
+  padding: 0;
+  box-shadow: none;
+}
+
+.ghost:hover {
+  color: var(--color-ink);
+  background-color: var(--color-hivis);
+  border-bottom-color: var(--color-ink);
+  transform: none;
+  box-shadow: none;
 }
 
 /* Sizes */
 .sm {
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 0.85rem;
   font-size: var(--text-sm);
 }
 
 .md {
-  padding: 0.625rem 1.25rem;
-  font-size: var(--text-sm);
+  padding: 0.45rem 1.1rem;
+  font-size: var(--text-base);
 }
 
 .lg {
-  padding: 0.75rem 1.5rem;
-  font-size: var(--text-base);
+  padding: 0.65rem 1.5rem;
+  font-size: var(--text-lg);
+}
+
+.ghost.sm,
+.ghost.md,
+.ghost.lg {
+  padding: 0.1rem 0.15rem;
+  font-size: var(--label-size);
 }
 
 @media (max-width: 768px) {
   .lg {
-    padding: 0.625rem 1.25rem;
-    font-size: var(--text-sm);
+    padding: 0.55rem 1.2rem;
+    font-size: var(--text-base);
   }
 }

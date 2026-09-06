@@ -24,10 +24,10 @@
 }
 
 .itemCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
   display: flex;
   flex-direction: column;
 }
@@ -58,8 +58,8 @@
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-bg-raised);
+  border: 2px solid var(--color-keyline);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
@@ -68,8 +68,8 @@
 }
 
 .itemButton:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--color-bg-raised);
+  border-color: var(--color-keyline);
 }
 
 .externalIcon {
@@ -88,7 +88,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-2xl);
   font-weight: var(--font-weight-bold);
-  color: #ef4444;
+  color: var(--color-fail);
   margin-bottom: var(--spacing-md);
 }
 
@@ -118,7 +118,7 @@
 
 .emergencyInstructions li::before {
   content: '• ';
-  color: #ef4444;
+  color: var(--color-fail);
 }
 
 .phoneNumber {
@@ -146,10 +146,10 @@
 }
 
 .resourcesCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-raised);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-keyline);
 }
 
 .resourcesDescription {

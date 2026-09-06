@@ -1,0 +1,75 @@
+/* The mark is a stamped machine plate: a black slab with one corner cut away
+   and safety orange showing through the cut, "OBH" reversed out of it. The
+   chamfer is the whole idea — a plate that has been cut to fit, which is what
+   the business does. It survives at 24px and it survives in one colour. */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mark {
+  display: block;
+  height: 34px;
+  width: auto;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover .mark {
+  transform: translate(-1px, -1px);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+/* "O'Brien Hughes" is the name the mark abbreviates, so the wordmark spells
+   out what OBH stands for rather than repeating the letters. */
+.wordTop {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 105%;
+  font-size: 0.9375rem;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+}
+
+.wordSub {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.12rem;
+}
+
+/* On the ink footer the wordmark reverses out. */
+.invert .wordTop {
+  color: var(--color-text-invert);
+}
+
+.invert .wordSub {
+  color: rgba(243, 244, 240, 0.62);
+}
+
+.compact .wordmark {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .wordSub {
+    display: none;
+  }
+
+  .mark {
+    height: 30px;
+  }
+}
