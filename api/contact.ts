@@ -51,7 +51,7 @@ function notifySlack(body: Record<string, unknown>) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      text: `:inbox_tray: *New lead from obhsoftware.ie*\n*${title}*\n${description}`,
+      msg: `:inbox_tray: *New lead from obhsoftware.ie*\n*${title}*\n${description}`,
     }),
   }).catch(() => {
     // Best-effort only — the lead is already safely in Solar.
