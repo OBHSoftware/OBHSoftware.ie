@@ -28,8 +28,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const data = await response.json();
+    notifySlack(req.body);
     return res.status(200).json(data);
   } catch {
     return res.status(500).json({ message: "Failed to submit" });
   }
+}
+
+/**
+ * Best-effort Slack ping so a new lead doesn't sit unseen in a Solar queue.
+ * Solar (above) is the system of record; this is just the nudge. Never lets
+ * a Slack failure affect the response to the visitor.
+ */
+function notifySlack(body: Record<string, unknown>) {
+  const slackWebhookUrl = process.env.LEAD_SLACK_WEBHOOK_URL;
+  if (!slackWebhookUrl) return;
+
+  const title = typeof body.title === "string" ? body.title : "New lead";
+  const description = typeof body.description === "string" ? body.description : "";
+
+  fetch(slackWebhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text: `:inbox_tray: *New lead from obhsoftware.ie*\n*${title}*\n${description}`,
+    }),
+  }).catch(() => {
+    // Best-effort only — the lead is already safely in Solar.
+  });
 }
